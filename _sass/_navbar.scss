@@ -1,0 +1,12 @@
+// This navbar follows the format of vim-airline (https://github.com/vim-airline/vim-airline)
+nav {
+    background-color: $base01;
+    color: $base04;
+
+    >.A {
+        background-color: $base0B;
+        color: $base01;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
