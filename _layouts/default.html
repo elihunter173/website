@@ -3,10 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>{{ site.title }} | {{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <!-- Load Custom CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+    <!-- Load jQuery -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Load KaTeX -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
   </head>
   <body>
-    {% include navigation.html %}
+    {% include navbar.html %}
     {{ content }}
+
+    <script src="{{ "/assets/js/katex_render.js" | relative_url }}"></script>
   </body>
 </html>

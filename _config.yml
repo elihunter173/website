@@ -57,8 +57,12 @@ defaults:
       layout: "note"
 
 # Build settings
+# Markdown and LaTeX setup
 markdown: kramdown
-theme: minima
+kramdown:
+  math_engine: mathjax
+
+# theme: minima
 plugins:
   - jekyll-feed
 
