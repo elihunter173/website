@@ -7,7 +7,7 @@ layout: default
   {{ page.date | date_to_string }}
   {% assign project = site.projects | where: 'unix_name', page.project | first %}
   {% if project %}
-    - <a href="{{ project.url }}">{{ project.name }}</a>
+    - <a href="{{ project.url | relative_url }}">{{ project.name }}</a>
   {% endif %}
 </p>
 

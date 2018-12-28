@@ -19,7 +19,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Eli W. Hunter's personal website where he details all of his projects and
   various ideas of his.
 
-baseurl: "" # the subpath of your site, e.g. /blog
+# the subpath of your site, e.g. /blog
+# NOTE: This should be overriden during local tests with `--baseurl /`
+baseurl: "/paper-range"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Social Media
