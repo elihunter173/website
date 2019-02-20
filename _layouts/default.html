@@ -1,20 +1,59 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ site.title }} | {{ page.title }}</title>
-    <!-- Load Custom CSS -->
-    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
-    <!-- Load jQuery -->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!-- Load KaTeX -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
-  </head>
-  <body>
-    {% include navbar.html %}
-    {{ content }}
+    <head>
+        <meta charset="utf-8">
+        <title>{{ site.title }} | {{ page.title }}</title>
+        <!-- Load Custom CSS -->
+        <link rel="stylesheet" href="{{ "/assets/css/marx.css" | relative_url }}">
+    </head>
+    <body>
+        <main>
+            {{ content }}
 
-    <script src="{{ "/assets/js/katex_render.js" | relative_url }}"></script>
-  </body>
+            {% comment %} Header {% endcomment %}
+            <center class="hero">
+                <h1>Paper Range</h1>
+                <h3 id="tagline">Built with Marx!</h3>
+                <p>
+                    Eli W. Hunter's Website
+                    <small>Small Text</small>
+                </p>
+                <div>
+                    <a href="https://duckduckgo.com/" target="_blank" id="duckduckgo">
+                        <button>Example Button</button>
+                    </a>
+                </div>
+            </center>
+
+            {% comment %} TOC/Navbar {% endcomment %}
+            <nav>
+                <ul>
+                    <li><a href="#">First</a></li>
+                    <li><a href="#">Second</a></li>
+                    <li><a href="#">Third</a></li>
+                    <li><a href="#">Fourth</a></li>
+                </ul>
+            </nav>
+
+            {% comment %} Article {% endcomment %}
+            <article>
+                <h1>Article</h1>
+            </article>
+
+            {% comment %} Aside {% endcomment %}
+            <aside>
+                <h1>Aside</h1>
+            </aside>
+
+            {% comment %} Section {% endcomment %}
+            <section>
+                <h1>Section</h1>
+            </section>
+
+            {% comment %} Footer {% endcomment %}
+            <footer>
+                {% include footer.html %}
+            </footer>
+        </main>
+    </body>
 </html>
