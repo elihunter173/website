@@ -3,11 +3,11 @@ layout: default
 title: Home
 ---
 <h2>My Posts</h2>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  <h4><a href="{{ post.url | relative_url }}" class="no-highlight no-underline">{{ post.title }}</a></h4>
+  <p>{{ post.date | date_to_string }}</p>
+  <p>{{ post.excerpt }}</p>
+  <p>
+    <a href="{{ post.url | relative_url }}" class="no-highlight"><strong>Read More</strong></a>
+  </p>
+{% endfor %}

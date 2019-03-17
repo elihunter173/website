@@ -1,0 +1,21 @@
+/* A collection of classes and IDs that power my blog */
+
+/* Marx Overrides */
+a.no-highlight {
+  color: inherit;
+}
+
+a.no-underline {
+  text-decoration: none;
+}
+
+/* Misc Specifics */
+.spaced-buttons {
+  /* vertical | horizontal */
+  margin: 0px 10px
+}
+
+#name {
+  color: inherit;
+  text-decoration: underline;
+}
