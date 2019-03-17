@@ -9,13 +9,16 @@ a.no-underline {
   text-decoration: none;
 }
 
+a.always-underline {
+  text-decoration: underline;
+}
+
 /* Misc Specifics */
 .spaced-buttons {
   /* vertical | horizontal */
   margin: 0px 10px
 }
 
-#name {
-  color: inherit;
-  text-decoration: underline;
+#footer-icons {
+  font-size: 1.65rem;
 }
