@@ -8,31 +8,22 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: The Paper Range
-email: hunter.eli.w@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Eli W. Hunter's personal website where he details all of his projects and
-  various ideas of his.
-
-# the subpath of your site, e.g. /blog
-# NOTE: This should be overriden during local tests with `--baseurl /`
-baseurl: "/paper-range"
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# Site Variables
+# These can be accessed such {{ site.foo }}. The site must restarted for these to be
+# reloaded.
+title: Paper Range
+subtitle: A blog about a ~~narrow~~ range of things
+name: Eli W. Hunter
+resume:
 
 # Social Media
-twitter_username: elihunter173
-github_username:  elihunter173
+github_url: https://github.com/elihunter173
+linkedin_url: https://www.linkedin.com/in/elihunter173/
+twitter_url: https://twitter.com/EliHunter173
 
-# Collections are groups of related pages, declared here
-collections:
-  projects:
-    # by default, collections do not output pages, but we want to be able to navigate to them
-    output: true
+# The subpath of your site, e.g. /blog
+baseurl: "/paper-range"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Front matter defaults
 defaults:
@@ -42,19 +33,9 @@ defaults:
       layout: "default"
   - scope:
       path: ""
-      type: "projects"
-    values:
-      layout: "project"
-  - scope:
-      path: ""
       type: "posts"
     values:
       layout: "post"
-  - scope:
-      path: ""
-      type: "notes"
-    values:
-      layout: "note"
 
 # Build settings
 # Markdown and LaTeX setup
@@ -62,9 +43,8 @@ markdown: kramdown
 kramdown:
   math_engine: mathjax
 
-# theme: minima
 plugins:
-  - jekyll-feed
+- jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

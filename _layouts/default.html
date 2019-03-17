@@ -1,21 +1,14 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>{{ site.title }} | {{ page.title }}</title>
-        <link rel="stylesheet" href="{{ "/assets/css/marx.css" | relative_url }}">
-    </head>
-    <body>
-        <main>
-            {% comment %} Header {% endcomment %}
-            {% include header.html %}
+---
+layout: head
+---
+<main>
+  {% comment %} Header {% endcomment %}
+  {% include header.html %}
 
-            {{ content }}
+  {{ content }}
 
-            {% comment %} Footer {% endcomment %}
-            <footer>
-                {% include footer.html %}
-            </footer>
-        </main>
-    </body>
-</html>
+  {% comment %} Footer {% endcomment %}
+  <footer>
+    {% include footer.html %}
+  </footer>
+</main>

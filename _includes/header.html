@@ -1,9 +1,6 @@
 <center>
-  <h1>Paper Range</h1>
-  <h4>Eli W. Hunter</h4>
-  <div>
-    <a href="https://duckduckgo.com/" target="_blank" id="duckduckgo">
-      <button>Example Button</button>
-    </a>
-  </div>
+  <br>
+  <h1><a href="{{ '/' | relative_url }}" class="no-highlight no-underline">{{ site.title }}</a></h1>
+  <h4>{{ site.subtitle | markdownify }}</h4>
+  <p>Written by <a href="{{ '/about' | relative_url }}" id="name">{{ site.name }}</a></p>
 </center>
