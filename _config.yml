@@ -1,20 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# This file is *NOT* reloaded automatically when you use 'bundle exec jekyll
+# serve'. If you change this file, please restart the server process.
 
 # Site Variables
 # These can be accessed such {{ site.foo }}. The site must restarted for these to be
 # reloaded.
-title: Paper Range
-subtitle: A blog about a ~~narrow~~ range of things
-name: Eli W. Hunter
-resume:
+# Title is also the owner's name
+title: Eli W. Hunter
+subtitle: A quiet little corner of the Internet
 
 # Social Media
 github_url: https://github.com/elihunter173
@@ -22,8 +14,9 @@ linkedin_url: https://www.linkedin.com/in/elihunter173/
 twitter_url: https://twitter.com/EliHunter173
 
 # The subpath of your site, e.g. /blog
-baseurl: "/paper-range"
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+# The base hostname & protocol for your site, e.g. http://example.com
+url: ""
 
 # Front matter defaults
 defaults:
@@ -36,12 +29,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-
-# Build settings
-# Markdown and LaTeX setup
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

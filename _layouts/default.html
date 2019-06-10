@@ -2,12 +2,14 @@
 layout: head
 ---
 <main>
-  {% comment %} Header {% endcomment %}
-  {% include header.html %}
+  <header>
+    {% include header.html %}
+  </header>
 
-  {{ content }}
+  <main>
+    {{ content }}
+  </main>
 
-  {% comment %} Footer {% endcomment %}
   <footer>
     {% include footer.html %}
   </footer>
