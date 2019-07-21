@@ -5,8 +5,9 @@ title: Home
 <section>
   {% for post in site.posts %}
     <article>
-      <h3><a href="{{ post.url | relative_url }}" class="no-highlight no-underline">{{ post.title }}</a></h3>
-      <p>{{ post.date | date_to_string }}</p>
+      <h3><a href="{{ post.url | relative_url }}" class="no-highlight
+          no-underline">{{ post.title }}</a></h3>
+      <p><em>{{ post.date | date_to_string }}</em></p>
       <p>{{ post.excerpt }}</p>
       <p>
         <a href="{{ post.url | relative_url }}" class="no-highlight"><strong>Read More</strong></a>
