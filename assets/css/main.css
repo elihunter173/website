@@ -1,6 +1,10 @@
 /* A collection of classes and IDs that power my blog */
 
 /* Marx Overrides */
+html {
+  scroll-behavior: smooth;
+}
+
 a.no-highlight {
   color: inherit;
 }
@@ -13,12 +17,33 @@ a.always-underline {
   text-decoration: underline;
 }
 
-/* Misc Specifics */
-.spaced-buttons {
-  /* vertical | horizontal */
-  margin: 0px 10px
+/* Navbar */
+#nav-container {
+  display: flex;
+  flex-wrap:  wrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-#footer-icons {
-  font-size: 1.65rem;
+#nav-container button {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+/* Footer */
+#footer a {
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+/* The profile photo MUST have square dimensions */
+#profile-photo {
+  width: 172px;
+  height: auto;
+  border-color: #000;
+  border-width: 20px;
+  border-radius: 50%;
 }
