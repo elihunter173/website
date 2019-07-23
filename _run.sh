@@ -5,6 +5,6 @@
 
 cd "$(dirname "$0")"
 
-# Make html
+# Make resume PDF
 alias md2resume="docker run -v ${PWD}:/resume there4/markdown-resume md2resume"
 md2resume pdf --template modern ./assets/resume.md .
