@@ -41,3 +41,4 @@ exclude:
   - Dockerfile
   - Session.vim
   - README.md
+  - LICENSE
