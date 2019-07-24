@@ -35,5 +35,5 @@ In `_deploy/` run:
 ```sh
 # Fully restart the container cluster to apply changes
 docker-compose kill
-docker-compose up
+docker-compose up -d
 ```
