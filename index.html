@@ -5,10 +5,12 @@ title: Home
 <section>
   {% for post in site.posts %}
     <article>
+      <header>
       <h3><a href="{{ post.url | relative_url }}" class="no-highlight
           no-underline">{{ post.title }}</a></h3>
-      <p><em>{{ post.date | date_to_string }}</em></p>
-      <p>{{ post.excerpt }}</p>
+      <time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time>
+      </header>
+      {{ post.excerpt }}
       <p>
         <a href="{{ post.url | relative_url }}" class="no-highlight"><strong>Read More</strong></a>
       </p>

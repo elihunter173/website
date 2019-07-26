@@ -1,7 +1,12 @@
 ---
-layout: default
+layout: single_section
 ---
-<h3>{{ page.title }}</h3>
-<p><em>{{ page.date | date_to_string }}</em></p>
+{% comment %}This is similar to index.html{% endcomment %}
+<article>
+  <header>
+    <h3>{{ page.title }}</h3>
+    <time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time>
+  </header>
 
-{{ content }}
+  {{ content }}
+</article>
