@@ -18,14 +18,14 @@ a.always-underline {
 }
 
 /* Navbar */
-#nav-container {
+header nav {
   display: flex;
   flex-wrap:  wrap;
   flex-direction: row;
   justify-content: space-around;
 }
 
-#nav-container button {
+header nav button {
   margin-top: 8px;
   margin-bottom: 5px;
   margin-left: 10px;
@@ -33,8 +33,13 @@ a.always-underline {
   text-transform: uppercase;
 }
 
+/* Dates in article headers */
+article header time {
+  font-style: italic;
+}
+
 /* Footer */
-#footer a {
+footer #icons a {
   text-decoration: none;
   font-size: 1.4rem;
 }
