@@ -53,16 +53,16 @@ USAGE
 ### Experience
 
 Noregon
-: **May 2019 - Present**
+: **May 2019 - Aug. 2019**
   *Software Engineer Intern*
-  Work with sales, operations' support, and product management to create a web
-  portal for data visualization and access using Flask, Bokeh, and Pandas,
+  Worked with sales, operations' support, and product management to create a
+  web portal for data visualization and access using Flask, Bokeh, and Pandas,
   enabling rapid, data-driven decision-making.
 
 Raleigh Vending Website
-: **May 2019 - Present**
+: **Jan. 2019 - May 2019**
   *Contract*
-  Design three websites, using the Bootstrap web framework, for the three
+  Designed three websites, using the Bootstrap web framework, for the three
   divisions of Raleigh Vending with Kasimir Schulz, working in close contact
   with owners of company.
 
@@ -70,24 +70,34 @@ Raleigh Vending Website
 
 ### Projects
 
-ARC: Dockerizing Software Stack
-: **Docker, Ansible, Vagrant, Virtualbox**
-  Convert previous VM dev environments to be docker containers, reducing load
-  of dev environments and improving support for Windows and lower-end systems.
-  Containerize production software stack, enabling distribution of ground
-  station applications and easier usage of multiple languages.
+[Cookbook](https://github.com/elihunter173/cookbook)
+: **Go, REST, 12-Factor App Design, Docker**
+  Create CLI and RESTful webserver produce high quality LaTeX, PDF, and HTML
+  documents from recipes specified via YAML/JSON. Learn about modern web
+  service and software-as-a-service design. Deploy webserver via containers and
+  distribute software via Go modules.
+
+[Personal Website](https://github.com/elihunter173/website)
+: **Docker, Docker Swarm, Jekyll, SSL**
+  Created my personal website using [Jekyll] and [Marx CSS], self hosted via
+  [Docker Swarm] at my house. Fully maintain the website, the SSL certificates,
+  and the network infrastructure required to run the website.
+
+[Jekyll]: https://jekyllrb.com/
+[Marx CSS]: https://github.com/mblode/marx
+[Docker Swarm]: https://docs.docker.com/engine/swarm/
 
 [SBGC Serial API Rewrite](https://github.com/elihunter173/sbgc-api)
 : **C/C++, Serial Ports, Doxygen**
-  Rewrite BaseCam Electronics C/C++ Serial API to provide a higher-level API,
-  wrap that higher-level API in Python, create unit tests, and standardize code
-  style.
+  Rewrote BaseCam Electronics C/C++ Serial API to provide a higher-level API,
+  wrap that higher-level API in Python, create unit tests, document code, and
+  standardize code style.
 
 [TweeterBot](https://github.com/elihunter173/bot-messengers)
 : **Python, TwitterAPI, JSON, Pipenv**
   Created a Twitter bot that randomly tweeted a sentence using a hand-crafted
   JSON dictionary, making sure that basic grammar rules were followed. Deployed
-  on a Raspberry Pi using cron for scheduling and pipenv for Python dependency
+  on a Raspberry Pi using cron for scheduling and Pipenv for Python dependency
   management. See
   [@EliHunter173](https://twitter.com/search?q=from:EliHunter173%20TweeterBot)
   on Twitter for results.
@@ -98,17 +108,21 @@ ARC: Dockerizing Software Stack
 
 [Aerial Robotics Club (ARC)](https://aerialroboticsclub.com/)
 : **Sept 2018 - Present**
-  Project lead of embedded control systems and DevOps. Manage the club's
-  backups. Handle the creation, distribution, and development of containers,
-  virtual machines, and provisioning systems. Develop hardware control system
-  servers.
+  *Software Team Lead*
+  Compete in international UAV competitions. Run weekly meetings and
+  post-project retrospectives. Manage 8+ person team, managing deadlines,
+  project assignments, and mission objectives. Act as SysAdmin for all Linux
+  club machines. Redesign all flight subsystems to follow client-server RPC
+  model. Create and maintain club's provisioning and container infrastructure.
+  Enhance ODLC geolocation algorithm.
 
 FOSS Interest Group
 : **Jan 2019 - Present**
-  Founding member. Discuss the issues facing open-source, how to contribute to
-  open-source projects, and open-source software in industry. Host lightning
-  talks from open-source contributors. Help members discover conventions and
-  projects they are passionate about.
+  *Founding Member*
+  Discuss the issues facing open-source, how to contribute to open-source
+  projects, and open-source software in industry. Host lightning talks from
+  open-source contributors. Help members discover conventions and projects they
+  are passionate about.
 
 [SUM Club](https://getinvolved.ncsu.edu/organization/314159)
 : **Sept 2018 - Present**
@@ -124,17 +138,17 @@ FOSS Interest Group
 1. Linux
 1. Docker
 1. Ansible
+1. REST
+1. RPC
 1. Git
-1. Serial Ports
-1. Bootstrap
-1. Python
-1. Java
-1. C/C++
+1. ZeroMQ
+2. Protobuf
 1. Flask
 1. Bokeh
 1. Pandas
-1. Doxygen
-1. Waterfall Methodologies
-1. Agile Methodologies
+1. Python
+1. Go
+1. C/C++
+1. Java
 
 ---
