@@ -12,8 +12,6 @@ the following commands starting in `_deploy/`.
 [Docker Compose]: https://docs.docker.com/compose/install/
 
 ```sh
-# Create PDF of resume
-./build_resume.sh
 # Build website docker container
 docker-compose build
 ```
@@ -37,3 +35,11 @@ In `_deploy/` run:
 docker-compose kill
 docker-compose up -d
 ```
+
+## Updating Resume
+
+I use <resumake.io> to create my resume using the `resume.json` in my
+[notes](https://github.com/elihunter173/notes).
+
+Go there, upload my `resume.json`, download a PDF, and place it at the root of
+this repo.
