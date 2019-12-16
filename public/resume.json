@@ -1,0 +1,164 @@
+{
+  "selectedTemplate": 4,
+  "headings": {
+    "work": "Experience",
+    "awards": "",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects"
+  },
+  "basics": {
+    "name": "Eli W. Hunter",
+    "email": "ewhunter@ncsu.edu",
+    "phone": "(336) 703-8593",
+    "website": "elihunter173.com",
+    "location": {
+      "address": "Raleigh, NC"
+    }
+  },
+  "education": [
+    {
+      "location": "Raleigh, NC",
+      "endDate": "May 2022",
+      "gpa": "4.0",
+      "institution": "NC State University",
+      "studyType": "BS",
+      "area": "Comp. Sci. & Applied Math",
+      "startDate": "Aug. 2018"
+    }
+  ],
+  "work": [
+    {
+      "location": "Greensboro, NC",
+      "website": "",
+      "startDate": "May 2019",
+      "highlights": [
+        "Worked with sales, operations’ support, and product management to create a web portal for data visualization and access using Flask, Bokeh, and Pandas, enabling rapid, data-driven decision-making.",
+        "Assisted with modelling of vehicle faults using NetworkX graphs."
+      ],
+      "company": "Noregon",
+      "position": "Software Engineer Intern",
+      "endDate": "Aug. 2019"
+    },
+    {
+      "highlights": [
+        "Compete in international UAV competitions.",
+        "Manage 8+ person team, managing deadlines, project assignments, and mission objectives.",
+        "Run weekly meetings and project retrospectives.",
+        "Sysadmin all Linux machines for the club.",
+        "Redesign all flight subsystems to follow client-server RPC model.",
+        "Create and maintain club’s provisioning and container infrastructure.",
+        "Enhance algorithm that geolocates ground targets using aerial imagery."
+      ],
+      "company": "Aerial Robotics Club",
+      "endDate": "Present",
+      "startDate": "Sept. 2018",
+      "position": "Software Team Lead",
+      "location": "NC State University"
+    },
+    {
+      "highlights": [
+        "Designed three websites, using the Bootstrap web framework, for the three divisions of Raleigh Vending with Kasimir Schulz.",
+        "Regularly met with company owners to demo progress."
+      ],
+      "company": "Raleigh Vending",
+      "position": "Contract Web Designer",
+      "location": "Raleigh, NC",
+      "startDate": "Jan. 2019",
+      "endDate": "May 2019"
+    }
+  ],
+  "skills": [
+    {
+      "level": "",
+      "keywords": [
+        "Go",
+        "Python",
+        "C/C++",
+        "Rust",
+        "Java",
+        "Javascript"
+      ],
+      "name": "Languages"
+    },
+    {
+      "keywords": [
+        "Linux",
+        "Docker",
+        "Ansible",
+        "Nginx",
+        "Git"
+      ],
+      "name": "Tools"
+    },
+    {
+      "keywords": [
+        "Protobuf",
+        "ZeroMQ",
+        "Flask",
+        "Pandas",
+        "Bokeh",
+        "Bootstrap"
+      ],
+      "name": "Libraries & Frameworks"
+    }
+  ],
+  "projects": [
+    {
+      "keywords": [
+        "Go",
+        "REST",
+        "12-Factor App Design"
+      ],
+      "name": "Cookbook",
+      "url": "https://github.com/elihunter173/cookbook",
+      "description": "Create CLI and RESTful webserver produce high quality LaTeX, PDF, and HTML documents from recipes specified via YAML/JSON. Learn about modern web service and software-as-a-service design. Deploy webserver via containers and distribute software via Go modules."
+    },
+    {
+      "keywords": [
+        "C++",
+        "CMake",
+        "Serial Ports"
+      ],
+      "name": "SBGC Serial API Rewrite",
+      "description": "Rewrote BaseCam Electronics C/C++ Serial API to provide a higher-level API, wrap that higher-level API in Python, create unit tests, document code, and standardize code style.",
+      "url": "https://github.com/ncsuarc/sbgc-api"
+    },
+    {
+      "keywords": [
+        "Python",
+        "Pipenv",
+        "Twitter API",
+        "JSON"
+      ],
+      "name": "TweeterBot",
+      "description": "Created a Twitter bot that randomly tweeted a sentence using a hand-crafted JSON dictionary, making sure that basic grammar rules were followed. Deployed on a Raspberry Pi using cron for scheduling and Pipenv for Python dependency management.",
+      "url": "https://github.com/elihunter173/text-generator"
+    },
+    {
+      "keywords": [
+        "Docker",
+        "Docker Swarm",
+        "SSL"
+      ],
+      "name": "Personal Website",
+      "description": "Created my personal website using Jekyll and Marx CSS, self hosted via Docker Swarm at my house. Fully maintain the website, the SSL certificates, and the network infrastructure required to run the website.",
+      "url": "https://github.com/elihunter173/website"
+    }
+  ],
+  "awards": [
+    {
+      "awarder": "",
+      "summary": ""
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "projects",
+    "skills",
+    "awards"
+  ]
+}

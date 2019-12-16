@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Eli W. Hunter</title>
+    <link>/notes/</link>
+    <description>Recent content in Notes on Eli W. Hunter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSC 216: Intro to Software Engineering &amp; Programming Concepts</title>
+      <link>/notes/csc216/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/csc216/</guid>
+      <description>Administrivia Grades    Weight Component Additional Info     12% Guided Projects    34% Projects Two projects. 3% of each is part 1. 14% of each is part 2.   Guided Projects 12    Labs 15    Exam 1 12 Exam 1 will cover material from approximately the first third of the course.   Exam 2 12 Exam 2 will cover material from approximately the first two-thirds of the course.</description>
+    </item>
+    
+    <item>
+      <title>CSC 230: C &amp; Software Tools</title>
+      <link>/notes/csc230/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/csc230/</guid>
+      <description>Coding Style We use Javadoc-style Doxygen comments.
+We avoid magic numbers, instead using constants via preprocessor directives (#define VALUE_NAME &amp;lt;VALUE&amp;gt;).
+Indent with soft tabs (i.e. spaces). One statement per line. End all lines with \n.
+Avoid global variables because they&#39;re really unsafe and it&#39;s hard to track their modification.
+Compilation Java uses cross-platform bytecode that the JVM will use on runtime to produce and run machine code. The JVM either uses a bytecode interpreter or Just-In-Time (JIT) compilation.</description>
+    </item>
+    
+    <item>
+      <title>CSC 316: Data Structures &amp; Algorithms</title>
+      <link>/notes/csc316/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/csc316/</guid>
+      <description>Terms  Problem: Question to answer. Problem Specification: Specific description of problem parameters and solutions. Parameters: The specific, current input to a problem. Parts of a problem that can change without changing the fundamental nature of the problem. Solution: Description of the properties needed for the algorithm to have. Or, The actual solving algorithm. Algorithm: A general, finite solution to a problem. Normally specified in pseudocode. Good algorithms are efficient, adaptable, and easy to implement.</description>
+    </item>
+    
+    <item>
+      <title>E 102: Engineering in the 21st Century</title>
+      <link>/notes/e102/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/e102/</guid>
+      <description>Administrivia  Goal of E-101: Show engineering as a profession, the design cycle, basic problem solving. Goals of E-102: Specific the grand challenges engineers face, how engineers tackle those, and how those challenges impact history, politics, society, etc.  This is a GEP (interdisciplinary perspectives).   We only meet once a week on Thursday! 1 Free absence allowed. After -5% per class (for unexcused)  Professor  Name: Hailey Queen Email: haqueen@ncsu.</description>
+    </item>
+    
+    <item>
+      <title>MA 225: Foundations of Advanced Mathematics</title>
+      <link>/notes/ma225/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/ma225/</guid>
+      <description>Vocabulary  Axiom: A statement simply accepted to be true. Theorem: A statement proved to be true using the axioms. Lemma: A small theorem used in a specific proof to make the proof cleaner/easier. Proposition: A sentence with one of two truth values.  &amp;ldquo;The sky is blue.&amp;rdquo; &amp;ldquo;4 divides 5.&amp;rdquo;   Universe ($\mathcal{U}$): All possible elements within the realm of discussion. Open Sentence: A propsoition dependent on a variable within the universe.</description>
+    </item>
+    
+    <item>
+      <title>MA 242: Calculus 3</title>
+      <link>/notes/ma242/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/ma242/</guid>
+      <description>Vector Property Equations  $a_T = \frac{\vec{r}&amp;rsquo; \cdot \vec{r}&#39;&#39;}{||\vec{r}&amp;lsquo;||}$ $a_N = \frac{||\vec{r}&amp;rsquo; \times \vec{r}&amp;lsquo;&amp;lsquo;||}{||\vec{r}&amp;lsquo;||}$ $K = \frac{||\vec{r}&amp;rsquo; \times \vec{r}&amp;lsquo;&amp;lsquo;||}{||\vec{r}&amp;lsquo;||^3}$ $\hat{T} = \frac{\vec{r}&#39;}{||\vec{r}&amp;lsquo;||}$ $\hat{B} = \frac{\vec{r}&amp;rsquo; \times \vec{r}&#39;&#39;}{||\vec{r}&amp;rsquo; \times \vec{r}&amp;lsquo;&amp;lsquo;||}$ $\hat{N} = \hat{B} \times \hat{T}$  </description>
+    </item>
+    
+    <item>
+      <title>PY 205: Physics I (Mechanics &amp; Energy)</title>
+      <link>/notes/py205/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/py205/</guid>
+      <description>Units Fundamental Units    Dimension Symbol SI Unit     Length $L$ meter ($m$)   Mass $M$ kilogram ($kg$)   Time $T$ second ($s$)    Derived Units    Dimension SI Unit     Area square meter ($m^2$)   Volume cubic meter ($m^3$)   Velocity meters per second ($m/s$)   Acceleration meters per second per second ($m/s^2$)   Force Newtons or ($N = kg \cdot m/s^2$)   Pressure Newtons per meter ($N/m = kg/s^2$)    SI Prefixes    Prefix $10^n$     tera- ($T$) 12   giga- ($G$) 9   mega- ($M$) 6   kilo- ($k$) 3   centi- ($c$) -2   milli- ($m$) -3   micro- ($\mu$) -6   nano- ($n$) -9   pico- ($p$) -12   fempto- ($f$) -15    Kinematics    Symbol Property SI Units     $x$ or $y$ Position $m$   $v$ Velocity $m/s$   $a$ Acceleration $m/s^2$   $t$ Time $s$    Equations  $v_f = v_i + at$ $x_f = x_i + v_it + \frac{1}{2}at^2$ $\bar{v} = \frac{v_f + v_i}{2}$ $x_f = x_i + (\frac{v_{x,f} + v_{x,i}}{2})t$ $v_f^2 = v_i^2 + 2a(x_f - x_i)$  Constants  $g_{earth} = 9.</description>
+    </item>
+    
+    <item>
+      <title>PY 208: Physics II (Electricity and Magnetism)</title>
+      <link>/notes/py208/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/py208/</guid>
+      <description>Scanned PDF.</description>
+    </item>
+    
+    <item>
+      <title>SOC 202: Principles of Sociology</title>
+      <link>/notes/soc202/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/soc202/</guid>
+      <description>Administrivia  No final exam. Just a final semi-independent project. Grades on Moodle. No late work. No more than 2 absences. 3 tardies = 1 absence. Notes for day uploaded at start of class.  Terms  Sociology: Science of human social behavior and individuals interaction with society. Sociological Imagination/Perspective: Ability to see relation between individual lives and society at large. Specifically dealing with troubles and issues. Diversity: Abstract concept of the variety of experiences of members in a group.</description>
+    </item>
+    
+    <item>
+      <title>ST 370: Probability &amp; Statistics for Engineers</title>
+      <link>/notes/st370/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notes/st370/</guid>
+      <description>Scanned PDF.</description>
+    </item>
+    
+  </channel>
+</rss>

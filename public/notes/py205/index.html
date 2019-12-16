@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Eli W. Hunter">
+    <meta name="description" content="NC State Student">
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PY 205: Physics I (Mechanics &amp; Energy)"/>
+<meta name="twitter:description" content="Units Fundamental Units    Dimension Symbol SI Unit     Length $L$ meter ($m$)   Mass $M$ kilogram ($kg$)   Time $T$ second ($s$)    Derived Units    Dimension SI Unit     Area square meter ($m^2$)   Volume cubic meter ($m^3$)   Velocity meters per second ($m/s$)   Acceleration meters per second per second ($m/s^2$)   Force Newtons or ($N = kg \cdot m/s^2$)   Pressure Newtons per meter ($N/m = kg/s^2$)    SI Prefixes    Prefix $10^n$     tera- ($T$) 12   giga- ($G$) 9   mega- ($M$) 6   kilo- ($k$) 3   centi- ($c$) -2   milli- ($m$) -3   micro- ($\mu$) -6   nano- ($n$) -9   pico- ($p$) -12   fempto- ($f$) -15    Kinematics    Symbol Property SI Units     $x$ or $y$ Position $m$   $v$ Velocity $m/s$   $a$ Acceleration $m/s^2$   $t$ Time $s$    Equations  $v_f = v_i &#43; at$ $x_f = x_i &#43; v_it &#43; \frac{1}{2}at^2$ $\bar{v} = \frac{v_f &#43; v_i}{2}$ $x_f = x_i &#43; (\frac{v_{x,f} &#43; v_{x,i}}{2})t$ $v_f^2 = v_i^2 &#43; 2a(x_f - x_i)$  Constants  $g_{earth} = 9."/>
+
+    <meta property="og:title" content="PY 205: Physics I (Mechanics &amp; Energy)" />
+<meta property="og:description" content="Units Fundamental Units    Dimension Symbol SI Unit     Length $L$ meter ($m$)   Mass $M$ kilogram ($kg$)   Time $T$ second ($s$)    Derived Units    Dimension SI Unit     Area square meter ($m^2$)   Volume cubic meter ($m^3$)   Velocity meters per second ($m/s$)   Acceleration meters per second per second ($m/s^2$)   Force Newtons or ($N = kg \cdot m/s^2$)   Pressure Newtons per meter ($N/m = kg/s^2$)    SI Prefixes    Prefix $10^n$     tera- ($T$) 12   giga- ($G$) 9   mega- ($M$) 6   kilo- ($k$) 3   centi- ($c$) -2   milli- ($m$) -3   micro- ($\mu$) -6   nano- ($n$) -9   pico- ($p$) -12   fempto- ($f$) -15    Kinematics    Symbol Property SI Units     $x$ or $y$ Position $m$   $v$ Velocity $m/s$   $a$ Acceleration $m/s^2$   $t$ Time $s$    Equations  $v_f = v_i &#43; at$ $x_f = x_i &#43; v_it &#43; \frac{1}{2}at^2$ $\bar{v} = \frac{v_f &#43; v_i}{2}$ $x_f = x_i &#43; (\frac{v_{x,f} &#43; v_{x,i}}{2})t$ $v_f^2 = v_i^2 &#43; 2a(x_f - x_i)$  Constants  $g_{earth} = 9." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/notes/py205/" />
+
+
+
+    
+      <base href="/notes/py205/">
+    
+    <title>
+  Eli W. Hunter · PY 205: Physics I (Mechanics &amp; Energy)
+</title>
+
+    
+      <link rel="canonical" href="/notes/py205/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.83a2010dac9f59f943b3004cd6c4f230507ad036da635d3621401d42ec4e2835.css" integrity="sha256-g6IBDayfWflDswBM1sTyMFB60DbaY102IUAdQuxOKDU=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    
+      
+      
+        
+        <link rel="stylesheet" href="/scss/notes.min.18fab4627e52eeea39fef1958d59d56dc7b8e9ba59e5111c7b1a4f634aec4831.css" integrity="sha256-GPq0Yn5S7uo5/vGVjVnVbce46bpZ5REcexpPY0rsSDE=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.61.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Eli W. Hunter
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/notes/">Notes</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/posts/">Posts</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/resume.pdf">Résumé</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+<section class="container post">
+  <article>
+    <header>
+      <div class="post-title">
+        <h1 class="title">PY 205: Physics I (Mechanics &amp; Energy)</h1>
+      </div>
+      <div class="post-meta">
+        <div class="date">
+          <span class="posted-on">
+            <i class="fas fa-calendar"></i>
+            Spring 2019
+          </span>
+          <span>
+            <i class="fas fa-user"></i>
+            Dr. Kory Green
+          </span>
+        </div>
+      </div>
+      
+      
+        <div class="post-toc">
+          <h1 class="toc-title">Table of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#units">Units</a></li>
+    <li><a href="#kinematics">Kinematics</a></li>
+    <li><a href="#rotation">Rotation</a></li>
+    <li><a href="#newtonian-physics">Newtonian Physics</a></li>
+    <li><a href="#energy">Energy</a></li>
+  </ul>
+</nav>
+        </div>
+      
+    </header>
+
+    <div class="note">
+      <h1 id="units">Units</h1>
+<h2 id="fundamental-units">Fundamental Units</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th align="center">Symbol</th>
+<th>SI Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Length</td>
+<td align="center">$L$</td>
+<td>meter ($m$)</td>
+</tr>
+<tr>
+<td>Mass</td>
+<td align="center">$M$</td>
+<td>kilogram ($kg$)</td>
+</tr>
+<tr>
+<td>Time</td>
+<td align="center">$T$</td>
+<td>second ($s$)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="derived-units">Derived Units</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>SI Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Area</td>
+<td>square meter ($m^2$)</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>cubic meter ($m^3$)</td>
+</tr>
+<tr>
+<td>Velocity</td>
+<td>meters per second ($m/s$)</td>
+</tr>
+<tr>
+<td>Acceleration</td>
+<td>meters per second per second ($m/s^2$)</td>
+</tr>
+<tr>
+<td>Force</td>
+<td>Newtons or ($N = kg \cdot m/s^2$)</td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td>Newtons per meter ($N/m = kg/s^2$)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="si-prefixes">SI Prefixes</h2>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th align="center">$10^n$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tera- ($T$)</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>giga- ($G$)</td>
+<td align="center">9</td>
+</tr>
+<tr>
+<td>mega- ($M$)</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td>kilo- ($k$)</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>centi- ($c$)</td>
+<td align="center">-2</td>
+</tr>
+<tr>
+<td>milli- ($m$)</td>
+<td align="center">-3</td>
+</tr>
+<tr>
+<td>micro- ($\mu$)</td>
+<td align="center">-6</td>
+</tr>
+<tr>
+<td>nano- ($n$)</td>
+<td align="center">-9</td>
+</tr>
+<tr>
+<td>pico- ($p$)</td>
+<td align="center">-12</td>
+</tr>
+<tr>
+<td>fempto- ($f$)</td>
+<td align="center">-15</td>
+</tr>
+</tbody>
+</table>
+<h1 id="kinematics">Kinematics</h1>
+<table>
+<thead>
+<tr>
+<th align="center">Symbol</th>
+<th>Property</th>
+<th align="center">SI Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">$x$ or $y$</td>
+<td>Position</td>
+<td align="center">$m$</td>
+</tr>
+<tr>
+<td align="center">$v$</td>
+<td>Velocity</td>
+<td align="center">$m/s$</td>
+</tr>
+<tr>
+<td align="center">$a$</td>
+<td>Acceleration</td>
+<td align="center">$m/s^2$</td>
+</tr>
+<tr>
+<td align="center">$t$</td>
+<td>Time</td>
+<td align="center">$s$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="equations">Equations</h2>
+<ul>
+<li>$v_f = v_i + at$</li>
+<li>$x_f = x_i + v_it + \frac{1}{2}at^2$</li>
+<li>$\bar{v} = \frac{v_f + v_i}{2}$</li>
+<li>$x_f = x_i + (\frac{v_{x,f} + v_{x,i}}{2})t$</li>
+<li>$v_f^2 = v_i^2 + 2a(x_f - x_i)$</li>
+</ul>
+<h2 id="constants">Constants</h2>
+<ul>
+<li>$g_{earth} = 9.80 m/s^2$</li>
+</ul>
+<h1 id="rotation">Rotation</h1>
+<h2 id="variables">Variables</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Symbol</th>
+<th>Property</th>
+<th align="center">SI Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">$\theta$</td>
+<td>Angle/Angular Position</td>
+<td align="center">$rad$</td>
+</tr>
+<tr>
+<td align="center">$\omega$</td>
+<td>Angular speed</td>
+<td align="center">$rad/s$</td>
+</tr>
+<tr>
+<td align="center">$\alpha$</td>
+<td>Angular acceleration</td>
+<td align="center">$rad/s^2$</td>
+</tr>
+<tr>
+<td align="center">$\tau$</td>
+<td>Torque (angular force)</td>
+<td align="center">$N \cdot m$</td>
+</tr>
+<tr>
+<td align="center">$I$</td>
+<td>Moment of inertia</td>
+<td align="center">$kg \cdot m^2$</td>
+</tr>
+<tr>
+<td align="center">$r$</td>
+<td>Radius</td>
+<td align="center">$m$</td>
+</tr>
+<tr>
+<td align="center">$T$</td>
+<td>Period</td>
+<td align="center">$s$</td>
+</tr>
+<tr>
+<td align="center">$F$</td>
+<td>Frequency</td>
+<td align="center">$1/s$ or $Hz$</td>
+</tr>
+<tr>
+<td align="center">$v$</td>
+<td>Linear velocity</td>
+<td align="center">$m/s$</td>
+</tr>
+<tr>
+<td align="center">$a_c = a_r$</td>
+<td>Centripetal/center-seeking acceleration</td>
+<td align="center">$m/s^2$</td>
+</tr>
+<tr>
+<td align="center">$a_t$</td>
+<td>Tangential acceleration</td>
+<td align="center">$m/s^2$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="equations-1">Equations</h2>
+<ul>
+<li>$\omega = \frac{2\pi}{T}$</li>
+<li>$v = \frac{2 \pi r}{T}$</li>
+<li>$a_c = \frac{v^2}{r}$</li>
+<li>$T = \frac{2 \pi r}{v}$</li>
+<li>$F = \frac{1}{T}$</li>
+<li>$\tau = I \alpha$</li>
+<li>$I = I_{CM} + MD^2$ (Parallel Axis Theorem)</li>
+<li>$\omega_f = \omega_i + at$</li>
+<li>$\theta_f = \theta_i + \omega_i t + \frac{1}{2}\alpha t^2$</li>
+<li>$\bar{\omega} = \frac{\omega_f + \omega_i}{2}$</li>
+<li>$\theta_f = \theta_i + (\frac{\omega_{f} + \omega_{i}}{2})t$</li>
+<li>$\omega_f^2 = \omega_i^2 + 2\alpha (\theta_f - \theta_i)$</li>
+</ul>
+<h3 id="common-moments-of-inertia">Common Moments of Inertia</h3>
+<table>
+<thead>
+<tr>
+<th>Shape</th>
+<th align="center">Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point</td>
+<td align="center">$I = MR^2$</td>
+</tr>
+<tr>
+<td>Rod attached in middle</td>
+<td align="center">$I = \frac{1}{12}MR^2$</td>
+</tr>
+<tr>
+<td>Rod attached on end</td>
+<td align="center">$I = \frac{1}{3}MR^2$</td>
+</tr>
+<tr>
+<td>Thin circular hoop</td>
+<td align="center">$I_{\perp} = MR^2$ and $I_{\parallel} = \frac{1}{2}MR^2$</td>
+</tr>
+<tr>
+<td>Thin solid disk</td>
+<td align="center">$I_{\perp} = \frac{1}{2}MR^2$ and $I_{\parallel} = \frac{1}{4}MR^2$</td>
+</tr>
+<tr>
+<td>Hollow sphere</td>
+<td align="center">$I = \frac{2}{3}MR^2$</td>
+</tr>
+<tr>
+<td>Solid sphere</td>
+<td align="center">$I = \frac{2}{5}MR^2$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vocab">Vocab</h2>
+<ul>
+<li>Lever/Moment Arm: The perpendicular distance between the axis of rotation and the application of
+force.
+<ul>
+<li>AKA: The part that matters.</li>
+</ul>
+</li>
+</ul>
+<h1 id="newtonian-physics">Newtonian Physics</h1>
+<h2 id="principles">Principles</h2>
+<ul>
+<li>Archimede's Principle (for bouyancy): The bouyant force is the weight of the fluid displaced.</li>
+</ul>
+<h2 id="laws">Laws</h2>
+<ol>
+<li>$\sum{\vec{F}} = 0 \Longrightarrow \vec{a} = 0$</li>
+<li>$\sum{\vec{F}} = m\vec{a} = \frac{d}{dt}(m\vec{v})$</li>
+<li>Equal and opposite reaction.</li>
+</ol>
+<h2 id="types-of-forces">Types of Forces</h2>
+<ul>
+<li><strong>Contact:</strong> Objects must be touching to have an effect
+<ul>
+<li>Normal/Flex: Perpendicular to plane, prevents clipping.</li>
+<li>Tension: From rope or rope-like objects.</li>
+<li>Friction: Opposes motion of body against another.</li>
+<li>Spring: Seeks equilibrium in springs.</li>
+<li>Buoyant: Pushes things with/against gravity depending on density.</li>
+</ul>
+</li>
+<li><strong>Field:</strong> Acts even without touching.
+<ul>
+<li>Gravitational: Pull all material objects together.</li>
+<li>Electromagnetic: Pull/push magnetic things.</li>
+</ul>
+</li>
+</ul>
+<h2 id="equations-for-forces">Equations for Forces</h2>
+<table>
+<thead>
+<tr>
+<th>Force Type</th>
+<th>Equation</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weight</td>
+<td>$W = mg = m * \frac{GM_{body}}{r^2}$</td>
+<td>Assumes uniform gravitational field.</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td>$N = F_{\perp_{inside}}$</td>
+<td>The force that prevents two bodies from intersecting.</td>
+</tr>
+<tr>
+<td>Spring</td>
+<td>$F_{sp} = -kx$</td>
+<td>$k$ is the unique spring constant.</td>
+</tr>
+<tr>
+<td>Bouyant</td>
+<td>$B = \rho_{fluid}gV_{disp}$</td>
+<td>For fully submered bodies, $V_{disp} = V_{obj}$.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="energy">Energy</h1>
+<h2 id="vocabulary">Vocabulary</h2>
+<ul>
+<li>Energy: The ability to do work.</li>
+<li>Work: A measure of change of state and its associated difficulty in a system.</li>
+</ul>
+<h2 id="principles-1">Principles</h2>
+<ul>
+<li>Energy in a system is constant unless is receives some work external to the system or does some
+work external to the system.</li>
+</ul>
+<h2 id="variables-1">Variables</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Symbol</th>
+<th>Property</th>
+<th align="center">SI Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">$E$</td>
+<td>Energy</td>
+<td align="center">$J$</td>
+</tr>
+<tr>
+<td align="center">$W$</td>
+<td>Work / Change in Energy</td>
+<td align="center">$J$</td>
+</tr>
+<tr>
+<td align="center">$P$</td>
+<td>Power / Rate of Change in Energy</td>
+<td align="center">$J/s$ or $W$</td>
+</tr>
+<tr>
+<td align="center">$U$</td>
+<td>Potential Energy</td>
+<td align="center">$J$</td>
+</tr>
+<tr>
+<td align="center">$U_g$</td>
+<td>Gravitational Potential Energy</td>
+<td align="center">$J$</td>
+</tr>
+<tr>
+<td align="center">$U_{sp}$</td>
+<td>Spring Potential Energy</td>
+<td align="center">$J$</td>
+</tr>
+<tr>
+<td align="center">$KE$</td>
+<td>Kinetic Energy</td>
+<td align="center">$J$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="equations-2">Equations</h2>
+<ul>
+<li>$E = \vec{F} \cdot \vec{r}$</li>
+<li>$E_f = E_i + W$</li>
+<li>$W_f = \int!f,\mathrm{d}r$</li>
+</ul>
+<h3 id="energy-equations">Energy Equations</h3>
+<table>
+<thead>
+<tr>
+<th>Energy Type</th>
+<th align="center">Equations</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Potential Spring Energy ($U_s$)</td>
+<td align="center">$\frac{1}{2}kx^2$</td>
+<td></td>
+</tr>
+<tr>
+<td>Potential Gravitational Energy ($U_g$)</td>
+<td align="center">$mgh$</td>
+<td>Assumes uniform gravitational field</td>
+</tr>
+<tr>
+<td>Translational Kinetic Energy ($KE$)</td>
+<td align="center">$\frac{1}{2}mv^2$</td>
+<td></td>
+</tr>
+<tr>
+<td>Rotational Kinetic Energy ($KE$)</td>
+<td align="center">$\frac{1}{2}I\omega^2$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+  </article>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+</section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>
