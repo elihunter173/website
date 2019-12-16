@@ -1,0 +1,54 @@
+// Used for list.html
+.list .section-title {
+  margin: 2rem 0 0 0;
+}
+.list .list-items {
+  margin: 0.5rem 0 0 0;
+}
+
+
+// Used for single.html
+.note {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 2rem 0 0 0;
+  }
+
+  dt {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1em;
+  }
+  dt + dd > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.post-toc {
+  margin: 2rem 0;
+
+  .toc-title {
+    font-size: 2.6rem;
+  }
+
+  ul {
+    // Pretend like we don't have a ul
+    list-style-type: none;
+
+    // Be tight
+    margin: 0;
+    padding: 0;
+
+    // Grid
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    li {
+      text-indent: -0.8em;
+      padding-left: 0.8em;
+      padding-right: 1em;
+      line-height: 1.4em;
+    }
+  }
+}

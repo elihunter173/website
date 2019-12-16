@@ -1,3 +1,79 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+theme = "hugo-coder"
+title = "Eli W. Hunter"
+
+paginate = 20
+canonifyurls = true
+
+[markup.highlight]
+    # Dracula is easy to read and not too jarring for both light and dark
+    # themes
+    style = "dracula"
+[markup.tableOfContents]
+    endLevel = 1
+    startLevel = 1
+
+[params]
+    author = "Eli W. Hunter"
+    info = "PL, OS, UAV, FOSS, IoT, and Acronym Enthusiast"
+    description = "NC State Student"
+    avatarurl = "img/profile.jpg"
+    # footercontent = "I don't like the way this looks"
+
+    favicon_32 = "/img/favicon-32x32.png"
+    favicon_16 = "/img/favicon-16x16.png"
+
+    hidecredits = true
+    hidecopyright = true
+
+    rtl = false
+
+    # I enable this on a per-page basis because I don't like enabling
+    # JavaScript if unnecessary
+    math = false
+
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorscheme = "auto"
+
+    # Custom CSS
+    custom_scss = ["scss/notes.scss"]
+
+    # Custom JS
+    custom_js = []
+
+# Social links
+# I don't give these weights because they show up in the order given.
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    url = "https://github.com/elihunter173/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    url = "https://twitter.com/elihunter173/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin fa-2x"
+    url = "https://linkedin.com/in/elihunter173/"
+[[params.social]]
+    name = "Medium"
+    icon = "fab fa-medium"
+    url = "https://medium.com/@elihunter173"
+
+# Menu links
+# These can be given weights, but if you don't they're just alphabetical
+[[menu.main]]
+    name = "Résumé"
+    url = "/resume.pdf"
+[[menu.main]]
+    name = "Posts"
+    url  = "/posts/"
+[[menu.main]]
+    name = "Projects"
+    url  = "/projects/"
+[[menu.main]]
+    name = "Notes"
+    url  = "/notes/"
