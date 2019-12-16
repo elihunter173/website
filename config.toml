@@ -68,12 +68,12 @@ canonifyurls = true
 [[menu.main]]
     name = "Résumé"
     url = "/resume.pdf"
-[[menu.main]]
-    name = "Posts"
-    url  = "/posts/"
-[[menu.main]]
-    name = "Projects"
-    url  = "/projects/"
+# [[menu.main]]
+#     name = "Projects"
+#     url  = "/projects/"
 [[menu.main]]
     name = "Notes"
     url  = "/notes/"
+# [[menu.main]]
+#     name = "Posts"
+#     url  = "/posts/"
