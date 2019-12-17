@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  website:
+    image: elihunter173/website
+
+    build:
+      context: .
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    secrets:
+      - site.pem
+      - site.key
+      - source: site.conf
+        target: /etc/nginx/conf.d/site.conf
+
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+secrets:
+  site.conf:
+    file: ./nginx.conf
+  site.pem:
+    external: true
+  site.key:
+    external: true
