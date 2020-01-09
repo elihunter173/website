@@ -1,4 +1,2 @@
-# Compiled Jekyll files
-_site
-.jekyll-metadata
-.sass-cache
+# Generated website
+public/

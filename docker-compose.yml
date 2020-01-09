@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  website:
+    image: elihunter173/website
+    build:
+      context: .
+    ports:
+      - "80:80"
+      - "443:443"
