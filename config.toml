@@ -58,10 +58,6 @@ canonifyurls = true
     name = "LinkedIn"
     icon = "fab fa-linkedin fa-2x"
     url = "https://linkedin.com/in/elihunter173/"
-[[params.social]]
-    name = "Medium"
-    icon = "fab fa-medium"
-    url = "https://medium.com/@elihunter173"
 
 # Menu links
 # These can be given weights, but if you don't they're just alphabetical
