@@ -39,7 +39,7 @@ canonifyurls = true
     colorscheme = "auto"
 
     # Custom CSS
-    custom_scss = ["scss/notes.scss"]
+    custom_scss = ["scss/notes.scss", "scss/lists.scss"]
 
     # Custom JS
     custom_js = []

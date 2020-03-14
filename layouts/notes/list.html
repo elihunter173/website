@@ -4,18 +4,17 @@
 {{ define "content" }}
   <section class="container list">
     <h1 class="title">{{ .Title }}</h1>
-    {{/* TODO: Sort these by semester and alphabetically */}}
-    {{- range .Pages.GroupByParam "Semester" -}}
+    {{ range .Pages.GroupByParam "Semester" }}
       <h3 class="section-title">{{ .Key }}</h3>
       <ul class="list-items">
-        {{- range .Pages.ByTitle -}}
+        {{ range .Pages.ByTitle }}
           <li>
             <a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">
               {{ .Title }}
             </a>
           </li>
-        {{- end -}}
-    </ul>
-    {{- end -}}
+        {{ end }}
+      </ul>
+    {{ end }}
   </section>
 {{ end }}
