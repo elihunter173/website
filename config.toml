@@ -1,9 +1,6 @@
 theme = "hugo-coder"
 title = "Eli W. Hunter"
 
-paginate = 20
-canonifyurls = true
-
 [markup.highlight]
     # Dracula is easy to read and not too jarring for both light and dark
     # themes
