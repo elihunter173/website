@@ -15,6 +15,7 @@ title = "Eli W. Hunter"
     description = "NC State Student"
     avatarurl = "img/profile.jpg"
     # footercontent = "I don't like the way this looks"
+    dateFormat = "2006-01-02"
 
     favicon_32 = "/img/favicon-32x32.png"
     favicon_16 = "/img/favicon-16x16.png"
@@ -67,6 +68,6 @@ title = "Eli W. Hunter"
 [[menu.main]]
     name = "Notes"
     url  = "/notes/"
-# [[menu.main]]
-#     name = "Posts"
-#     url  = "/posts/"
+[[menu.main]]
+    name = "Blog"
+    url  = "/posts/"
