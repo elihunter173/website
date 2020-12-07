@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      Eli
+      {% if section.title %}
+      | {{section.title}}
+      {% elif page.title %}
+      | {{page.title}}
+      {% endif %}
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+    <nav>
+      <h2><a href="/">~eli</a></h2>
+      <ul>
+        <li><a href="/blog/">blog</a></li>
+        <li><a href="/notes/">notes</a></li>
+        <li><a href="/resume.pdf">résumé</a></li>
+      </ul>
+    </nav>
+
+    {% block content %}{% endblock content %}
+  </body>
+</html>

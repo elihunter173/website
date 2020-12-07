@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "esm": "^3.2.25",
+    "html-minifier": "^4.0.0",
+    "mathjax-full": "^3.1.0"
+  }
+}

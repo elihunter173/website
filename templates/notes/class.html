@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <h1 class="title">{{ page.title }}</h1>
+  {% set section = get_section(path=page.ancestors|last) %}
+  Instructor: {{ page.extra.teacher }} | Semester: {{ section.title }}
+
+  <h3>Table of Contents</h3>
+  <ul>
+    {% for h1 in page.toc %}
+    <li>
+      <a href="{{h1.permalink | safe}}">{{ h1.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</header>
+
+<article>{{ page.content | safe }}</article>
+{% endblock content %}

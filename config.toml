@@ -1,73 +1,18 @@
-theme = "hugo-coder"
-title = "Eli W. Hunter"
+# The URL the site will be built for
+base_url = "https://elihunter173.com"
 
-[markup.highlight]
-    # Dracula is easy to read and not too jarring for both light and dark
-    # themes
-    style = "dracula"
-[markup.tableOfContents]
-    endLevel = 1
-    startLevel = 1
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
 
-[params]
-    author = "Eli W. Hunter"
-    info = "Robots & Lower Level Programming"
-    description = "NC State Student"
-    avatarurl = "img/profile.jpg"
-    # footercontent = "I don't like the way this looks"
-    dateFormat = "2006-01-02"
+minify_html = true
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "solarized-dark"
 
-    hidecredits = true
-    hidecopyright = true
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
 
-    rtl = false
-
-    # I enable this on a per-page basis because I don't like enabling
-    # JavaScript if unnecessary
-    math = false
-
-    # Specify light/dark colorscheme
-    # Supported values:
-    # "auto" (use preference set by browser)
-    # "dark" (dark background, light foreground)
-    # "light" (light background, dark foreground) (default)
-    colorscheme = "auto"
-
-    # Custom CSS
-    custom_scss = ["scss/notes.scss", "scss/lists.scss"]
-
-    # Custom JS
-    custom_js = []
-
-# Social links
-# I don't give these weights because they show up in the order given.
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github fa-2x"
-    url = "https://github.com/elihunter173/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter fa-2x"
-    url = "https://twitter.com/elihunter173/"
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fab fa-linkedin fa-2x"
-    url = "https://linkedin.com/in/elihunter173/"
-
-# Menu links
-# These can be given weights, but if you don't they're just alphabetical
-[[menu.main]]
-    name = "Résumé"
-    url = "/resume.pdf"
-# [[menu.main]]
-#     name = "Projects"
-#     url  = "/projects/"
-[[menu.main]]
-    name = "Notes"
-    url  = "/notes/"
-[[menu.main]]
-    name = "Blog"
-    url  = "/posts/"
+[extra]
+# Put all your custom variables here
