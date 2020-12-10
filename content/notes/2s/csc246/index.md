@@ -829,25 +829,31 @@ here.
 
 ```nohighlight
 monitor ReadersWriters {
-  int nr = 0; // Number of readers
-  int nw = 0; // Number of writers
+  // Number of readers
+  int nr = 0;
+  // Number of writers
+  int nw = 0;
 
-  Condition readable; // Okay to read?
-  Condition writable; // Okay to write?
+  // Okay to read?
+  Condition readable;
+  // Okay to write?
+  Condition writable;
 
   void lockReading() {
     while (nw > 0) {
       readable.wait();
     }
     nr++;
-    // Other readers waiting should know that it's safe to read. We do this
-    // because our pseudo-code doesn't use broadcast
+    // Other readers waiting should know that
+    // it's safe to read. We do this because our
+    // pseudo-code doesn't use broadcast
     readable.signal();
   }
   void unlockReading() {
     nr--;
     if (nr == 0) {
-      // Don't broadcast because we only want to wake up one writer.
+      // Don't broadcast because we only want to
+      // wake up one writer.
       writable.signal();
     }
   }
@@ -861,9 +867,11 @@ monitor ReadersWriters {
   void unlockWriting() {
     nw--;
 
-    // Wake a reader and a writer and let them race.
+    // Wake a reader and a writer and let them
+    // race.
     writable.signal();
-    readable.signal(); // We don't have broadcast >:(
+    // We don't have broadcast >:(
+    readable.signal();
   }
 }
 ```
@@ -1108,7 +1116,8 @@ We use C/Java like syntax for monitors.
 
 ```nohighlight
 monitor Maximizer {
-  // In some languages hasValC and hasVal might be able to be in the same
+  // In some languages hasValC and hasVal might
+  // be able to be in the same
   condition hasValC;
   bool hasVal = false;
 
@@ -1117,13 +1126,15 @@ monitor Maximizer {
     while (!hasVal || val > largest) {
       largest = val;
     }
-    hasValC.signal(); // this only wakes a single thread / waiter
+    // this only wakes a single thread / waiter
+    hasValC.signal();
     hasVal = true;
   }
   int getLargest() {
     if (!hasVal) {
       hasValC.wait();
-      hasValC.signal(); // tell anyone else waiting to wake up
+      // tell anyone else waiting to wake up
+      hasValC.signal();
     }
     return largest;
   }
@@ -1136,11 +1147,15 @@ monitor IntStack {
   condition nonEmpty;
   Stack<Integer> stack = new Stack<>();
   int popInt() {
-    // Must be while because suppose you have three threads A, B, C. B is
-    // waiting for something to be pushed. A just pushed something. Then C came
-    // in and popped after A pushed, without blocking. B then, having been woke
-    // up by A, wakes up and would try to pop from an empty stack (because C
-    // stole its element) if there was not a while loop.
+    // Must be while because suppose you have
+    // three threads A, B, C. B is waiting for
+    // something to be pushed. A just pushed
+    // something. Then C came in and popped
+    // after A pushed, without blocking. B then,
+    // having been woke up by A, wakes up and
+    // would try to pop from an empty stack
+    // (because C stole its element) if there
+    // was not a while loop.
     while (stack.size() <= 0) {
       nonEmpty.wait();
     }
@@ -1278,13 +1293,15 @@ programs or limit resource utilization (until deadlock).
 The pseudo-code for detecting deadlock is as follows:
 
 ```nohighlight
-While there's some process P where all of P's outstanding requests can be
-satisfied:
-  Remove all request and assignment edges for P (to pretent P finishes without
-  asking for more).
+While there's some process P where all of P's
+outstanding requests can be satisfied:
+  Remove all request and assignment edges for P
+  (to pretent P finishes without asking for
+  more).
 If any processes remain:
   You have a deadlock.
-  Find cycle(s); the processes among them are responsible for the deadlock.
+  Find cycle(s); the processes among them are
+  responsible for the deadlock.
 ```
 
 Now, how do we resolve the deadlock? We have to kill a process. We could kill a
@@ -1500,11 +1517,11 @@ class Process:
         self.page_size = page_size
         self.page_table = page_table
 
-    def translate_address(self, logical_address):
-        page_number = logical_address // self.page_size
-        frame_num = self.page_table[page_number]
-        page_offset = logical_address % self.page_size
-        return frame_num * self.page_size + page_offset
+    def translate_address(self, addr):
+        page_number = addr // self.page_size
+        frame = self.page_table[page_number]
+        offset = addr % self.page_size
+        return frame * self.page_size + offset
 ```
 
 {{ figure(src="logical_addresses.png", title="Logical Addresses") }}
@@ -2052,7 +2069,8 @@ __host__ void someFunction(int a, char *b) {
 }
 
 // d needs to be in device memory
-__device__ void otherFunction(int c, double *d) {
+__device__ void otherFunction(int c, double *d)
+{
   // C code to run on the device (or GPU).
 }
 ```
@@ -2061,15 +2079,18 @@ Each thread in a grid executes a **kernel** (no relation to OS kernel). A
 kernel is a function that runs on the device but can be called from the host.
 
 ```c
-// Define a kernel that will execute on the device and be called from the host.
+// Define a kernel that will execute on the
+// device and be called from the host.
 __global__ void myKernel(int a, int *bList) {
   // C code for the device to execute.
 }
 
 int main() {
-  // Call a kernel from the host, asking the device to execute.
-  // NOTE: bList must be in device memory
-  myKernel<<<blocksPerGrid, threadsPerBlock>>>(a, bList);
+  // Call a kernel from the host, asking the
+  // device to execute. NOTE: bList must be in
+  // device memory
+  myKernel<<<blocksPerGrid, threadsPerBlock>>>
+  (a, bList);
 }
 ```
 

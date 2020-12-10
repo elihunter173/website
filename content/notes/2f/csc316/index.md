@@ -198,8 +198,9 @@ language to avoid regrade requests and complaints.
 ```
 Algorithm nameOfAlgorithm(param1, param2, ...)
   Input
-    param1, description of param1, including variables derived from / attached
-      to param1.
+    param1, description of param1, including
+      variables derived from / attached to
+      param1.
     param2, ...
   Output
     Description of output
@@ -1570,7 +1571,12 @@ experimentally.
 This might easier to show via accumulation
 
 ```python
-f = lambda s: reduce(lambda acc, c: r * acc + ord(c), s)
+from functools import reduce
+def hasher(string):
+    reduce(
+        lambda acc, c: r * acc + ord(c),
+        string,
+    )
 ```
 
 ### Cyclic Shifting
@@ -1582,7 +1588,14 @@ we sum the current hash.
 In practice, we can do the cycling using bit shifts.
 
 ```python
-f = lambda s: reduce(lambda acc, c: ((acc << n) | (acc >> m - n)) + ord(c), s)
+from functools import reduce
+def rol(byte, n):
+    """Rotates `byte` left by n bits."""
+def hasher(string):
+    reduce(
+        lambda acc, c: rol(acc, n) + ord(c)
+        string,
+    )
 ```
 
 A good value for $n$ when hashing English words is 5. This was determined

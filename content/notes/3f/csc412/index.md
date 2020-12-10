@@ -273,7 +273,8 @@ Expr -> L2
 L2 -> L2 + L1 | L1 - L1 | L1
 L1 -> L1 * L0 | L1 / L0 | L0
 L0 -> Atom
-# Atom is a human-friendly alias for the bottom level
+# Atom is a human-friendly alias for the bottom
+# level
 Atom -> [id] | [num] | ( Expr )
 ```
 
@@ -285,9 +286,10 @@ trivially rewritten using something like
 ```
 # Left recursive
 L1 -> L1 * L0
-# Not left recursive, uses {...} repetition. Quoted symbols are not magical.
-# Unquoted are magic.
-L1 -> L0 { "*" L0 *
+# Not left recursive, uses {...} repetition.
+# Quoted symbols are not magical. Unquoted are
+# magic.
+L1 -> L0 { "*" L0 }
 ```
 
 There are two ways of parsing we will discuss. There is **top-down parsing**,
@@ -334,7 +336,7 @@ impl Parse for TokenStream {
         node.push(self.next());
         node.push(self.B());
       }
-      _ => panic!("Please do real error handling"),
+      _ => todo!("do real error handling"),
     }
     node
   }
@@ -354,11 +356,13 @@ removed). Here's another annotated example.
 # Left recursive!
 Fee -> Fee a | b
 
-# b was the only terminating branch so it becomes the start
-# Fee a was the non-terminating branch, so we repeat it
+# b was the only terminating branch so it
+# becomes the start. Fee a was the
+# non-terminating branch, so we repeat it.
 Fee -> b { a }
 
-# We could do this more formally with this. It's identical to the above.
+# We could do this more formally with this. It's
+# identical to the above.
 Fee -> b Fee'
 Fee' -> a Fee' | \e
 ```
@@ -374,7 +378,8 @@ transformations. Basically, $A'$ is the formal way to do `{ ... }`.
 Expr -> Expr + Term | Expr - Term | Term
 Term -> Term * Atom | Term / Atom | Atom
 
-# Rewritten not left-recursive expression grammar
+# Rewritten not left-recursive expression
+# grammar
 Expr -> Term Expr'
 Expr' -> + Term Expr' | - Term | \e
 Term -> Atom Term'
@@ -510,7 +515,8 @@ N -> a N
 N -> \e
 
 # Make LL(1)
-# Realize that M and N can both start with a. Factor that out.
+# Realize that M and N can both start with a.
+# Factor that out.
 G -> \e
 G -> a G'
 G' -> b N
@@ -566,8 +572,8 @@ G2 -> aAbbb
 A -> aAb | 0
 B -> aBbb | 1
 
-# Oh no, we have to factor out a common a again. We're stuck in an infinite
-# loop...
+# Oh no, we have to factor out a common a again.
+# We're stuck in an infinite loop...
 ```
 
 As we've gone over, here's the *rough* procedure for converting an $LL(1)$
@@ -591,16 +597,19 @@ token is and determines the next production to check.
 
 ```python
 class TableParser:
-  """Pseudo-python describing a table driven parser."""
+  """Table driven parser in pseudo-python."""
 
   def parse(self, tokens):
     """
-    This is like a recursive descent parser except we use a loop with a stack
-    because, well, that's exactly what recursion does but we have to have
-    generic code so it's easier to loop like this. (Well, at least that's what
-    we say.)
+    This is like a recursive descent parser
+    except we use a loop with a stack because,
+    well, that's exactly what recursion does but
+    we have to have generic code so it's easier
+    to loop like this. (Well, at least that's
+    what we say.)
     """
-    # processing is the current non-terminal or terminal we're processing
+    # processing is the current non-terminal or
+    # terminal we're processing
     processing = Stack()
     processing.push(EOF)
     while True:
@@ -613,12 +622,16 @@ class TableParser:
           processing.next()
           tokens.next()
         else:
-          raise Error(f"Looking for {want}, got {got}")
+          raise Error(
+            f"expected {want}, got {got}"
+          )
       else:
         # A -> B1 B2 ... Bn
         new_wants = self.table[want][got]
         if new_wants is None:
-          raise Error(f"Got unexpected token expanding {want}")
+          raise Error(
+            f"unexpected token for {want}"
+          )
         else:
           processing.next()
           # Push Bn ... B1
@@ -698,7 +711,8 @@ This could be done by a parser generator. Here's a concrete example using YACC.
 
 ```yacc
 # $$ refers to the attribute on the lhs
-# $n refers to the attribute on the nth element of the rhs
+# $n refers to the attribute on the nth element
+# of the rhs
 Assign -> Ident = Expr;  $$ <- COST(store) + $3
 Expr -> Expr + Term;  $$ <- $1 + COST(add) + $3
 ```
@@ -975,9 +989,11 @@ int square(int num) {
 
 ##### LLVM
 ```llvm
-; %[name] is a register. You can give them any name but compilers tend to
-; produce just incrementing numbers for simplicity.
-; This is C so it's name is mangled like it would be in C++ or Rust.
+; %[name] is a register. You can give them any
+; name but compilers tend to produce just
+; incrementing numbers for simplicity. This is C
+; so it's name is mangled like it would be in
+; C++ or Rust.
 define i32 @square(i32 %num) {
   %1 = alloca i32
   store i32 %num, i32* %1
@@ -1005,7 +1021,8 @@ struct list {
 ```llvm
 %struct.list = type { i32, %struct.list* }
 
-@array = global [100 x i32] zeroinitializer, align 16
+@array =
+  global [100 x i32] zeroinitializer, align 16
 @x = global i32 0, align 4
 ```
 
@@ -1153,13 +1170,15 @@ repeated reference. Here is an example.
 // Calculate the nth prime, very expensive.
 size_t nthPrime(size_t n);
 
-// This technically evaluates nthPrime every time, which is very expensive.
+// This technically evaluates nthPrime every
+// time, which is very expensive.
 void codeMotion(size_t n) {
   for (size_t i = 0; i < nthPrime(n); i++) {
     printf("%d\n", i);
   }
 }
-// This code is equivalent and evaluate nthPrime only once.
+// This code is equivalent and evaluate nthPrime
+// only once.
 void codeMotion(size_t n) {
   size_t end = nthPrime(n)
   for (size_t i = 0; i < end; i++) {
@@ -1264,7 +1283,8 @@ struct foo {
 
 static struct foo f;
 
-// The two following functions are running concurrently
+// The two following functions are running
+// concurrently
 int sum_x(void) {
   int s = 0;
   for (int i = 0; i < 1000000; ++i) {

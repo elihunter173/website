@@ -126,11 +126,14 @@ http://docs.openafs.org/Reference/1/
 
 ```java
 /**
- * This is a Javadoc comment. You must use this for programs.
+ * This is a Javadoc comment. You must use this
+ * for programs.
  *
- * @param paramName Use this to specify parameters.
+ * @param paramName Use this to specify
+ * parameters.
  *
- * @author authorName Use to specify the author of the code.
+ * @author authorName Use to specify the author
+ * of the code.
  */
 ```
 

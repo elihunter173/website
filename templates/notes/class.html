@@ -6,6 +6,7 @@
   {% set section = get_section(path=page.ancestors|last) %}
   Instructor: {{ page.extra.teacher }} | Semester: {{ section.title }}
 
+  {% if page.toc|length > 0 %}
   <h3>Table of Contents</h3>
   <ul>
     {% for h1 in page.toc %}
@@ -14,6 +15,7 @@
     </li>
     {% endfor %}
   </ul>
+  {% endif %}
 </header>
 
 <article>{{ page.content | safe }}</article>

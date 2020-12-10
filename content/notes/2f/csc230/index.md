@@ -67,7 +67,7 @@ collisions). Because of this, you really should only use them for defining
 constants.
 
 ```c
-// Defining simple constants. Make sure you don't put simple constants!
+// Defining simple constants.
 #define SIZE 5
 ```
 
@@ -81,7 +81,7 @@ macro value in parentheses, if we're using multiple operators.
 ```c
 // Bad behavior!
 #define TIMES_TWO(x) x * 2
-// this expands to 1 + 1 * 2 = 3, which is wrong
+// this expands to: 1 + 1 * 2 = 3
 TIMES_TWO(1 + 1);
 // Better behavior
 #define TIMES_TWO(x) (x * 2)
@@ -264,14 +264,16 @@ false negatives.
 ### Examples
 
 ```sh
-# Compile your program with symbolic information
+# Compile your program with symbol information
 $ gcc -g -std=c99 –Wall program.c -o program
 
 # General usage
-$ valgrind valgrind-options ./program program-options
+$ valgrind valgrind-options ./program args
 
-# Example usage (--tool=memcheck is unnecessary)
-$ valgrind --tool=memcheck --leak-check=full ./program
+# Example usage
+# You could --tool=toolname, but memcheck is
+# the default (and what we'll use)
+$ valgrind --leak-check=full ./program
 ```
 
 ## CPPCheck
@@ -380,10 +382,12 @@ IMO, this is more clear because it is more like a for each loop.
 
 ```c
 for (char *c = string; *c != '\0'; c++) {
-  // Using pointers. Means you can avoid array syntax.
+  // Using pointers. Means you can avoid array
+  // syntax.
 }
 for (int i = 0; string[i]; i++) {
-  // Using arrays, along with the null terminator (0) being falsey.
+  // Using arrays, along with the null
+  // terminator (0) being falsey.
 }
 ```
 
@@ -632,7 +636,8 @@ are normally fairly lazy (very justifiably), we normally just allocate a large
 enough character array for usual input. For example,
 
 ```c
-char someString[100]; // 100 will probably be enough, right?
+// 100 will probably be enough, right? (No)
+char someString[100];
 scanf("%s", someString);
 ```
 
@@ -984,10 +989,15 @@ interactions with pointers. Most of the time, you'll just use `const` pointers
 to declare to users that you won't change the value.
 
 ```c
-int const * x = &a; // pointer to a const int
-int * const y = &b; // const pointer to a int
-int const * const z = &c; // const pointer to a const int
+// pointer to a const int
+int const * x = &a;
+// const pointer to a int
+int * const y = &b;
+// const pointer to a const int
+int const * const z = &c;
 ```
+
+*Hint:* In general, you should read `const` and points backwards.
 
 ## Pointer Arithmetic
 
@@ -1039,7 +1049,8 @@ about, so it's not recommended unless you have a **good** reason to do so.
 ```c
 int a[] = { 1, 4, 9, 16, 25 };
 int len = sizeof( a ) / sizeof( a[ 0 ] );
-// This points right after the array. This is okay as long as we don't dereference it
+// This points right after the array. This is
+// okay as long as we don't dereference it
 int *end = a + len;
 int sum = 0;
 for ( int *p = a; p < end; p++ ) {
@@ -1079,8 +1090,10 @@ because `malloc` and `free` track the memory used.
 
 ```c
 // stdlib.h
-void *malloc(size_t size); // returns memory address
-void free(void *memoryAddress);
+// returns memory address
+void *malloc(size_t size);
+// returns `addr` to system allocator
+void free(void *addr);
 ```
 
 A common usage of dynamic allocation is for large or variable length arrays.
@@ -1090,8 +1103,10 @@ can't be bothered to make it known at compile time. For example,
 ```c
 #include <stdlib.h>
 // Allocate a dynamic array for 1000 integers
-int *list = (int *) malloc(1000 * sizeof(int)); // how they like to do it
-int *list = malloc(1000 * sizeof *list); // the zen way
+// how they like to do it
+int *list = (int *) malloc(1000 * sizeof(int));
+// how I like to do it
+int *list = malloc(1000 * sizeof(*list));
 ```
 
 ## Dynamic Allocation Hazards
@@ -1163,16 +1178,17 @@ To declare a variable without allocating it, you must use `extern` when
 declaring the variable.
 
 ```c
-// There exists some global named x. I don't know where, but it's there and I
-// want it.
+// There exists some global named x. I don't
+// know where, but it's there and I want it.
 extern int x;
 ```
 
 To declare a function, you just declare the function prototype.
 
 ```c
-// There exists some global procedure named f. I don't know where, but it's
-// there and I want it.
+// There exists some global procedure named f. I
+// don't know where, but it's there and I want
+// it.
 int f( x );
 ```
 
@@ -1263,8 +1279,8 @@ procedures we have. This is a core part of a header file! (which we haven't
 gotten to yet). Function declarations look like the following:
 
 ```c
-// Declaration. Variable names are optional, but sometimes good for
-// documentation.
+// Declaration. Variable names are optional, but
+// good for documentation.
 int expunge( float x, long y );
 
 // Definition.
@@ -1316,14 +1332,18 @@ on the heap. (We store a pointer to the first element in the array.)
 ```c
 // Declare and allocate an array of length 10
 int a[10];
-// Declare and allocate an array of length 10. Initialize array to zero.
+// Declare and allocate an array of length 10.
+// Initialize array to zero.
 int a[10] = {};
-// Declare and allocate array and partially initialize it.
+// Declare and allocate array and partially
+// initialize it.
 int a[10] = {1, 2, 3};
-// Declare and allocate an array large enough to fit the given data.
+// Declare and allocate an array large enough to
+// fit the given data.
 int a[] = {1, 2, 3};
-// Declare and allocate an array large enough to fit the given data. Giving
-// indexes. Elements unspecified are zeroed.
+// Declare and allocate an array large enough to
+// fit the given data. Giving indexes. Elements
+// unspecified are zeroed.
 int a[] = {[3] = 1, 2, [6] = 3};
 // {0, 0, 0, 1, 2, 0, 3}
 ```
@@ -1336,24 +1356,29 @@ behind the scenes.
 For multi-dimensional arrays, C uses the same syntax as Java.
 
 ```c
-// Declare and allocate 2D array with 3 rows and 4 columns.
+// Declare and allocate 2D array with 3 rows and
+// 4 columns.
 int table[3][4];
-// Declare and allocate 2D array with 3 rows and 4 columns. Initialize to zero.
+// Declare and allocate 2D array with 3 rows and
+// 4 columns. Initialize to zero.
 int table[3][4] = {};
-// Declare and allocate 2D array with 3 rows and 4 columns. Initialize values.
+// Declare and allocate 2D array with 3 rows and
+// 4 columns. Initialize values.
 int table[3][4] = {
   {0, 1, 4, 9},
   {16, 25, 36, 49},
   {64, 81, 100, 121 }
 };
-// Declare and allocate 2D array with 3 rows and 4 columns. Partially
-// initialize values. All other values initialized to zero.
+// Declare and allocate 2D array with 3 rows and
+// 4 columns. Partially initialize values. All
+// other values initialized to zero.
 int table[3][4] = {
   {0, 1},
   {16, 25, 36, 49},
   {64}
 };
-// We also have the special indexing initialization.
+// We also have the special indexing
+// initialization.
 ```
 
 C can only infer the size of the outermost array. It cannot for any inner
@@ -1459,15 +1484,18 @@ not having a function keyword.
 Here's a quick breakdown of the syntax.
 
 ```c
-// Declare a variable called foo which is a pointer to a function that takes in
-// a pointer to a character and returns an integer.
+// Declare a variable called foo which is a
+// pointer to a function that takes in a pointer
+// to a character and returns an integer.
 int (*foo)(char*);
 
-// Declare a function that takes in a function which takes a character and
-// returns an integer.
+// Declare a function that takes in a function
+// which takes a character and returns an
+// integer.
 void someFunc(int (*)(char*));
 
-// Declare an array of function pointers. Call this array testList
+// Declare an array of function pointers. Call
+// this array testList
 bool (*testList[10]) (int);
 ```
 
@@ -1560,7 +1588,8 @@ struct Person p1;
 // Initialize the struct
 p1.height = 1.75;
 p1.age = 24;
-// Note that we can't do p1.name = "William" because we used array syntax when declaring
+// Note that we can't do p1.name = "William"
+// because p1.name is an array and not a pointer
 strcpy(p1.name, "William");
 
 // Declare and initialize a struct
@@ -1569,7 +1598,7 @@ struct Person p2 = { "William", 1.85, 27 };
 // More explicit initialization syntax
 struct Person p3 = {
   .age = 33,
-  .name = “Agatha”,
+  .name = "Agatha",
   .height = 1.7
 };
 ```
@@ -1581,14 +1610,17 @@ useful for global `struct`s (like singletons) or one-time use `struct`s. No
 other `struct` has the same type.
 
 ```c
-// Declare anonymous struct with an instance named varName
+// Declare anonymous struct with an instance
+// named varName
 typedef struct {
   type name;
   ...
 } varName;
 
-// Typedef a struct. Basically assign the anonymous struct type to the given.
-// This is hotly debated. I generally don't like for non-opaque types.
+// Typedef a struct. Basically assign the
+// anonymous struct type to the given. This is
+// hotly debated. I generally don't typedef
+// structs, but it doesn't matter much to me.
 typedef struct {
   int foo;
   char bar;
@@ -1602,7 +1634,8 @@ get large, we like to deal with `struct *`s. This means, to get a field on the
 `struct *`, we must first dereference it (duh). This looks like
 
 ```c
-// readStruct returns a pointer to an malloc'd struct. We won't free that here.
+// readStruct returns a pointer to an malloc'd
+// struct. We won't free that here.
 struct Person *p1 = readStruct();
 printf("%s\n", (*p1).name);
 ```
@@ -1612,7 +1645,8 @@ basic things like this. Therefore, we invented `->` syntax, which is just `*`
 and `.` combined. The above would like like
 
 ```c
-// readStruct returns a pointer to an malloc'd struct. We won't free that here.
+// readStruct returns a pointer to an malloc'd
+// struct. We won't free that here.
 struct Person *p1 = readStruct();
 printf("%s\n", p1->name);
 ```
@@ -1632,24 +1666,29 @@ for some reason.
 ## Syntax
 
 ```c
-// General Syntax. For types such as arrays, the name must be mixed with the
-// type because C has annoying syntax.
+// General Syntax. For types such as arrays, the
+// name must be mixed with the type because C
+// has annoying syntax.
 typedef TYPE IDENTIFIER;
 
-// "Complex" basic type. Generally not recommended.
+// "Complex" basic type. Generally not
+// recommended.
 typedef char Table[NUM_ROWS][NUM_COLS];
 
 // Pointer type. Strongly advised against.
 typedef char *str;
 
-// Anonymous enum. Generally not recommended.
+// Anonymous enum.
 typedef enum { NAME1, NAME2 } ExampleEnum;
 
-// Anonymous struct. Generally not recommended.
+// Anonymous struct.
 typedef struct {
   int field1,
   char field2,
 } ExampleStruct;
+
+// Function. Strongly recommended.
+typedef void *mallocLike(size_t size);
 ```
 
 ## Recommendations
@@ -1688,8 +1727,10 @@ it through accessor/mutator procedures. This simplifies the client code and
 allows you more flexibility with modifying the type.
 
 ```c
-// We declare the following anonymous struct to have the name OpaqueStruct
-// This means you can use the type as OpaqueStruct instead of struct OpaqueStruct.
+// We declare the following anonymous struct to
+// have the name OpaqueStruct This means you can
+// use the type as OpaqueStruct instead of
+// struct OpaqueStruct.
 typedef struct {
   int field1,
   char field2,
@@ -1717,11 +1758,13 @@ Here's a quick comparison of the benefits two
 ## Linked List Example
 
 ```c
-// Create a struct with a useful short name and long name
+// Create a struct with a useful short name and
+// long name
 typedef struct NodeStruct {
   int value;
-  // We must use struct NodeStruct, because the typedef only applies after the
-  // typedef in the file
+  // We must use struct NodeStruct, because the
+  // typedef only applies after the typedef in
+  // the file
   struct NodeStruct *next;
 } Node;
 
@@ -1731,8 +1774,8 @@ Node *head = malloc(sizeof(Node));
   .next = NULL;
 }
 
-// Simple traversal, relying on next being NULL at the end of the list and NULL
-// being falsey
+// Simple traversal, relying on next being NULL
+// at the end of the list and NULL being falsey
 for ( Node *n = head; n; n = n->next ) {
   printf( "%d ", n->value );
 }
@@ -2008,7 +2051,8 @@ typedef struct Node Node;
 ```c
 // Specific implementations in source
 typedef struct Node {
-  // Here we're storing any generic data using a void pointer and a size
+  // Here we're storing any generic data using a
+  // void pointer and a size
   size_t size;
   void *data;
   struct Node *next;
@@ -2040,22 +2084,27 @@ list.
 ```c
 #include "set.h"
 
-// An inner component of our actual data type, Set
+// An inner component of our actual data type,
+// Set
 struct Node {
   void *val;
   struct Node *next;
 };
 
-// This is our actual data type this file deals with
+typedef bool eq_fn(void const *v1,
+                   void const *v2);
+
+// This is our actual data type this file deals
+// with
 typedef struct SetStruct {
-  // I can store any data, but I must know their size and how to compare the
-  // data
+  // I can store any data, but I must know their
+  // size and how to compare the data
   size_t vsize;
-  bool (*same)(void const *v1, void const *v2);
+  eq_fn same;
   struct Node *head;
 } Set;
 
-Set *makeSet(size_t vsize, bool (*same)(void const *v1, void const *v2)) {
+Set *makeSet(size_t vsize, eq_fn same) {
   Set *s = malloc(sizeof(Set)) ;
   s->head = NULL;
   s->vsize = vsize;
@@ -2083,7 +2132,8 @@ that you `free` it in the other path.
 ```c
 /**
   Read an entire block of data from fp.
-  @return Pointer to the block on success, or NULL on failure
+  @return Pointer to the block on success, or
+  NULL on failure
 */
 char *getBlock( FILE *fp ) {
   char *buf = (char *)malloc( BLOCK_SZ );
@@ -2091,7 +2141,8 @@ char *getBlock( FILE *fp ) {
     // Don't need to friend here.
     return NULL;
   }
-  if (fread( buf, 1, BLOCK_SZ, fp ) != BLOCK_SZ ) {
+  if ( fread( buf, 1, BLOCK_SZ, fp )
+       != BLOCK_SZ ) {
     free(buf); // MAKE SURE TO FREE HERE!!!
     return NULL;
   }
@@ -2102,8 +2153,9 @@ char *getBlock( FILE *fp ) {
 Likewise with file pointers.
 
 ```c
-bool getFile( char *name, int cap, char *buffer ) {
-  FILE *fp = fopen( name, “r” );
+bool getFile( char *name, int cap,
+              char *buffer ) {
+  FILE *fp = fopen( name, "r" );
   if ( !fp ) {
     return false;
   }
@@ -2126,12 +2178,6 @@ C has a `int system(const char*)` procedure, that allows us to just run the
 given string as if it were a shell command, and returns its return code.
 You should **never use this** because it's slow and insecure. If you use it,
 make sure to **completely** and **totally** validate all input.
-
-## Failure to Understand the System
-
-## Buffer Overflow
-
-# Encryption
 
 # Enums
 
@@ -2164,10 +2210,11 @@ also printed as integers.
 
 ```c
 enum Color { red, green, blue };
-enum Mood { happy, sad, blue }; // THIS WON'T WORK
+ // This won't work because `blue` is reused.
+enum Mood { happy, sad, blue };
 
 enum Mood m = happy;
-m++; // m == sad (probably)
+m++; // m == sad
 ```
 
 ## Enum Hack
@@ -2256,19 +2303,22 @@ the stream with nice-looking operators to give use new, easier syntax.
 #include <iostream>
 
 int main() {
-  // Put the folowing string to the std::cout stream
-  // std::cout is buffered stdout
+  // Put the folowing string to the std::cout
+  // stream. std::cout is buffered stdout.
   std::cout << "Hello, World!\n";
 
-  // Alternatively, use std::endl
-  // std::endl is the platform specific line terminator and std::flush
-  // std::flush tells the buffered output to flush
+  // Alternatively, use std::endl, the platform
+  // specific line terminator.
   std::count << "Hello, World!" << std::endl;
-  // Write newline manually and then flush
-  std::count << "Hello, World!" << '\n' << std::flush;
+  // std::flush tells the buffered output to
+  // flush manually.
+  std::count << "Hello, World!" << '\n'
+    << std::flush;
 
-  // Generally, you shouldn't use std::endl or std::flush because generally the
-  // OS knows better when it should flush the buffer than you.
+  // Generally, you shouldn't use std::endl or
+  // std::flush because generally the OS knows
+  // better when it should flush the buffer than
+  // you.
 }
 ```
 
@@ -2316,8 +2366,9 @@ prepend the name with a `c`. We use namespaces because they're nice.
 // Import stdio.h from C
 #include <cstdio>
 
-// Like a * import from other languages. Import everything from std namespace
-// into our namespace. Use with care! (Or not at all.)
+// Like a * import from other languages. Import
+// everything from std namespace into our
+// namespace. Use with care! (Or not at all.)
 using namespace std;
 
 int main() {
@@ -2359,7 +2410,8 @@ references*, which is really cool.
 ```cpp
 // Takes a reference to a and b
 void swap(int &a, int &b) {
-  // notice how we're not dereferencing. It calls int's copy constructor
+  // notice how we're not dereferencing. It
+  // calls int's copy constructor
   int tmp = a;
   a = b;
   b = temp;
@@ -2402,7 +2454,8 @@ functions.
 The syntax is almost exactly what you think it would be!
 
 ```cpp
-void repeat(char const *str = "Good Evening", int count = 10) {
+void repeat(char const *str = "Good Evening",
+            int count = 10) {
   for (int i = 0; i < count; i++) {
     std::cout << str;
   }
@@ -2421,8 +2474,10 @@ arrays!
 string a = "123";
 string b = "xyz";
 string c;
-c = a; // copies a to c
-c = a + b; // makes c a copy of a and b concatenated
+// copies a to c
+c = a;
+// makes c a copy of a and b concatenated
+c = a + b;
 
 // Compares the contents of a and b
 if (a == b) {
@@ -2479,11 +2534,13 @@ C++11 has a for each loop.
 for (int v : container) {
   count << v << endl;
 }
-// Reference iteration. Only do if you need mutability.
+// Reference iteration. Only do if you need
+// mutability.
 for (int &v : container) {
   count << v << endl;
 }
-// Const reference iteration. Use most of the time.
+// Const reference iteration. Use most of the
+// time.
 for (const int &v : container) {
   count << v << endl;
 }
@@ -2515,7 +2572,8 @@ class Person {
 
   public:
   Person(string name, int age) {
-    // Use the implicity this reference (generally preferred)
+    // Use the implicit this reference
+    // (generally preferred)
     this->name = name;
     // Use the scope resolution operator
     Person::age = age;
@@ -2539,9 +2597,12 @@ public:
   }
 }
 
-SomeClass c; // calls default constructor
-SomeClass *cp = new SomeClass; // calls default constructor
-SomeClass c[5]; // calls default constructor 5 times
+// calls default constructor
+SomeClass c;
+// calls default constructor
+SomeClass *cp = new SomeClass;
+// calls default constructor 5 times
+SomeClass c[5];
 ```
 
 ### Copy Constructor
@@ -2552,11 +2613,13 @@ passing it to a function or assigning it to something else).
 ```cpp
 class List {
 public:
-  // other is what you want to copy. This must be a reference because otherwise
-  // you'd have to call the copy constructor to call the copy constructor.
+  // other is what you want to copy. This must
+  // be a reference because otherwise you'd have
+  // to call the copy constructor to call the
+  // copy constructor.
   List(const List &other) {
     Node **ptr = &head;
-    for ( Node *n = other.head; n; n = n->next ) {
+    for (Node *n = other.head; n; n = n->next) {
       *ptr = new Node;
       (*ptr)->val = n->val;
       ptr = &((*ptr)->next);
@@ -2582,10 +2645,6 @@ Destructors are called automatically when the object goes out of scope
 (allocated on the stack) or when `delete` is called manually. C++ will default
 to having a destructor that does nothing. This is **not** okay for objects that
 dynamically allocate things.
-
-```cpp
-
-```
 
 ### Operator Overloading
 
@@ -2613,13 +2672,18 @@ to access a private member of `List`, this must be a friend.
 
 ```cpp
 class List {
-  // Allows this function's definition to access its private parts.
-  friend ostream &operator<<( ostream &output, const List &lst );
+  // Allows this function's definition to access
+  // its private parts.
+  friend ostream &
+  operator<<(ostream &output, const List &lst);
 };
 
-// If you didn't declare this a friend earlier, then this could not access lst.head.
-ostream &operator<<( ostream &output, const List &lst ) {
-  for ( List::Node *n = lst.head; n; n = n->next ) {
+// If you didn't declare this a friend earlier,
+// then this could not access lst.head.
+ostream &operator<<(ostream &output,
+                    const List &lst) {
+  for (List::Node *n = lst.head; n;
+       n = n->next) {
     output << n->val << " ";
   }
   return output;
@@ -2640,7 +2704,8 @@ class List {
   };
   Node *head;
 public:
-  static int x; // It's not my job to declare this
+  // It's not my job to declare this
+  static int x;
 
   List();
   List( const List & );
@@ -2663,7 +2728,8 @@ List::List() {
   head = NULL;
 }
 
-// Implementing copy constructor, destructor, etc.
+// Implementing copy constructor, destructor,
+// etc.
 ```
 
 ## Throwing

@@ -60,13 +60,13 @@ teacher = "Dr. Sarah Heckman"
 ## Main Topics
 
 * Managing Complex Software: Software gets big. How do you handle it?
-    * Tools: Eclipse :(
+  * Tools: Eclipse :(
 * Test Driven Development: Writing tests first and then trying to make it so
   that your code passes those tests.
-    * Tools: JUnit 4
+  * Tools: JUnit 4
 * Code Coverage: How much code is being tested
 * Static Analysis: Looks at the code itself.
-    * Tools: Checkstyle, SpotBugs, PMD, EclEmma
+  * Tools: Checkstyle, SpotBugs, PMD, EclEmma
 * Version Control: Manages source code across machines and tracks and merges
   changes.
   * Tools: Git
@@ -83,8 +83,8 @@ teacher = "Dr. Sarah Heckman"
 * Object Oriented: We deal with objects, representations of real things,
   which can interact with other objects and classes in limited, controlled ways.
 * Method: A list of statements to run.
-    * Static: A method which isn't connected to an object.
-    * Non-static: A method which is connected to an object.
+  * Static: A method which isn't connected to an object.
+  * Non-static: A method which is connected to an object.
 * Class: A blueprint for an object. Has a list of methods and fields that
   each object should have, and it defines what each of those methods do
   (normally) and what type those fields are.
@@ -121,7 +121,7 @@ teacher = "Dr. Sarah Heckman"
 * Polymorphism: Where you can treat multiple different types (of objects) as
   the same type.
   * This is normally visualized, in Java, as a hierarchy of classes, like a
-    family tree.
+  family tree.
 * Abstract Class: Classes that can have `abstract` methods.
   * Concrete children `extends` this abstract class but can only implement one.
   * **Consider nouns.**
@@ -130,7 +130,7 @@ teacher = "Dr. Sarah Heckman"
 * Interfaces: Special classes that only describe abstract methods.
   * Concrete children `implements` this interface and can implement many.
   * All classes are `public` and `abstract` (because nothing else matters to
-    outsiders).
+  outsiders).
 * Abstract classes and interfaces cannot be instantiated.
   * Abstract classes can specify constructors, however.
 * Delegation: The process of wrapping an Object so that it uses the Object's
@@ -149,13 +149,13 @@ teacher = "Dr. Sarah Heckman"
 * Reference Semantics: This bit of data is interacted with by a reference
   object / pointer.
 * Dereferencing: Accessing the data or the method of an object.
-    * Dot Notation: The process of accessing the methods of a reference.
-        * e.g. `reference.method()`, `reference.field`
+  * Dot Notation: The process of accessing the methods of a reference.
+    * e.g. `reference.method()`, `reference.field`
 
 ### Null Semantics
 
 * `null`: A built in value that does not refer to any object.
-    * It cannot be dereferenced!
+  * It cannot be dereferenced!
 * `null` can be passed, initialized, checked for, returned (for bad data), etc!
 
 ### Java Specifics/Oddities
@@ -165,19 +165,19 @@ teacher = "Dr. Sarah Heckman"
 * Implicit Parameter: `this` is an implied parameter in all methods of an
   object. It references the current object.
 * Default Values: All types have specific default values.
-    * `int` = 0
-    * `double` = 0.0
-    * `boolean` = false
-    * `char` = null (character)
-    * `Object` = null (object)
+  * `int` = 0
+  * `double` = 0.0
+  * `boolean` = false
+  * `char` = null (character)
+  * `Object` = null (object)
 
 ### Invariants
 
 * Invariants: Things which you state are going to be always true. You must
   ensure it.
   * *Java Invariants:* If you override `equals()`, you should also override
-    `hashCode()`
-    * `hashCode()`: Hashes an objects
+  `hashCode()`
+  * `hashCode()`: Hashes an objects
 
 ### Cloning
 
@@ -193,7 +193,7 @@ teacher = "Dr. Sarah Heckman"
   everything! This is the beauty of OOD.
 * Encapsulation: Hide the plumbing or implementation details from the
   clients. They don't need to know and they might mess things up!
-    * Ways: Make fields private so you can control what people do.
+  * Ways: Make fields private so you can control what people do.
 
 ## Inheritance
 
@@ -215,7 +215,8 @@ teacher = "Dr. Sarah Heckman"
 
 ```java
 public class SubClass extends SuperClass {
-    // This class has all of the (implemented) functionality of the super class
+  // This class has all of the (implemented)
+  // functionality of the super class
 }
 ```
 
@@ -233,25 +234,30 @@ public class SubClass extends SuperClass {
   with the methods present in those interfaces or abstract classes.
 
 ```java
-public abstract class Beer implements Drinkable, Brewable {
+public abstract class Beer
+implements Drinkable, Brewable {
 
-    private String name;
+  private String name;
 
-    public Beer(String name) {
-        this.name = name;
-    }
+  public Beer(String name) {
+    this.name = name;
+  }
 
-    // Declare abstract methods
-    public abstract boolean addIngredient(BeerIngredient i);
-    public abstract Collection<BeerIngredient> getIngredients();
+  // Declare abstract methods
+  public abstract boolean
+  addIngredient(BeerIngredient i);
+  public abstract Collection<BeerIngredient>
+  getIngredients();
 
-    // Implement inherited methods
-    public void brew() {
-        System.out.println(name + " is being brewed");
-    }
+  // Implement inherited methods
+  public void brew() {
+    System.out.println(
+      name + " is being brewed"
+    );
+  }
 
-    // I don't have to implement Drinkable because this is an abstract class
-
+  // I don't have to implement Drinkable because
+  // this is an abstract class
 }
 ```
 
@@ -259,9 +265,7 @@ public abstract class Beer implements Drinkable, Brewable {
 
 ```java
 public interface Brewable {
-
-    void brew();
-
+  void brew();
 }
 ```
 
@@ -295,10 +299,10 @@ public interface Brewable {
 
 ```java
 new Foo() {
-    public int someState;
-    public void doStuff() {
-        // Do things
-    }
+  public int someState;
+  public void doStuff() {
+    // Do things
+  }
 }
 ```
 
@@ -306,11 +310,11 @@ new Foo() {
 
 * Exception: A special object that represents an error or bad condition.
   * Unchecked Exception: Exception that doesn't have to be handled to be compiled.
-    * Java Examples: `InputMismatchException`
-    * For Java: extend `RuntimeException`
+  * Java Examples: `InputMismatchException`
+  * For Java: extend `RuntimeException`
   * Checked Exception: Exception that must be handled to be compiled.
-    * Java Examples: `FileNotFoundException`
-    * For Java: extend `Exception`
+  * Java Examples: `FileNotFoundException`
+  * For Java: extend `Exception`
   * Checked vs Unchecked is semi-arbitrarily decided by Java language developers.
 * `throw`: A keyword that throws an object that implements the `Throwable` interface.
 * `throws`: A keyword in the method header that states that the stated exception might be generated
@@ -333,42 +337,44 @@ new Foo() {
 
 ```java
 try {
-    // Do things
+  // Do things
 } catch (ExceptionType name) {
-    // Handle errors
+  // Handle errors
 }
 ```
 
 ```java
 try {
-    // Statements
-    // Exception thrown!
-    // Statements skipped
+  // Statements
+  // Exception thrown!
+  // Statements skipped
 } catch (UnmatchedExceptionType name) {
-    // Would handle exception, but doesn't go in here
+  // Would handle exception, but doesn't go in
+  // here
 } catch (MatchedExceptionType name) {
-    // Handle thrown exception
+  // Handle thrown exception
 } catch (AlsoMatchedExceptionType name) {
-    // Would handle exception, but goes to first catch block.
+  // Would handle exception, but goes to first
+  // catch block.
 } finally {
-    // Statements here are always executed!
+  // Statements here are always executed!
 }
 ```
 
 ```java
 try {
-    // Throws either Exception1 or Exception2, that need to be handled equally
+  // Throws either Exception1 or Exception2,
+  // that need to be handled equally
 } catch (Exception1 | Exception2 name) {
-    // Handle exceptions
+  // Handle exceptions
 }
-
 ```
 
 ```java
-try (Scanner fileReader = new Scanner(new File())){
-    // May throw FileNotFoundException
+try (File f = new File()) {
+  // May throw FileNotFoundException
 } catch (FileNotFoundException e) {
-    // Handle exception
+  // Handle exception
 }
 // Resources automatically closed!
 ```
@@ -382,13 +388,12 @@ try (Scanner fileReader = new Scanner(new File())){
 
 ```java
 public class MyException extends Exception {
-    public static final String DEFAULT_MESSAGE = "Exception message";
-    public MyException(String message) {
-        super(message);
-    }
-    public MyException() {
-        super(DEFAULT_MESSAGE);
-    }
+  public MyException(String message) {
+    super(message);
+  }
+  public MyException() {
+    super("Exception message");
+  }
 }
 ```
 
@@ -407,14 +412,14 @@ public class MyException extends Exception {
   * "It's a solved problem."
 * API: A list of instructions of how to interact with the software.
   * For this class, they are simple a series of webpages, created from Javadoc,
-    that describe how to use our afternoon.
+  that describe how to use our afternoon.
 * Installation of Libraries:
   * Add the JAR (Java ARchive) to your classpath.
 * Classpath: A set of locations that your Java Compiler and JVM will look at for code.
   * By default, your system `PATH` variable. However, you can update it with command line flags.
   * Eclipse does this automatically with your `.project` and `.classpath` files. This allows you to
-    structure your projects like Eclipse expects and compile them easily within Eclipse.
-    * In Eclipse, you add libraries to the build path on a per-project or a global scale.
+  structure your projects like Eclipse expects and compile them easily within Eclipse.
+  * In Eclipse, you add libraries to the build path on a per-project or a global scale.
 
 ## Library and Build Managers
 
@@ -428,7 +433,7 @@ Java collections can be iterated using a for-each loop.
 
 ```java
 for (Type item : container) {
-    // Do things
+  // Do things
 }
 ```
 
@@ -439,13 +444,13 @@ To make a class use iterators, you should implement `Iterable<E>`.
 
 ```java
 public class List<E> implements Iterable<E> {
-    // Stuff
-    public Iterator iterator() {
-        // Make iterator and stuff
-    }
-    public class Iterator<E> {
-        // Do stuff
-    }
+  // Stuff
+  public Iterator iterator() {
+    // Make iterator and stuff
+  }
+  public class Iterator<E> {
+    // Do stuff
+  }
 }
 ```
 
@@ -470,7 +475,7 @@ public class List<E> implements Iterable<E> {
 * Java GUI Libraries:
   * `java.awt.*`: Abstract Windowing Toolkit. The OG.
   * `javax.swing.*`: Java Extension Swing
-    * Inherits from `awt`.
+  * Inherits from `awt`.
 * Components:
   * Frame: Top-level window with title and border.
   * Container: A thing that contains components.
@@ -481,14 +486,14 @@ public class List<E> implements Iterable<E> {
   * Special-purpose containers: `JRootPane`, `JLayeredPane`
 * Layouts:
   * `BorderLayout`: The UI is divided into north, sound, east, west, and
-    center.
+  center.
   * `FlowLayout`: Components go from left to right and wrap when they run out
-    of room.
+  of room.
   * `BoxLayout`: Components in row or column.
   * `CardLayout`: Components in a stack where only the top is shown.
   * `GridLayout`: Things are in a rectangular grid.
   * `GridBagLayout`: Things are in a rectangular grid and can span multiple
-    grids.
+  grids.
 
 GUIs are **event-driven**. That is, we wait for the user to interact with the
 GUI and they can do whatever they want. We can, however, restrict their access.
@@ -528,7 +533,7 @@ There are many ways to do this:
   * Cons: It mixes controller and view code. It is harder to reuse things.
 * Create lambda expressions for handling events.
   * Pros: You don't have to write as much boilerplate as the anonymous class.
-    You can also reuse some code.
+  You can also reuse some code.
   * Cons: It doesn't separate the controller and view code as much.
 
 **Low level events** are interactions with the operating system, like key
@@ -543,45 +548,54 @@ action events.
   * `.processEvent()`: Takes in `ActionEvent` and takes action.
 
 ```java
-public class CSC216GUI extends JFrame implements ActionListener {
+public class CSC216GUI extends JFrame
+implements ActionListener {
 
-    public CSC216GUI() {
-        // Setup
-        this.setTitle("CSC 216 GUI");
-        this.setSize(400, 400);
-        this.setLocation(600, 200);
+  public CSC216GUI() {
+    // Setup
+    setTitle("CSC 216 GUI");
+    setSize(400, 400);
+    setLocation(600, 200);
 
-        // Create main container
-        Container c = this.getContentPane(new BorderLayout());
+    // Create main container
+    Container c = getContentPane(
+      new BorderLayout()
+    );
 
-        // Components
-        JLabel lblCheer = new JLabel("Wolf!");
-        c.add(lblCheer, BorderLayout.NORTH);
+    // Components
+    JLabel lblCheer = new JLabel("Wolf!");
+    c.add(lblCheer, BorderLayout.NORTH);
 
-        JButton btnClick = new JButton("Click me!");
-        // Anonymous class
-        btnClick.addActionListener(new ActionListener() {
-            public void eventPerformed(ActionEvent e) {
-                System.out.println("Anonymous class");
-            }
-        });
-        // Lamda expression
-        btnClick.addActionListener(e -> { System.out.println("Lambda expression") });
-        // GUI is listener
-        btnClick.addActionListener(this);
-        c.add(btnClick, BorderLayout.SOUTH);
+    JButton btnClick = new JButton("Click me!");
+    // Anonymous class
+    btnClick.addActionListener(
+      new ActionListener() {
+        void eventPerformed(ActionEvent e) {
+          System.out.println("Anonymous class");
+        }
+      }
+    );
+    // Lamda expression
+    btnClick.addActionListener(e -> {
+      System.out.println("Lambda expression")
+    });
+    // GUI is listener
+    btnClick.addActionListener(this);
+    c.add(btnClick, BorderLayout.SOUTH);
 
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE); // so it actually closes
-        this.setVisible(true); // default is invisible because fuck you
-    }
+    // so it actually closes
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    // default is invisible :)
+    setVisible(true);
+  }
 
-    public void eventPerformed(ActionEvent e) {
-        System.out.println("GUI is listener");
-    }
+  public void eventPerformed(ActionEvent e) {
+    System.out.println("GUI is listener");
+  }
 
-    public static void main(String[] args) {
-        CSC216 gui = new CSC216GUI();
-    }
+  public static void main(String[] args) {
+    CSC216 gui = new CSC216GUI();
+  }
 
 }
 ```
@@ -646,11 +660,11 @@ because everything is done through `ListIterator`.
 * others.
 * Examples:
   * Java Swing Apps:
-    * View and controller in the same class (very tightly coupled). (GUI class)
+  * View and controller in the same class (very tightly coupled). (GUI class)
   * Web Apps:
-    * View: HTML/XHTML + CSS.
-    * Controller: GET and POST.
-    * Model: Whatever backend underlies the project.
+  * View: HTML/XHTML + CSS.
+  * Controller: GET and POST.
+  * Model: Whatever backend underlies the project.
 
 ## Observer
 
@@ -744,9 +758,9 @@ That state object then acts and changes the parent state object as necessary.
   * Version Control
   * Continuous Integration
   * *Why use best practices?*
-    * Improve programmer productivity.
-    * Reduce software faults and failures.
-    * Support collaboration.
+  * Improve programmer productivity.
+  * Reduce software faults and failures.
+  * Support collaboration.
 
 ## Software Process
 
@@ -835,7 +849,7 @@ That state object then acts and changes the parent state object as necessary.
   * Deliverables: Specific objects/things that must be turned in or delivered.
 * Tasks should have a time estimate attached to them
   * Ideal Time: The amount of time something should take ideally, no distractions, work 100% of
-    time with 100% efficiency.
+  time with 100% efficiency.
   * Elapsed Time: The amount of time it actually takes to do something.
 * Story Points: A relative, unit-less measure of time to express the size/difficulty of a task.
 
@@ -855,9 +869,9 @@ That state object then acts and changes the parent state object as necessary.
   usually infinite executions domain, against the *expected behavior*."
 * *Write black box test cases first!* That way you aren't biased.
 * Tips:
-    * Really just try to mess things up.
-    * Think about equivalence classes.
-    * For white box tests, think about cyclomatic complexity.
+  * Really just try to mess things up.
+  * Think about equivalence classes.
+  * For white box tests, think about cyclomatic complexity.
 * Test code should be separate from source code.
 * Test code should be javadoc'd as well as source code.
 * **Iterate between tests and coding**
@@ -866,29 +880,29 @@ That state object then acts and changes the parent state object as necessary.
 
 * Fault A bug. An incorrect process, step, or data definition.
 * Verification: Evaluates whether the product is being built right.
-    * White box testing. Code is known.
-    * Test individual paths, correctly loops at boundaries, internal data
-      structures, logical decisions are complete (handle true and false).
+  * White box testing. Code is known.
+  * Test individual paths, correctly loops at boundaries, internal data
+    structures, logical decisions are complete (handle true and false).
 * Validation: Evaluates whether the right product is being built.
-    * Black box testing. Code is unknown.
-    * Incorrect or missing functions, interface errors, errors in data
-      structures, behavior or performance errors, initialization and
-      termination errors.
+  * Black box testing. Code is unknown.
+  * Incorrect or missing functions, interface errors, errors in data
+    structures, behavior or performance errors, initialization and
+    termination errors.
 * Equivalence Classes: Chunks of input/output space that (should) all work
   identically. Pick a representative (middle!) value from these chunks.
-    * This is part of the *suitably selected* part of testing.
+  * This is part of the *suitably selected* part of testing.
 * Cyclomatic Complexity: The number of paths of execution that can be
   taken through a program (or at least an estimate of it).
-    * Easy way to find: Number of decisions + 1 (not always correct!)
+  * Easy way to find: Number of decisions + 1 (not always correct!)
 
 ### Types of Testing
 
 * Unit: Tests a single bit of software (normally a method). Should be
   automated.
-    * JUnit
+  * JUnit
 * Integration: Tests a small group of software units together (or
   integrated!). Should be automated.
-    * JUnit
+  * JUnit
 * Functional/System: Tests a full, complete, integrated system / piece of
   software. Should be external.
 * Acceptance: Tests done by client to make sure that software works as
@@ -902,49 +916,49 @@ That state object then acts and changes the parent state object as necessary.
 ### Test Case Information
 
 * Unique Identifier
-    * Black Box: Name of test in document.
-    * White Box: Name of test method or specific assert.
+  * Black Box: Name of test in document.
+  * White Box: Name of test method or specific assert.
 * Input into the program or program unit
-    * Black Box: How the user runs and interacts with the program. *Should be
-      extremely specific.*
-    * White Box: Inputs to a method that set up the test.
+  * Black Box: How the user runs and interacts with the program. *Should be
+    extremely specific.*
+  * White Box: Inputs to a method that set up the test.
 * Expected Results from the program or program unit
-    * What you expect to get back, based off the requirements. *Should be
-      extremely specific.*
+  * What you expect to get back, based off the requirements. *Should be
+    extremely specific.*
 * Actual Results from the program or program unit
-    * Black Box: What the user is shown.
-    * White Box: Return values or state from other methods or objects.
+  * Black Box: What the user is shown.
+  * White Box: Return values or state from other methods or objects.
 
 ### Code Coverage
 
 * Code Coverage: A measure of test case completeness.
-    * Method Coverage: How many methods have been tested?
-    * Statement Coverage: How many statements in each method have been tested?
-    * Decision/Branch Coverage: How many decisions have been evaluated on
-      their true and false path?
-    * Condition Coverage: How many individual conditionals have been executed
-      for both their true and false path? (EclEmma's Branch coverage)
+  * Method Coverage: How many methods have been tested?
+  * Statement Coverage: How many statements in each method have been tested?
+  * Decision/Branch Coverage: How many decisions have been evaluated on
+    their true and false path?
+  * Condition Coverage: How many individual conditionals have been executed
+    for both their true and false path? (EclEmma's Branch coverage)
 * If you have 100% statement coverage, you have 100% condition coverage
 * Coverage is not perfect and doesn't say that your test cases are strong.
 * ***80-90% line/statement coverage is expected for each non-UI class.***
-    * Never stop testing.
-    * Double check on Jenkins.
+  * Never stop testing.
+  * Double check on Jenkins.
 * You can test coverage on non-whitebox tests too! :)
 
 ## Debugging
 
 * Eclipse can debug code!
 * Debugging lets you see code as it is running.
-    * What line its executing.
-    * The stacktrack.
-    * The current data.
+  * What line its executing.
+  * The stacktrack.
+  * The current data.
 * Breakpoints: Things you can insert from the gutter to stop/pause code
   execution when it reaches that line.
-    * Allows you to walk through your code step by step.
+  * Allows you to walk through your code step by step.
 * Steps: How your program executes.
-    * Step Over: Executes the next method as if it was a black box.
-    * Step In: Executes a method by going into it.
-    * Step Return: Goes to the return statement and finishes it.
+  * Step Over: Executes the next method as if it was a black box.
+  * Step In: Executes a method by going into it.
+  * Step Return: Goes to the return statement and finishes it.
 
 ## Analysis Types
 
@@ -952,12 +966,12 @@ That state object then acts and changes the parent state object as necessary.
 * Dynamic Analysis: Evaluating the code by executing it.
 * Looks for obvious problems or misuses of APIs, ignoring invariants, etc.
 * Issues:
-    * False Positive: Reports bugs that program doesn't contain.
-    * False Negative: Contains bugs that analyzer does not report.
+  * False Positive: Reports bugs that program doesn't contain.
+  * False Negative: Contains bugs that analyzer does not report.
 * Our Tools:
-    * FindBugs: Finds subtle bugs.
-    * CheckStyle: Make sure that code is properly constructed in correct style.
-    * PMD: Finds more style issues and content issues.
+  * FindBugs: Finds subtle bugs.
+  * CheckStyle: Make sure that code is properly constructed in correct style.
+  * PMD: Finds more style issues and content issues.
 
 ## UML (Unified Modelling Language)
 
@@ -1005,23 +1019,23 @@ That state object then acts and changes the parent state object as necessary.
   * Abstract Class Connector: Solid arrow with triangular head points from concrete class to interface.
 * Composition (has-a): There are quite a few different ones!
   * Attributes: Small things (Strings, primitives), part of existing library, immutable value
-    objects.
+  objects.
   * Dependency: A Class needs another Class to work, but doesn't have any fields that are one.
-    * *Shouldn't be included in CSC-216!*
-    * Connector: A dashed line.
+  * *Shouldn't be included in CSC-216!*
+  * Connector: A dashed line.
   * Association: A Class knows about an instance of another Class, but they are somewhat
-    independent.
-    * Connector: A solid arrow with `>` head from the container (source) to the contained
-      (target) with numbers (multiplicity) to show how many containers have how many contained.
+  independent.
+  * Connector: A solid arrow with `>` head from the container (source) to the contained
+    (target) with numbers (multiplicity) to show how many containers have how many contained.
   * Aggregation: The container class essentially just controls a group of those Classes.
-    Unidirectional.
-    * Connector: A line with a white diamond next to the aggregate class.
+  Unidirectional.
+  * Connector: A line with a white diamond next to the aggregate class.
   * Composition: The container class controls every part of the contained.
-    Unidirectional.
-    * Connector: A line with a black diamond next to the container class.
+  Unidirectional.
+  * Connector: A line with a black diamond next to the container class.
 * Abstracts: Shows Classes that can't be directly instantiated. Italicized.
   * Implements: When a class implements an interfaces. Shown with dashed line with a white triangle
-    head.
+  head.
 * Interfaces: Shows interfaces. Depend on the particular instance.
 
 {{ figure(src="class_design.png", title="Event Class") }}
@@ -1053,14 +1067,14 @@ That state object then acts and changes the parent state object as necessary.
   considered different algorithms.
 * Specific, common growth rates are shown at the bottom in a table.
 
-| Name        | Big O Notation  |
+| Name    | Big O Notation  |
 |-------------|-----------------|
-| Constant    | $O(1)$          |
-| Logarithmic | $O(log(N))$     |
-| Linear      | $O(N)$          |
+| Constant  | $O(1)$      |
+| Logarithmic | $O(log(N))$   |
+| Linear    | $O(N)$      |
 | Log-Linear  | $O(N * log(N))$ |
-| Quadratic   | $O(N^2)$        |
-| Exponential | $O(2^N)$        |
+| Quadratic   | $O(N^2)$    |
+| Exponential | $O(2^N)$    |
 
 # Data Structures
 
@@ -1085,12 +1099,12 @@ That state object then acts and changes the parent state object as necessary.
 * When using postfix ($1 2 +$) or prefix ($+ 1 2$) notation, these can be stack
   evaluated.
   * For prefix notation, you push tokens onto the stack and, once you reach a
-    function that takes $N$ arguments, you push $N$ more times and then pop $N
-    + 1$ times (to remove the arguments and the operator), evaluate the
-    function, and then push the result onto the stack.
+  function that takes $N$ arguments, you push $N$ more times and then pop $N
+  + 1$ times (to remove the arguments and the operator), evaluate the
+  function, and then push the result onto the stack.
   * For postfix notation, you push tokens onto the stack unless it is a
-    function that takes $N$ arguments. Then you pop $N$ times, evaluate the
-    arguments, and push the result onto the stack.
+  function that takes $N$ arguments. Then you pop $N$ times, evaluate the
+  arguments, and push the result onto the stack.
 
 ## Queue
 
@@ -1126,21 +1140,21 @@ compiling code using an *abstract syntax tree / parse tree*.
 * **Balanced**: The property of a tree being at or near its minimum height.
 * Tree Properties:
   * **Height**: The number of nodes between the current node and the lowest leaf node.
-    * Really +1 the height of its child.
+  * Really +1 the height of its child.
   * **Depth**: The number of nodes between the current node and the root node.
 * Types of Traversals:
   * **Pre-order** is where you process the branch, the left, then the right.
-    * Start from the top and go down.
+  * Start from the top and go down.
   * **Post-order** is where you process the left, the right, then branch.
-    * Go to the bottom and then go up.
+  * Go to the bottom and then go up.
   * **In-order** is where you process the left, the branch, then the right.
-    * If you draw the tree such that the distance between sibling nodes halves
-      each level you go down, this is really easy.
+  * If you draw the tree such that the distance between sibling nodes halves
+    each level you go down, this is really easy.
 * Types of Nodes:
   * **Branch** nodes have a parent and a child.
   * **Leafs** have no children.
   * The **root** has no parent, and is the ancestor of all nodes. This can also
-    be a branch or leaf.
+  be a branch or leaf.
 * Node Relations:
   * A **parent** is a node that points to the current node.
   * A **child** is a node that the current node points to.
@@ -1172,19 +1186,20 @@ unbalanced binary search trees, the efficiency is near $O(n)$.
 
 In Java, it is recommended to do adds by reassigning your node with a function.
 
-```
+```java
 public void add(E element) {
-    this.root = add(overallRoot, value);
+  this.root = add(overallRoot, value);
 }
 private Node add(Node branch, E element) {
-    if (branch == null) {
-        branch = new Node(element);
-    } else if (E < branch.data) {
-        // You'd really do compareTo here but it's hard to read
-        branch.left = add(branch.left, element);
-    } else {
-        branch.right = add(branch.right, element);
-    }
+  if (branch == null) {
+    branch = new Node(element);
+  } else if (E < branch.data) {
+    // You'd really do compareTo here but it's
+    // hard to read
+    branch.left = add(branch.left, element);
+  } else {
+    branch.right = add(branch.right, element);
+  }
 }
 ```
 
@@ -1227,41 +1242,44 @@ There are many methods, each have trade-offs:
 
 * Sequential Search:
   * Definition: Start at element 0.
-    If you are on the element you want, you found it.  Otherwise, go to next
-    element.  At any time, if you are at the end, the list does not contain the
-    element.
+  If you are on the element you want, you found it.  Otherwise, go to next
+  element.  At any time, if you are at the end, the list does not contain the
+  element.
   * Efficiency: $O(n)$
   * Pros: Works for unsorted lists.
   * Cons: It's fairly slow.
 * Binary Search:
   * Definition: Locate target by selecting middle element, this is your pivot
-    point. If your element should go before the pivot point, look only at that
-    half. Likewise for your element after the pivot point. Select middle
-    element of that half as your new pivot point.  Recurse.
+  point. If your element should go before the pivot point, look only at that
+  half. Likewise for your element after the pivot point. Select middle
+  element of that half as your new pivot point.  Recurse.
   * Efficiency: $O(log_2(n))$
   * Pros: Is fast.
   * Cons: The list must be sorted.
 
-```
-// This is like java.util.Arrays#binarySearch(array, value)
-private static int binarySearch(int[] list, int value, int min, int max) {
-    if (min > max) {
-        // Missed element
-        return -1;
-        // java.util.Arrays#binarySearch(array, value) returns -(min + 1), or
-        // insertion point
+```java
+// This is like java.util.Arrays#binarySearch
+private static int
+binarySearch(int[] list, int value, int min,
+             int max) {
+  if (min > max) {
+    // Missed element
+    return -1;
+    // java.util.Arrays#binarySearch(array,
+    // value) returns -(min + 1), or insertion
+    // point
+  } else {
+    // List not empty
+    int pivot = (min + max) / 2;
+    if (value < list[pivot]) {
+      //
+      binarySearch(list, value, min, pivot - 1);
+    } else if (value > list[pivot]) {
+      binarySearch(list, value, pivot + 1, max);
     } else {
-        // List not empty
-        int pivot = (min + max) / 2;
-        if (value < list[pivot]) {
-            //
-            binarySearch(list, value, min, pivot - 1);
-        } else if (value > list[pivot]) {
-            binarySearch(list, value, pivot + 1, max);
-        } else {
-            return pivot;
-        }
+      return pivot;
     }
+  }
 }
 ```
 
@@ -1275,38 +1293,38 @@ ways to do this, each with trade offs:
   * Efficiency: $O(n!)$.
 * Selection Sort:
   * Method: There are two parts of the list: the sorted and the unsorted;
-    everything starts unsorted. Find the smallest value in the unsorted part
-    and place it at the end of the sorted part.
+  everything starts unsorted. Find the smallest value in the unsorted part
+  and place it at the end of the sorted part.
   * Efficiency: $O(n^2)$.
 * Bubble Sort:
   * Method: Start on the first element. Compare the current element to the
-    next, swapping them if they are not in the right order. Do this until you
-    reach the end of the list. Do this until the list is completely sorted.
+  next, swapping them if they are not in the right order. Do this until you
+  reach the end of the list. Do this until the list is completely sorted.
   * Efficiency: $O(n^2)$ but slower than selection sort due to doing more swaps.
 * Insertion Sort:
   * Method: There are two parts of the list: the sorted and the unsorted;
-    everything starts unsorted. Take the first element in the list and insert
-    it into the sorted part in sorted order. Do this until there is no unsorted
-    part.
+  everything starts unsorted. Take the first element in the list and insert
+  it into the sorted part in sorted order. Do this until there is no unsorted
+  part.
   * Efficiency: $O(n^2) but normally faster than selection sort because you do
-    fewer comparisons.
+  fewer comparisons.
 * Merge Sort:
   * Method: We already know how to merge two sorted lists (by having multiple
-    read heads and taking the smallest value at any of the read heads). If our
-    list is length 1, it is trivially sorted. If our list is unsorted, we split
-    the list into a left and right half and merge sort those. Then we merge
-    those two now sorted halves (each lists their own!). The list is now
-    sorted.
+  read heads and taking the smallest value at any of the read heads). If our
+  list is length 1, it is trivially sorted. If our list is unsorted, we split
+  the list into a left and right half and merge sort those. Then we merge
+  those two now sorted halves (each lists their own!). The list is now
+  sorted.
   * Efficiency: $O(n * log_2(n))$
 * Quick Sort:
   * Method: Pick a pivot element and split the list into two parts, either
-    larger or smaller than the pivot. Sort those sub lists. The pivot goes
-    right between these two sublists. The list is now sorted.
+  larger or smaller than the pivot. Sort those sub lists. The pivot goes
+  right between these two sublists. The list is now sorted.
   * Efficiency: $O(n * log_2(n))$ (can be worse with bad pivots).
   * It really matters what pivot you pick. There are different ways to do it:
-    * Pick first. (good and easy if unsorted)
-    * Pick randomly. (good on average)
-    * Pick median of first, middle, and last. (great for sorted and reverse sorted elements)
+  * Pick first. (good and easy if unsorted)
+  * Pick randomly. (good on average)
+  * Pick median of first, middle, and last. (great for sorted and reverse sorted elements)
 
 # Finite State Machines
 
@@ -1346,10 +1364,10 @@ ways to do this, each with trade offs:
 
 {{ figure(src="wc_fsm.png", title="`wc` as a FSM") }}
 
-| State | `A-Za-z`          | `\n`              | Other     |
+| State | `A-Za-z`      | `\n`        | Other   |
 |:-----:|-------------------|-------------------|-----------|
-| 0     | 1: `++wc`, `++cc` | 0: `++lc`, `++cc` | 0: `++cc` |
-| 1     | 1: `++cc`         | 0: `++lc`, `++cc` | 0: `++cc` |
+| 0   | 1: `++wc`, `++cc` | 0: `++lc`, `++cc` | 0: `++cc` |
+| 1   | 1: `++cc`     | 0: `++lc`, `++cc` | 0: `++cc` |
 
 ## While-Switch Idiom
 
@@ -1359,48 +1377,49 @@ ways to do this, each with trade offs:
 
 ```no-highlight
 while you have input:
-    switch(STATE):
-        case STATE_0: ...
-        case STATE_1: ...
-        case STATE_2: ...
-        case STATE_3: ...
+  switch(STATE):
+    case STATE_0: ...
+    case STATE_1: ...
+    case STATE_2: ...
+    case STATE_3: ...
 ```
 
 ```java
 // Replicates wc functionality
 while ((next = br.read()) != −1) {
+  ch = (char) next;
+  switch (state) {
+    case 0:
+      if (ch == '\n') {
+        ++lc;
+        ++cc;
+      } else if (Character.isLetter(ch)) {
+        state = 1;
+        ++wc;
+        ++cc;
+      } else {
+        ++cc;
+      }
+      break;
 
-    ch = (char) next;
+    case 1:
+      if (ch == '\n') {
+        state = 0;
+        ++lc;
+        ++cc;
+      } else if (Character.isLetter(ch)) {
+        ++cc;
+      } else {
+        state = 0;
+        ++cc;
+      }
+      break;
 
-    switch (state) {
-        case 0:
-            if (ch == '\n') {
-                ++lc;
-                ++cc;
-            } else if (Character.isLetter(ch)) {
-                state = 1;
-                ++wc;
-                ++cc;
-            } else {
-                ++cc;
-            }
-            break;
-
-        case 1:
-            if (ch == '\n') {
-                state = 0;
-                ++lc;
-                ++cc;
-            } else if (Character.isLetter(ch)) {
-                ++cc;
-            } else {
-                state = 0;
-                ++cc;
-            }
-            break;
-
-        default: System.out.println("Invalid state: " + state);
-    }
+    default:
+      System.out.println(
+        "Invalid state: " + state
+      );
+  }
 }
 ```
 
@@ -1428,7 +1447,8 @@ input.
 ```
 StateFunction curr = defaultStateFunction
 while input:
-  curr = curr(input) // curr returns a StateFunction
+  // curr returns a StateFunction
+  curr = curr(input)
 ```
 
 This does not work with bounded recursive loops.
@@ -1439,14 +1459,14 @@ This does not work with bounded recursive loops.
 * *Why use it?*
   * It works better for some things. For example, some things are inherently
   * recursive.
-    * Trees are inherently recursive (so are files).
-    * Some searches are inherently recursive.
+  * Trees are inherently recursive (so are files).
+  * Some searches are inherently recursive.
   * Some functional languages use only recursion. (e.g. Haskell, Scheme, etc.)
   * It can be mathematically proved to work much more easily through induction.
   * It's really elegant.
 * *How do you write recursively?*
   * You just treat the problem as if you've already solved a smaller but
-    *completely* identical problem.
+  *completely* identical problem.
   * Try to break the problem into a smaller but identical problem.
 
 ## Verification Methods
@@ -1456,11 +1476,11 @@ This does not work with bounded recursive loops.
 * Formal Analysis (Static): Mathematically prove this program calculates
   correctly (normally using discrete mathematics).
   * It is harder to prove that it does what the client whats for the given
-    inputs.
+  inputs.
   * You normally use mathematical induction.
-    * *Mathematically Induction?* You use your basis step (base case) followed
-      by inductive step (recursive).
-    * You have to correctly identify the recursive/inductive step.
+  * *Mathematically Induction?* You use your basis step (base case) followed
+    by inductive step (recursive).
+  * You have to correctly identify the recursive/inductive step.
 
 ## Important Notes
 
@@ -1502,16 +1522,16 @@ making sure your clients don't have to worry about that.
 
 ```java
 public void crawl(File f) {
-    crawl(File, "");
+  crawl(File, "");
 }
 
 public void crawl(File f, String indent) {
-    System.out.println(f);
-    if (f.isDirectory()) {
-        for (File subfile : f.listFiles()) {
-            crawl(subfile, indent + "    ");
-        }
+  System.out.println(f);
+  if (f.isDirectory()) {
+    for (File subfile : f.listFiles()) {
+      crawl(subfile, indent + "  ");
     }
+  }
 }
 ```
 
@@ -1524,11 +1544,14 @@ then do something with the local variable after the recursive method completes.
 ```java
 // This only works with synchronous method calls
 void reverseLines(Scanner input) {
-    if (input.hasNextLine()) {
-        String line = input.nextLine(); // "Push" something onto the "stack"
-        reverseLines(input); // Add a new method to the call stack
-        System.out.println(line); // "Pop" something from the "stack"
-    }
+  if (input.hasNextLine()) {
+    // "Push" something onto the "stack"
+    String line = input.nextLine();
+    // Add a new method to the call stack
+    reverseLines(input);
+    // "Pop" something from the "stack"
+    System.out.println(line);
+  }
 }
 ```
 

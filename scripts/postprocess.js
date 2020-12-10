@@ -1,9 +1,14 @@
 #!/usr/bin/env -S node -r esm
 
-// This is a simplified version of simple/tex2svg-page from
-// https://github.com/mathjax/MathJax-demos-node modified so so that it updates
-// the file in place, hard-codes my preferred config, and removes command-line
-// options
+/*
+  A post-processing script that I run on my outputed HTML to minify it and run
+  MathJax on it.
+
+  This is a simplified version of simple/tex2svg-page from
+  https://github.com/mathjax/MathJax-demos-node modified so so that it updates
+  the file in place, hard-codes my preferred config, and removes command-line
+  options
+*/
 
 // Read the HTML file
 const fs = require("fs");
@@ -20,12 +25,15 @@ if (argv.length !== 1) {
 }
 const filename = argv[0];
 
-const htmlfile = fs.readFileSync(filename, "utf8");
+var htmlfile = fs.readFileSync(filename, "utf8");
+// If we do collapse whitespace after MathJax runs, the spaces around the math
+// are removed. Thus we run it first.
+htmlfile = minify(htmlfile, { collapseWhitespace: true });
 
 // Load MathJax and initialize MathJax and typeset the given math
 require("mathjax-full")
   .init({
-    //  MathJax configuration
+    // MathJax configuration
     loader: {
       source: require("mathjax-full/components/src/source.js").source,
       load: ["adaptors/liteDOM", "tex-svg"],
@@ -51,7 +59,7 @@ require("mathjax-full")
     },
   })
   .then((MathJax) => {
-    //  Display the output
+    // Display the output
     const adaptor = MathJax.startup.adaptor;
     const html = MathJax.startup.document;
     if (html.math.toArray().length === 0) {
@@ -68,7 +76,7 @@ require("mathjax-full")
         adaptor.outerHTML(adaptor.root(html.document)),
       {
         collapseBooleanAttributes: true,
-        collapseWhitespace: true,
+        // collapseWhitespace: true,
         decodeEntities: true,
         minifyCSS: true,
         minifyJS: true,
@@ -77,6 +85,8 @@ require("mathjax-full")
         removeComments: true,
         removeOptionalTags: true,
         removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
         sortAttributes: true,
         sortClassName: true,
       }

@@ -12,7 +12,7 @@ blog posts.
 If you want to contact/follow me for whatever reason, here's my contact
 gubbins:
 
-* [GitHub](https://github.com/elihunter173/)
-* [Twitter](https://twitter.com/elihunter173/)
-* [LinkedIn](https://linkedin.com/in/elihunter173/)
-* Email: elihunter173 AT gmail.com
+* GitHub: <https://github.com/elihunter173/>
+* Twitter: <https://twitter.com/elihunter173/>
+* LinkedIn: <https://linkedin.com/in/elihunter173/>
+* Email: <mailto:elihunter173@gmail.com>

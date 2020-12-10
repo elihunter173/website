@@ -838,14 +838,17 @@ main:
   call _asmprint
   ; Pop the arguments you pushed onto the stack
   add sp, 4
-  ; Retrieve the return value, returned in ax by convention
+  ; Retrieve the return value, returned in ax
+  ; by convention
   mov [rc], ax
 
 _asmprint:
   push bp
   mov bp, sp
-  mov dl, [bp + 4] ; 4 to skip the IP pushed by call
-  mov cx, [bp + 6] ; 4 to skip the IP pushed by call
+  ; 4 to skip the IP pushed by call
+  mov dl, [bp + 4]
+  ; 4 to skip the IP pushed by call
+  mov cx, [bp + 6]
   mov ah, 2 ; Plan to read
 asmprint_loop:
   int 21h
@@ -854,7 +857,8 @@ asmprint_loop:
   ; Set return value
   mov ax, 0
   pop bp
-  ; We'd have to pop stuff off the stack if we had pushed
+  ; We'd have to pop stuff off the stack if we
+  ; had pushed
   ret
 ```
 
@@ -1127,7 +1131,8 @@ main:
   bl sqrt  ; call subroutine
 
 sqrt:
-  stmdb sp!, {r1-r3, lr}  ; save r1-r3 and link regiter
+  stmdb sp!, {r1-r3, lr}  ; save r1-r3 and
+  ; link regiter
 
   ; Trash the registers
   ldr r1, =27
@@ -1136,7 +1141,8 @@ sqrt:
   ; Load the hardcoded result
   ldr r0, =25
 
-  ; restore r1-r3, load the pc with the original link register
+  ; restore r1-r3, load the pc with the original
+  ; link register
   ldmia sp!, {r1-r3, pc}  ; 
 
 .data
