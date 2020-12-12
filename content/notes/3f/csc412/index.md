@@ -962,7 +962,7 @@ incredibly high quality machine code.
 ### LLVM IR
 
 Here is the LLVM IR assembly language reference:
-https://llvm.org/docs/LangRef.html
+<https://llvm.org/docs/LangRef.html>
 
 The LLVM project uses static single assignment (SSA) IR called LLVM bitcode.
 It's call bitcode because normally tools use a binary format for efficiency and

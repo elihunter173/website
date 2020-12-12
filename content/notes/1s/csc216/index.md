@@ -27,7 +27,7 @@ teacher = "Dr. Sarah Heckman"
   * If miss 4+ labs, -5 pt on final grade.
 * Instructor: Dr. Sarah Heckman (sesmith5)
 * Email: sarah_heckman@ncsu.edu
-* Web Page: https://people.engr.ncsu.edu/sesmith5/
+* Web Page: <https://people.engr.ncsu.edu/sesmith5/>
 * Phone: 919-515-2042
 * Office Location: Engineering Building II, Room 2297
 * Office Hours: (See calendar for most up-to-date office hours)

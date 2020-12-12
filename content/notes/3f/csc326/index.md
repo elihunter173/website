@@ -787,7 +787,7 @@ this in some databases using plugins.
 * `CHAR`
 * `VARCHAR($size)`: A string-like value that is given `$size` bytes. Unicode
   support varies from database to database so look at the documentation.
-* See more here: https://www.w3schools.com/sql/sql_datatypes.asp
+* See more here: <https://www.w3schools.com/sql/sql_datatypes.asp>
 
 Here's an annotated example of the standard SQL you would run to create a
 database, make a table in it, and add some rows.
