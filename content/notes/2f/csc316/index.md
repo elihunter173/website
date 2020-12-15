@@ -2449,9 +2449,9 @@ by forming a decision tree.
 {{ figure(src="sorting_decision_tree.png", title="Sorting Decision Tree") }}
 
 The first level can have up to $n$ children, all nodes in the next level can
-have $n-1$ children, and so on. This leads to a total number of nodes $n * n-1
-* ... * 1 = n!$. This means we know this means the height of the tree is at
-least $log(n!)$. Since $log(n!) \ge log(n/2)^{n/2}$. This is $\Omega(n \; log
-n)$.
+have $n-1$ children, and so on. Thus the total number of nodes is
+$n * n-1 * ... * 1 = n!$. This means we know this means the height of the tree
+is at least $log(n!)$. Since $log(n!) \ge log(n/2)^{n/2}$. This is
+$\Omega(n \\; log n)$.
 
 We have shown that no solution can be faster than $O(n log n)$.

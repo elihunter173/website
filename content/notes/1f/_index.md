@@ -2,6 +2,7 @@
 title = "Fall 2018"
 weight = 0
 page_template = "notes/class.html"
+insert_anchor_links = "left"
 +++
 
 This was the semester before I settled on using markdown for notes, so I
