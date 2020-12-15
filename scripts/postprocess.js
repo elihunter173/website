@@ -36,7 +36,7 @@ require("mathjax-full")
     // MathJax configuration
     loader: {
       source: require("mathjax-full/components/src/source.js").source,
-      load: ["adaptors/liteDOM", "tex-svg"],
+      load: ["adaptors/liteDOM", "tex-chtml"],
     },
     tex: {
       // the packages to use, e.g. "base, ams"; use "*" to represent the
@@ -47,8 +47,10 @@ require("mathjax-full")
         ["\\(", "\\)"],
       ],
     },
-    svg: {
-      fontCache: "global",
+    chtml: {
+      // Font to use for web fonts
+      fontURL:
+        "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
       exFactor: EX / EM,
     },
     "adaptors/liteDOM": {
@@ -62,13 +64,10 @@ require("mathjax-full")
     // Display the output
     const adaptor = MathJax.startup.adaptor;
     const html = MathJax.startup.document;
+
+    // Remove styles if there is no math
     if (html.math.toArray().length === 0) {
-      adaptor.remove(html.outputJax.svgStyles);
-      const cache = adaptor.elementById(
-        adaptor.body(html.document),
-        "MJX-SVG-global-cache"
-      );
-      if (cache) adaptor.remove(cache);
+      adaptor.remove(html.outputJax.chtmlStyles);
     }
 
     const updatedDoc = minify(
