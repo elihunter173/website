@@ -2,6 +2,7 @@ on: push
 name: Build and deploy on push
 jobs:
   build:
+    # TODO: Minify everything
     name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
