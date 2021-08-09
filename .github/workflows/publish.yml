@@ -6,11 +6,15 @@ jobs:
     name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: shalzz/zola-deploy-action
-      uses: shalzz/zola-deploy-action@master
+    - name: Checkout code
+      uses: actions/checkout@master
+      with:
+        node-version: '16'
+
+    - name: Install npm
+      uses: actions/setup-node@v2
+
+    - name: Build website
+      run: ./scripts/build.sh
       env:
-        PAGES_BRANCH: gh-pages
-        BUILD_DIR: .
-        BUILD_FLAGS: ""
-        TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: $GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}

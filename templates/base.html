@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="/styles.css">
 
     {# MathJax during development #}
-    {# TODO: This is currently always enabled b/c my post-processing is having issues #}
-    {% if current_url is containing("127.0.0.1") or true %}
+    {% if current_url is containing("127.0.0.1") %}
     <script>
       MathJax = {
         tex: {
