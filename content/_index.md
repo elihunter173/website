@@ -2,9 +2,8 @@
 +++
 
 Hi! My name is Eli. I'm a computer science and applied mathematics student at
-NC State. I work with the [Aerial Robotics Club at NC
-State](https://aerialroboticsclub.com/) as the software team lead and vice
-president.
+NC State. I used to serve as the software team lead and vice president of the
+[Aerial Robotics Club at NC State](https://aerialroboticsclub.com/).
 
 I publish my notes for all of my classes here as well as occasional technical
 blog posts.
