@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">{{ section.title }}</h1>
+
+{% for path in section.subsections %}
+{% set section = get_section(path=path) %}
+<h2><a href="{{ section.path | safe}}">{{section.title}}</a></h2>
+{{section.content | safe}}
+{% endfor %}
+
+{% endblock content %}

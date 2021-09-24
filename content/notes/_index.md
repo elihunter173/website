@@ -1,4 +1,4 @@
 +++
 title = "Notes"
-template = "notes/all.html"
+template = "notes/list.html"
 +++
