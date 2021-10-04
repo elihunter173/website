@@ -2,12 +2,11 @@ on: push
 name: Build and deploy on push
 jobs:
   build:
-    # TODO: Minify everything
-    name: shalzz/zola-deploy-action
+    name: Deploy website
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@master
+      uses: actions/checkout@main
       with:
         node-version: '16'
 

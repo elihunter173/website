@@ -1572,7 +1572,7 @@ void reverseLines(Scanner input) {
 ## Horner's Rule
 
 * Horner's Rule: A method for parsing numbers as polynomials.
-  * $1092 = (((0 + 1)x + 0)x + 9) + 2$ where $x$ is the given base
+  * $1092 = (((1)B + 0)B + 9) + 2$ where $B$ is the given base
 * Why is Horner's rule useful? Because it can be used to convert ASCII into
   numbers, since ASCII digits are all consecutive in terms of value.
 * Summary: Read value, shift by base, repeat.

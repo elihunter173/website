@@ -14,4 +14,4 @@ gubbins:
 * GitHub: <https://github.com/elihunter173/>
 * Twitter: <https://twitter.com/elihunter173/>
 * LinkedIn: <https://linkedin.com/in/elihunter173/>
-* Email: <mailto:elihunter173@gmail.com>
+* Email: [elihunter173@gmail.com](mailto:elihunter173@gmail.com)

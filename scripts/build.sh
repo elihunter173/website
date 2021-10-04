@@ -6,7 +6,8 @@ HERE="$(dirname "${BASH_SOURCE[0]}")"
 cd "$HERE"
 
 BUILD_DIR="$(git rev-parse --show-toplevel)"
-ZOLA_TAR="https://github.com/getzola/zola/releases/download/v0.14.0/zola-v0.14.0-x86_64-unknown-linux-gnu.tar.gz"
+ZOLA_VER='v0.14.1'
+ZOLA_TAR="https://github.com/getzola/zola/releases/download/$ZOLA_VER/zola-$ZOLA_VER-x86_64-unknown-linux-gnu.tar.gz"
 
 echo "Downloading zola at $ZOLA_TAR"
 wget -q -O - $ZOLA_TAR | tar xzf - -C /usr/local/bin

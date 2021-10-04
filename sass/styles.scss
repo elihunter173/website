@@ -12,13 +12,17 @@ img {
 
 @media(prefers-color-scheme: dark) {
   body {
-    background-color: black;
-    color: white;
+    background-color: #121212;
+    color: #fff;
   }
   a { color: #58a6ff; }
-  a:visited { color: #0077ff; }
+  a:visited { color: #cc76a4; }
   a:active { color: #ff0000; }
 }
+
+// Code color theme based on preferences
+@import url("syntax-dark.css") (prefers-color-scheme: dark);
+@import url("syntax-light.css") (prefers-color-scheme: light);
 
 h1.title {
   font-size: 2rem;
@@ -26,13 +30,25 @@ h1.title {
   margin-bottom: 0.5rem;
 }
 
+// NOTE: This does not include the right padding when scrolling...
 pre {
-  padding: 0.75em;
+  padding: 0.5rem;
+  outline: 0.15rem solid;
+  overflow-x: auto;
 }
 
-table, th, td {
-  border: 1px solid black;
+// Cut off the table if it's too wide and make it scroll
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
   border-collapse: collapse;
+}
+th, td {
+  border: 1px solid;
   padding: 0.25em;
 }
 
@@ -42,6 +58,14 @@ figure {
     font-size: 1.15rem;
     font-weight: bold;
   }
+}
+
+// Scroll too long mathjax math
+mjx-container[display=true] {
+  display: inline-grid;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
 }
 
 nav {
