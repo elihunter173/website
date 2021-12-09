@@ -1,76 +1,83 @@
 +++
-title = "Emoji Language (📜🔎😀📝📜)"
+title = "Emoji Language (📜➰😀)"
 +++
 
-# Clauses
+# Structure
 
-**Structure:** Subject-Verb-Object/Destination
+Every clause in the emoji language follows the strict "Subject - Verb -
+Object/Destination" structure. Each part must be one emoji and all must be
+present for clause to be complete. Within a message, the same emoji refers to
+the same object/event; use identifiers to have multiple similar objects/events.
 
-Each must be one emoji and all must be present for clause to be complete.
-Within a clause, the same emoji ALWAYS refers to the same object/event; use
-identifiers to have multiple similar objects/events.
+*Example:* I know you = "👈🧠👉".
 
-# Types of Clauses
+You can also have exclamations, which are just a single emoji indicating the
+exclamation.
 
-* **Clauses:** Look at diagram. To go up a level, don't follow up clause with
-  conjunction.
-* **Main:** 1st clause must be this, simply a statement.
-* **Descriptive:** Clause which gives more information about previous emoji.
-* **Causal:** Clause explains a reason the earlier one did happen.
-* **Concessional:** Clause explains a reason the earlier one shouldn't have
-  happened.
-* **Optional:** Group of any clause where only 1 of the clauses can be true.
+*Example:* It's raining = "🌧️".
 
-# Tenses
+## Emoji Descriptors
 
-To give more information about the state or timing of a verb, you can put one
-of the special tense emojis immediately before it. These do not count to the
-"clause emoji count". All time information is relative to the time of writing.
+Every emoji can have a description phrase associated with it. These phrases are
+placed after the emoji they describe and start with a single, special emoji
+indicating what kind descriptor it is.
 
-* General "": Something which typically occurs, is occurring, or always occurs.
-  The most common tense and should be used if more specificity is not needed.
-* Past "🕘": Something which did occur and has now finished.
-* Present "🕛": Something which recently began occurring and is still occurring
+* ➰ (... ➿): Adjective phrase. This phrase contains a list of adjective-type
+  emojis, followed by a ➿ to indicate the end of the adjective phrase. If you
+  only have one adjective-type emoji, ➿ does not need to be specified.
+  * *Example:* My dog ate a big round chicken = "🐕➰👈🍴🐔➰🆙⚪➿".
+* 〰️: Descriptive clause. Begins a new subject-verb-object clause which
+  specifically describes the affected emoji. Usually, you will include the
+  emoji itself in the clause. "Which", "Where".
+  * *Example:* The dog, which I bought, makes me happy = "🐕〰️👈💳🐕😊👈"
+* 🚫: Negator. Negates emoji immediately following. This does not have any
+  emojis in its descriptor phrase. "Not".
+* 0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟: Identifiers. Since emojis tend to refer to the same
+  object/event, you can use identifiers to differentiate between similar
+  objects/events.
+
+## Clause Modifiers
+
+Clauses can have modifiers which affect their meaning. These modifiers are
+placed immediately after the clause which they affect.
+
+* ❓: Interrogator. Marks the prior clause as a true-false question. "Right?".
+
+## Verb Modifiers
+
+Verbs in particular can have modifiers. These modifiers are placed after the
+verb they affect, just like with clause modifiers and emoji descriptors.
+
+Currently, the only modifiers are tense modifiers. If tense is unspecified,
+verbs are in their basic form which is roughly present tense. It means
+something which typically occurs, is occurring, or always occurs.
+
+* 🕘: Past. Something which did occur and has now finished.
+  * *Example:* I used to want a meal = "👈🙏🕘🍽️"
+* 🕛: Present. Something which recently began occurring and is still occurring
   and will continue occurring.
-* Future "🕒": Something which has not yet occurred but likely will later.
+  * *Example:* I currently want a meal = "👈🙏🕛🍽️"
+* 🕒: Future. Something which has not yet occurred but will later.
+  * *Example:* I will want a meal = "👈🙏🕒🍽️"
 
-## Examples of Tenses
+## Conjunctions
 
-* 👈🙏🍽️: I want a meal / to eat.
-* 👈🕘🙏🍽️: I used to want a meal / to eat.
-* 👈🕛🙏🍽️: I currently want a meal / to eat.
-* 👈🕒🙏🍽️: I will want a meal / to eat.
+Conjunctions introduce new subject-verb-object clauses with a specific relation
+to the previous one.
 
-# Clauses
+* ➕: Additional. The following clause exists in addition to the previous one.
+  "And" or "But".
+* ➖: Optional. Either the following clause or the preceding clause are true,
+  but not both. "Or" or "Either... Or".
+* ✖️: Causal. The following clause caused or motivated the earlier clause.
+  "Because" or "Since".
+* ➗: Concessional. The following clause occurred in spite of the earlier one,
+  explaining a reason the earlier one shouldn't have happened, can not follow a
+  descriptive clause. "Although".
 
-Introduce new clauses.
+# Vocabulary
 
-* ➕: Additional. Following clause is the same as the earlier one. "And" or
-  "But"
-* ➖: Optional. Following clause and earlier clause are of same level but only
-  1 can be true. "Or" or "Either... Or"
-* ✖️: Causal. Following clause is causal, causing earlier. can not follow a
-  descriptive clause. "Because" or "Since"
-* ➗: Concessional. Following clause is concessional, explaining a reason the
-  earlier one shouldn't have happened, can not follow a descriptive clause.
-  "Although"
-* 🔎: Descriptor. Begins descriptive clause which describes the preceding
-  emoji.
-
-# Special Emojis
-
-Do not count towards emoji count.
-
-* 🚫: Negator. Negates emoji immediately following, does count toward emoji
-  count.
-* 🔗: Integrator. Following emoji was present for or integral to the action
-  (accompaniment vs means must be inferred), follows an entire clause.
-* ❓: Interrogator. At the beginning of clause, presents the next clause as a
-  "true or false" question.
-* 0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟: Identifiers. Follow emoji to give it an ID so one can use the
-  same emoji for multiple different subjects.
-
-# Pronouns
+## Pronouns
 
 * 👈: 1st person singular.
 * 👐: 1st person plural.
@@ -79,11 +86,11 @@ Do not count towards emoji count.
   essentially can be used like a placeholder for a noun. This is essentially an
   unspecified object/event.
 
-# Common Less-Intuitive Vocabulary
+## Common Vocabulary
 
-* ➡️: linking verb
-* 🙏: to want/need/hope for
-* ✊: to own/have
-* ✴️: to happen/occur
-* 🗣️: to say/write/communicate
-* 🧠: knowledge/memory
+* ➡️: to be.
+* 🙏: to want/need/hope for; prayer.
+* ✊: to own/have; fist.
+* ✴️: to happen/occur; explosion.
+* 🗣️: to say/write/communicate; speaking/speech.
+* 🧠: to know/remember; knowledge/memory.
