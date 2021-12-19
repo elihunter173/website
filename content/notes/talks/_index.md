@@ -1,7 +1,6 @@
 +++
-title = "Talks"
-template = "notes/talk_list.html"
+title = "Notes from Talks"
 page_template = "notes/talk.html"
 +++
 
-Talks and one-off presentations I attend.
+Notes from talks and one-off presentations I attend.
