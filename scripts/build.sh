@@ -9,28 +9,33 @@ HERE="$(dirname "${BASH_SOURCE[0]}")"
 cd "$HERE"
 REPO_DIR="$(git rev-parse --show-toplevel)"
 
-echo "Building subprojects"
-./build-subprojects.sh
-echo "Done building subprojects"
+echo "> Building elihunter173.com..."
 
-echo "Downloading zola at $ZOLA_TAR"
+echo -e "\n> Downloading zola at $ZOLA_TAR"
 wget -q -O - $ZOLA_TAR | tar xzf - -C /usr/local/bin
 
-echo "Building HTML"
+cd "$REPO_DIR/scripts"
+echo -e "\n> Building subprojects"
+./build-subprojects.sh
+echo "> Done building subprojects"
+
+echo -e "\n> Building HTML"
 cd "$REPO_DIR"
 zola build
 
-echo "Post-processing HTML"
+echo -e "\n> Post-processing HTML"
 cd "$REPO_DIR/scripts"
 npm install --production
 find "$REPO_DIR/public" -name '*.html' -print0 | xargs -0 -n 1 -P 8 node -r esm postprocess.js
 
-echo "Ensuring all LaTeX parsed correctly"
-# ! means invert return value (i.e. not). grep returns true (zero) when found
-# and false (non-zero) when not found. We want to not find things.
-! grep --recursive --files-with-matches 'Undefined control sequence'
+echo -e "\n> Checking files for LaTeX errors"
+if grep --recursive --files-with-matches --include '*.html' 'Undefined control sequence'; then
+    echo "> Above files have LaTeX errors"
+else
+    echo "> No errors found"
+fi
 
-echo "Pushing to repo"
+echo -e "\n> Pushing to GitHub pages"
 cd "$REPO_DIR/public"
 REPO="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git init
