@@ -21,7 +21,7 @@ of them so here is what little I still have.
 * `..`: Above directory.
 * `~`: Home directory.
 
-![AFS Tree](afs_tree.png)
+{{ figure(src="afs_tree.png, title="Simple Heap") }}
 
 # Commands
 
