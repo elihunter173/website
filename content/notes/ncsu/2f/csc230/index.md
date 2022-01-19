@@ -84,7 +84,7 @@ macro value in parentheses, if we're using multiple operators.
 // this expands to: 1 + 1 * 2 = 3
 TIMES_TWO(1 + 1);
 // Better behavior
-#define TIMES_TWO(x) (x * 2)
+#define TIMES_TWO(x) ((x) * 2)
 ```
 
 However, macros do allow for (very limited, very messy) generic programming.
