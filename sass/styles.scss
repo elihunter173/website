@@ -11,14 +11,20 @@ img {
   max-width: 100%;
 }
 
-@media(prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
     color: #fff;
   }
-  a { color: #58a6ff; }
-  a:visited { color: #cc76a4; }
-  a:active { color: #ff0000; }
+  a {
+    color: #58a6ff;
+  }
+  a:visited {
+    color: #cc76a4;
+  }
+  a:active {
+    color: #ff0000;
+  }
 }
 
 // Code color theme based on preferences
@@ -38,6 +44,20 @@ pre {
   overflow-x: auto;
 }
 
+// Taken and tweaked from GitHub
+// TODO: This is to ignore <code> tags in <pre> tags. I'd like a more
+// compatible way to do this
+code:not(pre *) {
+  padding: 0.15em 0.3em;
+  border-radius: 4px;
+  @media (prefers-color-scheme: light) {
+    background-color: rgba(175, 184, 193, 0.2);
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(110 * 0.85, 118 * 0.85, 129 * 0.85, 0.4);
+  }
+}
+
 // Cut off the table if it's too wide and make it scroll
 table {
   display: block;
@@ -49,7 +69,8 @@ table {
 table {
   border-collapse: collapse;
 }
-th, td {
+th,
+td {
   border: 1px solid;
   padding: 0.25em;
 }
@@ -63,7 +84,7 @@ figure {
 }
 
 // Scroll too long mathjax math
-mjx-container[display=true] {
+mjx-container[display="true"] {
   display: inline-grid;
   max-width: 100%;
   overflow-x: auto;
