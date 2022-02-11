@@ -792,7 +792,7 @@ this in some databases using plugins.
 Here's an annotated example of the standard SQL you would run to create a
 database, make a table in it, and add some rows.
 
-```mysql
+```sql
 -- Create a database called coffeemaker
 CREATE SCHEMA coffeemaker;
 -- Start "using" the database, basically cd in
@@ -828,7 +828,7 @@ SELECT * FROM recipes;
 Let's look a little more at those `SELECT` statements. `SELECT` statements are
 how you extract data from a database. They have the general form of
 
-```mysql
+```sql
 SELECT <cols> FROM <tables>
 WHERE <conditions>;
 ```
@@ -836,7 +836,7 @@ WHERE <conditions>;
 Some of the simplest types of queries are where you select multiple columns and
 filter by different columns. Here's annotated examples.
 
-```mysql
+```sql
 -- Select every column from the recipes table.
 SELECT * FROM recipes;
 
@@ -859,7 +859,7 @@ equality). To check for null we use `$columns IS NULL`.
 
 We can do more advanced queries by doing filtering, sorting, and aggregation.
 
-```mysql
+```sql
 -- Filter out all non-unique column combinations
 SELECT DISTINCT <columns> FROM <table>;
 
@@ -921,7 +921,7 @@ respectively, where `purchaser` is a foreign key.
 
 Here's how you create a foreign key
 
-```mysql
+```sql
 CREATE TABLE transactions (
   id BIGINT NOT NULL AUTO_INCREMENT,
   purchase BIGINT,
@@ -990,7 +990,7 @@ as part of a transaction, we would run the following query.
 *Note:* This displays multiple rows when transactions have multiple recipes,
 but the recipe is identical.
 
-```mysql
+```sql
 SELECT *
 FROM
   transactions AS t,

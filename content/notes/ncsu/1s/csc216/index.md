@@ -1375,7 +1375,7 @@ ways to do this, each with trade offs:
   other variables based off your given state and the input.
   * Switching on state doesn't really matter, but Dr. Heckman cares.
 
-```no-highlight
+```nohighlight
 while you have input:
   switch(STATE):
     case STATE_0: ...
