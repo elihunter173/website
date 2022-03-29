@@ -4,17 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>
-      Eli
-      {% if section.title %}
-      | {{section.title}}
-      {% elif page.title %}
-      | {{page.title}}
-      {% endif %}
+      {% block title %}
+        Eli
+        {% if section.title %}
+          | {{section.title}}
+        {% elif page.title %}
+          | {{page.title}}
+        {% endif %}
+      {% endblock title %}
     </title>
     <link rel="stylesheet" href="/styles.css">
 
     {# MathJax during development #}
-    {% if current_url is containing("127.0.0.1") %}
+    {% if current_url and current_url is containing("127.0.0.1") %}
     <script>
       MathJax = {
         tex: {
@@ -37,6 +39,8 @@
       </ul>
     </nav>
 
-    {% block content %}{% endblock content %}
+    <article>
+      {% block content %}{% endblock content %}
+    </article>
   </body>
 </html>
