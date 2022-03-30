@@ -719,8 +719,11 @@ Interaction occurs between a collection of interconnected **social groups**. In
 these groups, people communicate, have common goals/norms, and has a subject
 sense of "we".
 
-**Note:** Categories, people with some common features, aren't necessarily
-social groups.
+{% aside() %}
+Categories, people with some common features, aren't necessarily social groups.
+
+TODO: Remove this example text
+{% end %}
 
 ## Formal Organizations
 

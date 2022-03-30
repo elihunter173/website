@@ -3,7 +3,6 @@ body {
   font-family: sans-serif;
   max-width: 56rem;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 // For some reason max-width on body doesn't apply
@@ -80,6 +79,20 @@ figure {
   figcaption {
     font-size: 1.15rem;
     font-weight: bold;
+  }
+}
+
+aside {
+  padding: 0.3rem 0.8rem;
+  outline: 0.15rem solid;
+  // TODO(elihunter173): Color
+  // TODO(elihunter173): See what other people think of this
+  h3 {
+    text-align: center;
+  }
+  * {
+    // TODO(elihunter173): Tweak these to look good
+    margin: 0.5rem 0;
   }
 }
 
