@@ -4,4 +4,4 @@ title = "CSC 591: Special Topics in Computer Science: Computational Geometry"
 teacher = "Dr. Donald Sheehy"
 +++
 
-[Scanned PDF.](csc591.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1rPOIUAeaKgajgUESVL23VUI39_Rw0R9p/view)

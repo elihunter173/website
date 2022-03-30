@@ -4,4 +4,4 @@ title = "MA 520: Linear Algebra"
 teacher = "Dr. Bojko Bakalov"
 +++
 
-[Scanned PDF.](ma520.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1clg12o1vR-yAqWzho-BcoPACjvPhiTG4/view)

@@ -4,4 +4,4 @@ title = "CSC 333: Automata, Grammars, and Computability"
 teacher = "Dr. Don Sheehy"
 +++
 
-[Scanned PDF.](csc333.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1dKSWD9kK7oYvSC0RSiFk1_0ZlnV8JWni/view)

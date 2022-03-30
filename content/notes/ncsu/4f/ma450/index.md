@@ -4,4 +4,4 @@ title = "MA 450: Methods of Applied Mathematics I"
 teacher = "Dr. Mansoor Haider"
 +++
 
-[Scanned PDF.](ma450.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1VMRIchnuYi05mAipsqmjLJR3meszeSuy/view)

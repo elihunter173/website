@@ -1390,7 +1390,7 @@ return addresses are stored, and all that fun stuff.
 
 Here is some more information about the System V ABI for the Intel386
 architecture. That is the C ABI for the Intel architectures.
-http://sco.com/developers/devspecs/abi386-4.pdf
+<http://sco.com/developers/devspecs/abi386-4.pdf>
 
 ## Instruction Selection
 

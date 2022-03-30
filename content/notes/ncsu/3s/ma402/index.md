@@ -4,4 +4,4 @@ title = "MA 402: Mathematics of Scientific Computing"
 teacher = "Dr. Eric Hallman"
 +++
 
-[Scanned PDF.](ma402.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1bYWLiDqquGahyx7AxLlX7btJXO3ln82j/view)

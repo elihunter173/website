@@ -4,4 +4,4 @@ title = "CSC 416: Introduction to Combinatorics"
 teacher = "Dr. Ernest Stitzinger"
 +++
 
-[Scanned PDF.](csc416.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1-R36xdVih4nrSV4Ug_jQijfS80RYmMIt/view)

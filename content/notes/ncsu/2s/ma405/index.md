@@ -6,7 +6,7 @@ teacher = "Dr. Alina Duca"
 
 # Scanned Notes
 
-[Scanned PDF.](ma405.pdf)
+[Scanned PDF.](https://drive.google.com/file/d/1huWfNdQJyqVl1oXxsIKsSR0Fb3a0CIOF/view)
 
 # Cheatsheet
 
