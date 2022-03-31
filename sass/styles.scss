@@ -25,6 +25,9 @@ img {
   a:active {
     color: #ff0000;
   }
+  svg {
+    color: #fff;
+  }
 }
 
 // Code color theme based on preferences
@@ -60,7 +63,6 @@ code:not(pre *) {
 
 // Cut off the table if it's too wide and make it scroll
 table {
-  display: block;
   max-width: 100%;
   overflow-x: auto;
 }
@@ -68,6 +70,8 @@ table {
 // Make tables look nice
 table {
   border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
 }
 th,
 td {

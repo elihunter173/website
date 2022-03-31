@@ -1,8 +1,6 @@
 +++
 title = "Toothpaste Reviews 2020"
-description = "A silly review of a bunch of travel toothpastes I had lying around."
 date = 2020-09-07
-weight = 100
 +++
 
 For fun during quarantine I decided to go through my collection of travel-size
