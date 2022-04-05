@@ -1,6 +1,6 @@
 +++
-title = "Emoji Language (📜➰😀)"
-description = "A silly conlang with a small vocabulary written entirely in emojis."
+title = "Goofyglyphs (📜▶🤪)"
+description = "A silly conlang with minimal grammar and vocabulary, written entirely in emojis."
 weight = 50
 +++
 
@@ -24,43 +24,43 @@ Every emoji can have a description phrase associated with it. These phrases are
 placed after the emoji they describe and start with a single, special emoji
 indicating what kind descriptor it is.
 
-* ➰ (... ➿): Adjective phrase. This phrase contains a list of adjective-type
-  emojis, followed by a ➿ to indicate the end of the adjective phrase. If you
-  only have one adjective-type emoji, ➿ does not need to be specified.
-  * *Example:* My dog ate a big round chicken = "🐕➰👈🍴🐔➰🆙⚪➿".
-* 〰️: Descriptive clause. Begins a new subject-verb-object clause which
-  specifically describes the affected emoji. Usually, you will include the
-  emoji itself in the clause. "Which", "Where".
-  * *Example:* The dog, which I bought, makes me happy = "🐕〰️👈💳🐕😊👈"
+* ▶ (... ◀): Adjective phrase. This phrase contains a list of
+  adjective-type emojis, followed by a ◀ to indicate the end of the adjective
+  phrase. If you only have one adjective-type emoji, ◀ does not need to be
+  specified.
+  * *Example:* My dog ate a big round chicken = "🐕▶👈🍴🐔▶🆙⚪◀".
+* ⏩: Descriptive clause. Begins a new subject-verb-object clause which
+  specifically describes the affected emoji.
+  * *Example:* The dog, which I bought, makes me happy = "🐕⏩👈💳🐕😊👈"
 * 🚫: Negator. Negates emoji immediately following. This does not have any
   emojis in its descriptor phrase. "Not".
 * 0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟: Identifiers. Since emojis tend to refer to the same
   object/event, you can use identifiers to differentiate between similar
   objects/events.
 
-## Clause Modifiers
+## The Substantive Emoji
 
-Clauses can have modifiers which affect their meaning. These modifiers are
-placed immediately after the clause which they affect.
-
-* ❓: Interrogator. Marks the prior clause as a true-false question. "Right?".
+The 🔼 emoji introduces a new subject-verb-object clause which itself acts where
+the 🔼 is placed.
+* *Example:* I wonder if fish swim like to sailboats (I'm thinking about whether
+  fish swim similarly to boats) = "👈🤔🔼🏊▶🐟↔️❓🏊▶⛵"
 
 ## Verb Modifiers
 
 Verbs in particular can have modifiers. These modifiers are placed after the
-verb they affect, just like with clause modifiers and emoji descriptors.
+verb they affect, just like emoji descriptors.
 
-Currently, the only modifiers are tense modifiers. If tense is unspecified,
-verbs are in their basic form which is roughly present tense. It means
-something which typically occurs, is occurring, or always occurs.
-
-* 🕘: Past. Something which did occur and has now finished.
-  * *Example:* I used to want a meal = "👈🙏🕘🍽️"
-* 🕛: Present. Something which recently began occurring and is still occurring
-  and will continue occurring.
-  * *Example:* I currently want a meal = "👈🙏🕛🍽️"
-* 🕒: Future. Something which has not yet occurred but will later.
-  * *Example:* I will want a meal = "👈🙏🕒🍽️"
+* ❓: Interrogator. Marks the verb-clause as a true-false question.
+  * *Example:* "👉"
+* Tense Modifiers: These indicate the tense of the verb. If unspecified, then
+  verbs are roughly present tense.
+  * 🕘: Past. Something which did occur and has now finished.
+    * *Example:* I used to want a meal = "👈🙏🕘🍽️"
+  * 🕛: Present. Something which recently began occurring and is still occurring
+    and will continue occurring.
+    * *Example:* I currently want a meal = "👈🙏🕛🍽️"
+  * 🕒: Future. Something which has not yet occurred but will later.
+    * *Example:* I will want a meal = "👈🙏🕒🍽️"
 
 ## Conjunctions
 
@@ -81,9 +81,9 @@ to the previous one.
 
 ## Pronouns
 
-* 👈: 1st person singular.
-* 👐: 1st person plural.
+* 👈: 1st person.
 * 👉: 2nd person.
+* 👐: 3rd person.
 * 👇: Demonstrative pronoun (often followed by a descriptive clause),
   essentially can be used like a placeholder for a noun. This is essentially an
   unspecified object/event.
@@ -96,3 +96,13 @@ to the previous one.
 * ✴️: to happen/occur; explosion.
 * 🗣️: to say/write/communicate; speaking/speech.
 * 🧠: to know/remember; knowledge/memory.
+
+# Changelog
+
+* 2022-04-05:
+  * Changed ❓ from a clause modifier to a verb modifier. Removed clause
+    modifier section.
+  * Changed 👐 to from 1st person plural to 3rd person.
+  * Add substantive emoji 🔼.
+  * Change adjective phrase emoji from ➰ and ➿ to ▶️ and ◀️.
+  * Change descriptive phrase emoji from 〰️ to  ⏩.
