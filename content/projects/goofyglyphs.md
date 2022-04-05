@@ -106,3 +106,12 @@ to the previous one.
   * Add substantive emoji 🔼.
   * Change adjective phrase emoji from ➰ and ➿ to ▶️ and ◀️.
   * Change descriptive phrase emoji from 〰️ to  ⏩.
+* 2021-12-26:
+  * Changed descriptive clause emoji from 🔎 to 〰️.
+  * Add adjective phrase ➰ (... ➿).
+  * Classify descriptive clause emoji as emoji descriptor instead of a
+    conjunction.
+  * Remove integrator 🔗.
+  * Add more examples and explain overall grammar more.
+* 2017: Initial version. History has since been lost since it was a Google Keep
+  note on my phone for ~4 years.
