@@ -1,6 +1,6 @@
 +++
 title = "Partial Order Precedence Climbing Parsers"
-date = 2022-03-30
+date = 2022-04-12
 +++
 
 This article discusses a technique for creating precedence climbing parsers
@@ -68,27 +68,34 @@ left side of the operator. Whereas exponentiation `**` is right-associative
 since its rule `ExprP2` includes itself on the right side of the operator.
 
 Translating this grammar into a recursive descent parser (and handling
-left-recursion by "unrolling") gives us the following parser in pseudo-Rust.
+left-recursion with loops) gives us the following parser in pseudo-Rust.
 
 ```rs
-fn parse_expr(parser) -> Expr {
-    let lhs = parse_expr_p1(parser);
-    while parser.eat_token("+") {
-        let rhs = parse_expr_p1(parser);
+fn parse_expr(lexer) -> Expr {
+    let lhs = parse_expr_p1(lexer);
+    while lexer.eat_token("+") {
+        let rhs = parse_expr_p1(lexer);
         lhs = Binary("+", lhs, rhs);
     }
     lhs
 }
 
-fn parse_expr_p1(parser) -> Expr { ... }
+fn parse_expr_p1(lexer) -> Expr { ... }
 
-fn parse_expr_p2(parser) -> Expr { ... }
+fn parse_expr_p2(lexer) -> Expr {
+    let lhs = atom(lexer);
+    if lexer.eat_token("**") {
+        let rhs = parse_expr_p2(lexer);
+        lhs = Binary("**", lhs, rhs);
+    }
+    Ok(lhs)
+}
 
-fn atom(parser) -> Expr {
-    match parser.next() {
+fn atom(lexer) -> Expr {
+    match lexer.next() {
         "(" => {
-            let expr = parse_expr(parser);
-            parser.eat_token(")");
+            let expr = parse_expr(lexer);
+            lexer.eat_token(")");
             expr
         }
         num => Number(num),
@@ -103,12 +110,10 @@ correct.
 
 # Enter: Precedence Climbing (a.k.a. Pratt Parsing)
 
-One of the most popular ways to fix the issue of operator precedence while still
-leaving you a clean and intuitive grammar is by using a technique called
-precedence-climbing.
-
-Here, we keep our clean grammar from earlier but include an additional table
-defining each operator's precedence and associativity.
+One way to avoid twisting our grammar into a mess of `Expr`, `ExprP1`, ...,
+`ExprPN` like we did previously is to include an additional table defining each
+operator's numerical precedence and associativity, alongside our original clean
+and intuitive grammar from earlier.
 
 ```bnf
 Expr ::= Expr '+' Expr
@@ -123,16 +128,45 @@ Expr ::= Expr '+' Expr
 |----------|---------------|---------------|
 | `+`      | 1             | Left          |
 | `*`      | 2             | Left          |
-| `**`     | 5             | Right         |
+| `**`     | 3             | Right         |
 {% end %}
 
-The way to think of this algorithm is that your parser now has two different
-parts. A recursive part and a loop part.
+Now with this additional table, we need to switch away from our recursive
+descent parsing strategy and into something which knows how to use this
+precedence table. The most popular parsing strategy which does this is called
+**precedence climbing**, or alternatively **Pratt parsing**.
+
+With a recursive descent parser, we had a different function for every
+precedence level and every function/level would only recurse into either a
+higher precedence function or itself. We use a similar idea for a precedence
+climbing parser except instead of having multiple functions each handling a
+single precedence level, we have one function which takes the precedence level
+as an argument.
+
+```rs
+fn parse_expr(lexer, min_precedence) -> Expr {
+    let lhs = parse_unary(lexer);
+    loop {
+        let op = lexer.peek();
+        ... // Should we handle this op?
+        lexer.next();
+        let rhs = parse_expr(lexer, precedence_of(op));
+        lhs = Binary(op, lhs, rhs);
+    }
+    lhs
+}
+```
+
+The general shape of a precedence climbing parser
 
 TODO: Include flamegraph / stack diagram of what I mean.
 
 Then, our algorithm goes from the typical recursive descent to the following
 form.
+
+# Problem: Unclear Precedence Relationships
+
+# Solution: Partial Orders
 
 # Old Stuff
 
