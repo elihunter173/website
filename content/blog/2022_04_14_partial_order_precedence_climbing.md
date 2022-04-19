@@ -1,6 +1,6 @@
 +++
 title = "Partial Order Precedence Climbing Parsers"
-date = 2022-04-12
+date = 2022-04-14
 +++
 
 This article discusses a technique for creating precedence climbing parsers
@@ -8,13 +8,14 @@ This article discusses a technique for creating precedence climbing parsers
 assumes you have a basic familiarity with parsing techniques. For example, I
 won't explain BNF syntax or how to write a recursive descent parser.
 
+TODO: Include link to all code examples.
+
 # Background
 
 Suppose you want to create a programming language with arithmetic expressions.
 So for example you have numbers, operators for addition `+`, multiplication `*`,
 and exponentiation `**`, and you allow parenthesized expressions. We'll leave
-off subtraction `-`, division `/`, and other operators in this post for
-simplicity.
+off subtraction `-`, division `/`, and other operators for now for simplicity.
 
 The BNF grammar you'd *like* to write looks like this.
 
@@ -28,7 +29,7 @@ Expr ::= Expr '+' Expr
 
 But alas, this grammar is woefully incapable of handling the expressions your
 users throw at it and people start complaining that even expressions as simple
-as `1 + 2 * 3` result in an ambiguous parse tree. Or alternatively, your parser
+as `1 + 2 * 3` result in an ambiguous parse tree. Or maybe, your parser
 generator complains that this grammar is ambiguous and then doesn't really
 explain why.
 
@@ -42,7 +43,7 @@ or `1 + (2 * 3)`.
 
 Intuitively, people expect that multiplication `*` *binds tighter* (i.e. has a
 higher precedence) than addition `+`. So, they expect `1 * 2 + 3` to be parsed
-as `1 + 2 + 3` instead of `1 + 2 * 3`. Further, they expect addition `+` and
+as `(1 * 2) + 3` instead of `1 * (2 + 3)`. Further, they expect addition `+` and
 multiplication `*` to be left associative and `**` to be right associative. Or
 in other words, people from their experience with math expect `2**3**4` to be
 equal to `2**(3**4)` and not `(2**3)**4`.
@@ -68,7 +69,7 @@ left side of the operator. Whereas exponentiation `**` is right-associative
 since its rule `ExprP2` includes itself on the right side of the operator.
 
 Translating this grammar into a recursive descent parser (and handling
-left-recursion with loops) gives us the following parser in pseudo-Rust.
+left-recursion with loops) gives us the following code in pseudo-Rust.
 
 ```rs
 fn parse_expr(lexer) -> Expr {
@@ -83,15 +84,15 @@ fn parse_expr(lexer) -> Expr {
 fn parse_expr_p1(lexer) -> Expr { ... }
 
 fn parse_expr_p2(lexer) -> Expr {
-    let lhs = atom(lexer);
+    let lhs = parse_atom(lexer);
     if lexer.eat_token("**") {
         let rhs = parse_expr_p2(lexer);
         lhs = Binary("**", lhs, rhs);
     }
-    Ok(lhs)
+    lhs
 }
 
-fn atom(lexer) -> Expr {
+fn parse_atom(lexer) -> Expr {
     match lexer.next() {
         "(" => {
             let expr = parse_expr(lexer);
@@ -136,19 +137,21 @@ descent parsing strategy and into something which knows how to use this
 precedence table. The most popular parsing strategy which does this is called
 **precedence climbing**, or alternatively **Pratt parsing**.
 
-With a recursive descent parser, we had a different function for every
-precedence level and every function/level would only recurse into either a
-higher precedence function or itself. We use a similar idea for a precedence
-climbing parser except instead of having multiple functions each handling a
-single precedence level, we have one function which takes the precedence level
-as an argument.
+With our recursive descent parser, we had a different function for every
+precedence level and every function would only recurse into either a higher
+precedence function or itself. We use a similar idea for precedence climbing
+parsers except instead of having multiple functions each handling a single
+precedence level, we have one function which takes the precedence level as an
+argument.
+
+Here's what a precedence climbing parser looks like again in pseudo-Rust.
 
 ```rs
 fn parse_expr(lexer, min_precedence) -> Expr {
-    let lhs = parse_unary(lexer);
+    let lhs = parse_atom(lexer);
     loop {
-        let op = lexer.peek();
-        ... // Should we handle this op?
+        let op = lexer.peek_op();
+        ... // Should we quit or start a sub-parser at op's precedence?
         lexer.next();
         let rhs = parse_expr(lexer, precedence_of(op));
         lhs = Binary(op, lhs, rhs);
@@ -157,12 +160,41 @@ fn parse_expr(lexer, min_precedence) -> Expr {
 }
 ```
 
-The general shape of a precedence climbing parser
+With this strategy, each `parse_expr()` call expects to start directly on a
+number, or more generally an "atom" in the grammar. It then peeks at the next
+operator and decides, based off of what operator it is, whether it should create
+a binary expression and start a sub-parser to build the right hand side `rhs`.
+
+So for example, if `parse_expr()` is called with the precedence of addition `+`
+and it sees a multiplication operator `*`, then it should start a sub-parser.
+This sub-parser would then go on to parse every operator up to *but not
+including* multiplication `*`.
+
+$$1 + \\; \underbrace{2}\_{lhs} \enspace \underbrace{*}\_{op} \enspace \underbrace{3**4}\_{rhs} \\; * 5 + 6$$
+
+$$1 + \\; \underbrace{2 * 3**4}\_{lhs} \enspace \underbrace{*}\_{op} \enspace \underbrace{5}\_{rhs} \\; + 6$$
+
+Re-using this example, let's back out to the original `parse_expr()`. To parse a
+top-level expression, we always call `parse_expr()` with the base precedence of
+0. This initial `parse_expr()` call is positioned on `1` and finds `op` to be
+addition `+`. It then starts our sub-parser from earlier
+
+$$\underbrace{1}\_{lhs} \enspace \underbrace{+}\_{op} \enspace \underbrace{2 * 3**4 * 5}\_{rhs} \\; + 6$$
+
+$$\underbrace{1 + 2 * 3**4 * 5}\_{lhs} \enspace \underbrace{+}\_{op} \enspace \underbrace{6}\_{rhs}$$
+
+CUT
+
+Now you'll notice that I left the "Should we start a sub-parser at op's
+precedence?" code out. That's because that question is hard to answer without
+first understanding the overall structure of how precedence climbing works.
+
+In general, we want to start a sub-parser if `op`'s precedence is higher than
+`min_precedence`. This sub-parser will parse everything it can into `rhs`
 
 TODO: Include flamegraph / stack diagram of what I mean.
 
-Then, our algorithm goes from the typical recursive descent to the following
-form.
+left-associative expression we're building up `lhs`.
 
 # Problem: Unclear Precedence Relationships
 
