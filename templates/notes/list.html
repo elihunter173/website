@@ -6,33 +6,34 @@
 <h1 class="title">{{ ncsu.title }}</h1>
 
 {% for path in ncsu.subsections %}
-  {% set section = get_section(path=path) %}
-  <h2>{{section.title}}</h2>
-  {{ section.content | safe }}
+  {% set semester = get_section(path=path) %}
+  <h2>{{semester.title}}</h2>
+  {{ semester.content | safe }}
   <ul>
-    {% for page in section.pages | sort(attribute="title") %}
-      <li><a href="{{ page.path | safe }}">{{ page.title }}</a></li>
+    {% for class in semester.pages | sort(attribute="title") %}
+      <li><a href="{{ class.path | safe }}">{{ class.title }}</a></li>
     {% endfor %}
   </ul>
 {% endfor %}
-
-{% if section.pages|length > 0 %}
-  <h2>Miscellaneous</h2>
-  <ul>
-    {% for page in section.pages | sort(attribute="title") %}
-    <li><a href="{{ page.path | safe }}">{{ page.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endif %}
 
 {% set talks = get_section(path="notes/talks/_index.md") %}
 <h1 class="title">{{ talks.title }}</h1>
 {{ talks.content | safe }}
 
 <ul>
-  {% for page in talks.pages | sort(attribute="date") %}
-  <li><a href="{{ page.path | safe }}">{{ page.date }} &ndash; {{ page.title }}</a></li>
+  {% for talk in talks.pages | sort(attribute="date") %}
+  <li><a href="{{ talk.path | safe }}">{{ talk.date }} &ndash; {{ talk.title }}</a></li>
   {% endfor %}
 </ul>
+
+{% if section.pages|length > 0 %}
+<h1 class="title">Misc. Notes</h1>
+{{ section.content | safe }}
+<ul>
+  {% for page in section.pages | sort(attribute="title") %}
+  <li><a href="{{ page.path | safe }}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
 
 {% endblock content %}
