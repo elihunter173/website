@@ -1,13 +1,11 @@
 +++
 +++
 
-Hi! My name is Eli. I'm a computer scientist with a degree in computer science
-and applied mathematics from NC State University. I used to serve as the software
-team lead and vice president of the [Aerial Robotics Club at NC
-State](https://aerialroboticsclub.com/).
+Hi! My name is Eli. I like to play with robots and programming languages, and
+I'm a Software Engineer at Datadog.
 
-I publish my notes for all of my classes here as well as occasional technical
-blog posts.
+I publish all my notes from my time at NC State here as well as occasional blog
+posts.
 
 If you want to contact/follow me for whatever reason, here's my contact
 gubbins:
