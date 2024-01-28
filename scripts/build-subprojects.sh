@@ -24,7 +24,7 @@ cargo build --release --target wasm32-unknown-unknown
 wasm-bindgen --no-typescript --target web \
     --out-dir ./out/ \
     --out-name "game" \
-    ./target/wasm32-unknown-unknown/web/game.wasm
+    ./target/wasm32-unknown-unknown/web/city-game.wasm
 cat << EOF > ./out/index.html
 <!doctype html>
 <html lang="en">
