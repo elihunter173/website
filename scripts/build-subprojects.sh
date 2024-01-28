@@ -21,7 +21,7 @@ cp -r ./dist "$REPO_DIR/static/asteroids"
 
 eval `ssh-agent -s`
 # ssh-add - <<< '${{ secrets.CITY_GAME_PRIVATE_DEPLOY_KEY }}'
-echo '$CITY_GAME_PRIVATE_DEPLOY_KEY'
+echo "$CITY_GAME_PRIVATE_DEPLOY_KEY"
 subproject city-game
 cargo build --release --target wasm32-unknown-unknown
 wasm-bindgen --no-typescript --target web \
