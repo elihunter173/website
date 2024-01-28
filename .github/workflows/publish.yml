@@ -3,6 +3,10 @@ on:
     branches: ["main"]
 
 name: Build and deploy on push
+
+env:
+  RUST_CHANNEL: stable
+
 jobs:
   build:
     name: Deploy website
@@ -13,8 +17,15 @@ jobs:
       with:
         node-version: '16'
 
-    - name: Install npm
+    - name: Install asteroids deps
       uses: actions/setup-node@v2
+
+    - name: Install city-game deps
+      run: |
+        rustup update --no-self-update ${{ env.RUST_CHANNEL }}
+        rustup default ${{ env.RUST_CHANNEL }}
+        rustup target install wasm32-unknown-unknown
+        cargo install wasm-bindgen-cli
 
     - name: Build website
       run: ./scripts/build.sh
