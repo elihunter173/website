@@ -6,22 +6,20 @@ HERE="$(dirname "${BASH_SOURCE[0]}")"
 cd "$HERE"
 REPO_DIR="$(git rev-parse --show-toplevel)"
 
-subproject() {
-    proj="$1"
-    dir="$(mktemp -d -t "$proj".XXX)"
-    echo "Building subproject [directory=$dir]"
-    git clone "https://github.com/elihunter173/$proj.git" "$dir"
-    cd "$dir"
-}
-
-subproject asteroids-3d
+ASTEROIDS="$(mktemp -d -t asteroids-3d.XXX)"
+echo "Building asteroids-3d [directory=$ASTEROIDS]"
+git clone https://github.com/elihunter173/asteroids-3d.git "$ASTEROIDS"
+cd "$ASTEROIDS"
 npm install --production
 npm run build
 cp -r ./dist "$REPO_DIR/static/asteroids"
 
+CITY_GAME="$(mktemp -d -t city-game.XXX)"
+echo "Building city-game [directory=$CITY_GAME]"
 eval `ssh-agent -s`
 ssh-add - <<< "$CITY_GAME_PRIVATE_DEPLOY_KEY"
-subproject city-game
+git clone git@github.com:elihunter173/city-game.git "$CITY_GAME"
+cd "$CITY_GAME"
 cargo build --release --target wasm32-unknown-unknown
 wasm-bindgen --no-typescript --target web \
     --out-dir ./out/ \
