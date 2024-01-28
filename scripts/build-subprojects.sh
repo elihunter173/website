@@ -20,7 +20,7 @@ eval `ssh-agent -s`
 ssh-add - <<< "$CITY_GAME_PRIVATE_DEPLOY_KEY"
 git clone git@github.com:elihunter173/city-game.git "$CITY_GAME"
 cd "$CITY_GAME"
-cargo build --release --target wasm32-unknown-unknown
+cargo build --profile web --target wasm32-unknown-unknown
 wasm-bindgen --no-typescript --target web \
     --out-dir ./out/ \
     --out-name "game" \
