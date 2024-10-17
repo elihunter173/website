@@ -6,6 +6,11 @@ body {
   padding: 0 1rem;
 }
 
+// Doesn't work if on body element :shrug: https://www.matuzo.at/blog/2022/100daysof-day25
+html {
+  scrollbar-gutter: stable;
+}
+
 // For some reason max-width on body doesn't apply
 img {
   max-width: 100%;
