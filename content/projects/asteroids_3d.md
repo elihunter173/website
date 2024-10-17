@@ -4,6 +4,4 @@ description = "A 3D version of the classic Asteroids game made initially for my 
 weight = 1
 +++
 
-TODO: Talk more about how I did this and what I learned.
-
 [Play here](/asteroids/).
