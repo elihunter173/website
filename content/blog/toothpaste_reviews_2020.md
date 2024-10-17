@@ -1,6 +1,5 @@
 +++
 title = "Toothpaste Reviews 2020"
-description = "A silly review of a bunch of travel toothpastes I had lying around."
 date = 2020-09-07
 +++
 

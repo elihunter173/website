@@ -4,9 +4,11 @@
 <h1 class="title">{{ section.title }}</h1>
 {{ section.content | safe }}
 
+<ul style="list-style: none;">
 {% for page in section.pages %}
-<h2><a href="{{ page.path | safe }}">{{ page.title }}</a></h2>
-{{ page.description }}
+  <li>{{ page.date }} – <a href="{{ page.path | safe }}">{{ page.title }}</a><li>
 {% endfor %}
+</ul>
+
 
 {% endblock content %}
