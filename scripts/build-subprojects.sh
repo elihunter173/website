@@ -27,33 +27,3 @@ git clone --depth=1 git@github.com:elihunter173/weiding_portfolio.git "$WEIDING"
 rm -rf "$WEIDING/.git"
 cp -r "$WEIDING" "$REPO_DIR/static/weiding"
 zip -r "$REPO_DIR/static/weiding/site.zip" "$WEIDING"
-
-
-CITY_GAME="$(mktemp -d -t city-game.XXX)"
-echo "Building city-game [directory=$CITY_GAME]"
-ssh-add - <<< "$CITY_GAME_PRIVATE_DEPLOY_KEY"
-git clone git@github.com:elihunter173/city-game.git "$CITY_GAME"
-cd "$CITY_GAME"
-git reset --hard a0e84fe9269d6397d25c2c68f7d6fa9d12280b93
-cargo build --profile web --target wasm32-unknown-unknown
-wasm-bindgen --no-typescript --target web \
-    --out-dir ./out/ \
-    --out-name "game" \
-    ./target/wasm32-unknown-unknown/web/city-game.wasm
-cat << EOF > ./out/index.html
-<!doctype html>
-<html lang="en">
-<body style="margin: 0px;">
-  <script type="module">
-    import init from './game.js'
-    init().catch((error) => {
-      if (!error.message.startsWith("Using exceptions for control flow, don't mind me. This isn't actually an error!")) {
-        throw error;
-      }
-    });
-  </script>
-</body>
-</html>
-EOF
-cp -r ./assets ./out/.
-cp -r ./out "$REPO_DIR/static/the-merp-experiment"
