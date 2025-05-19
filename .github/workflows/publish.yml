@@ -7,6 +7,7 @@ name: Build and deploy on push
 env:
   RUST_CHANNEL: stable
   CITY_GAME_PRIVATE_DEPLOY_KEY: "${{ secrets.CITY_GAME_PRIVATE_DEPLOY_KEY }}"
+  WEIDING_PRIVATE_DEPLOY_KEY: "${{ secrets.WEIDING_PRIVATE_DEPLOY_KEY }}"
 jobs:
   build:
     name: Deploy website
