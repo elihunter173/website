@@ -1,0 +1,132 @@
+#lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  line-height: 0;
+}
+
+#lightbox img {
+  width: auto;
+  height: auto;
+}
+#lightbox a img {
+  border: none;
+}
+
+#outerImageContainer {
+  position: relative;
+  background-color: #51c17a;
+  margin: 0 auto;
+}
+
+#imageContainer {
+  padding: 10px;
+  /* This is necessary for the hoverNav to be overlaid on the image using position: absolute. */
+  position: relative; 
+}
+
+#loading {
+  position: absolute;
+  top: 5;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+#hoverNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+#hoverNav a {
+  outline: none;
+}
+
+#prevLink,
+#nextLink {
+  width: 49%;
+  height: 100%;
+  background-image: url(data:image/gif;base64,AAAA); /* Trick IE into showing hover */
+  display: block;
+}
+#prevLink {
+  left: 0;
+  float: left;
+}
+#nextLink {
+  right: 0;
+  float: right;
+}
+#prevLink:hover,
+#prevLink:visited:hover {
+  background-image: url(../images/icons/prev.svg);
+  background-size: 80px;
+  /* Because of the image details it's hard to center this visually. 50% looks
+   * too low but this is about right.
+  */
+  background-position: left 47.5%;
+  background-repeat: no-repeat;
+}
+
+#nextLink:hover,
+#nextLink:visited:hover {
+  background-image: url(../images/icons/next.svg);
+  background-size: 80px;
+  /* Because of the image details it's hard to center this visually. 50% looks
+   * too low but this is about right.
+   */
+  background-position: right 47.5%;
+  background-repeat: no-repeat;
+}
+
+#imageDataContainer {
+  font: 16px Helvetica, sans-serif;
+  background-color: #fff;
+  margin: 0 auto;
+  line-height: 1.4em;
+  overflow: auto;
+}
+
+#imageData {
+  padding: 8px 10px 0 10px;
+  color: #070603;
+}
+#imageData #imageDetails {
+  width: 90%;
+  float: left;
+  text-align: left;
+}
+#imageData #caption {
+  font-weight: bold;
+  color: blue;
+}
+#imageData #numberDisplay {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+}
+#imageData #bottomNavClose {
+  float: right;
+}
+#imageData #bottomNavClose img {
+  width: 32px;
+  height: 32px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
