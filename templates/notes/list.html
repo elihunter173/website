@@ -9,10 +9,18 @@
   {% set semester = get_section(path=path) %}
   <h2>{{semester.title}}</h2>
   {{ semester.content | safe }}
-  <ul>
-    {% for class in semester.pages | sort(attribute="title") %}
-      <li><a href="{{ class.path | safe }}">{{ class.title }}</a></li>
-    {% endfor %}
+  <ul class="no-bullets">
+  {% for class in semester.pages | sort(attribute="title") %}
+    {% set parts = class.title | split(pat=": ") %}
+    {% set code = parts | first %}
+    {% set code_len = code | length %}
+    {% set name = parts | last %}
+    <li>
+      {# pad with nonbreaking spaces to make the code the max width (7 chars) #}
+      <span class="mono">{% for _ in range(end=7 - code_len) %}&nbsp;{% endfor %}{{ code }}</span>
+      <a href="{{ class.path | safe }}">{{ name }}</a>
+    </li>
+  {% endfor %}
   </ul>
 {% endfor %}
 

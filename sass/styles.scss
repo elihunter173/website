@@ -42,6 +42,10 @@ h1.title {
   margin-bottom: 0.5rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+}
+
 // NOTE: This does not include the right padding when scrolling...
 pre {
   padding: 0.5rem;
@@ -61,6 +65,10 @@ code:not(pre *) {
   @media (prefers-color-scheme: dark) {
     background-color: rgba(110 * 0.85, 118 * 0.85, 129 * 0.85, 0.4);
   }
+}
+
+code, pre, .mono {
+  font-family: Hack;
 }
 
 // Cut off the table if it's too wide and make it scroll
@@ -118,4 +126,11 @@ nav {
 
 video {
   width: 100%;
+}
+
+// Remove bullets from lists
+ul.no-bullets {
+  list-style: none;
+  // Override the default padding-inline-start of 40px
+  padding-inline-start: 0;
 }
