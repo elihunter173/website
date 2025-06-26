@@ -102,7 +102,7 @@ to the previous one.
 * 2022-04-05:
   * Changed ❓ from a clause modifier to a verb modifier. Removed clause
     modifier section.
-  * Changed 👐 to from 1st person plural to 3rd person.
+  * Changed 👐 from 1st person plural to 3rd person.
   * Add substantive emoji 🔼.
   * Change adjective phrase emoji from ➰ and ➿ to ▶️ and ◀️.
   * Change descriptive phrase emoji from 〰️ to  ⏩.

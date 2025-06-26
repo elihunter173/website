@@ -62,7 +62,7 @@ good toothpastes.
 
 Oh Aquafresh, I never used you before now and I'm glad. This was the hardest
 paste to spread (much worse than the gel above!) and hardly foamed at all once
-you actually got it all over your teach. The taste was the harshest mint I
+you actually got it all over your teeth. The taste was the harshest mint I
 tried and didn't even leave your mouth feeling clean. It wasn't actively
 unpleasant to use but there are so many better options.
 

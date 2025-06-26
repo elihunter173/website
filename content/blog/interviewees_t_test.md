@@ -9,7 +9,7 @@ This always sort of bothers me because when you delete a test the first time it 
 
 The easy and practical way to avoid these pitfalls is to keep your old tests and copy-and-paste a new one instead of rewriting the same one over and over. But I'm going to propose a swaggier solution: the **T** test framework.
 
-The test framework is called T because it's meant to be _extremely_ short and easy to understand (plus it makes [joke in the the title work](https://en.wikipedia.org/wiki/Student%27s_t-test)). My hope is that you can read this post and then weeks later reproduce the test framework from memory and explain how it works in under a minute.
+The test framework is called T because it's meant to be _extremely_ short and easy to understand (plus it makes [joke in the title work](https://en.wikipedia.org/wiki/Student%27s_t-test)). My hope is that you can read this post and then weeks later reproduce the test framework from memory and explain how it works in under a minute.
 
 You can find the T framework for all the programming languages I feel comfortable doing interviews in—Rust, Python, and C—with their output below the code. But it should be easy to write versions in your programming language of choice.
 
