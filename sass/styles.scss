@@ -5,6 +5,15 @@ body {
   margin: 0 auto 6rem;
 }
 
+.anchor-link {
+  font-size: 1.25em;
+  vertical-align: 0.04em;
+  text-decoration: none;
+  // TODO: Make this a lighter color except for when hovered
+}
+
+// TODO: Make h2 smaller and h1 larger
+
 article {
   padding: 0 1rem;
 }
@@ -51,6 +60,10 @@ h3,
 h4,
 h5,
 h6 {
+  // Other possible fonts:
+  // - ZCOOL KuaiLe
+  // - Hachi Maru Pop (Japanese)
+  // - Stick (Japanese)
   font-family: "ZCOOL KuaiLe", sans-serif;
 }
 
