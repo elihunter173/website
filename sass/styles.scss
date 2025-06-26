@@ -3,6 +3,9 @@ body {
   font-family: sans-serif;
   max-width: 50rem;
   margin: 0 auto 6rem;
+}
+
+article {
   padding: 0 1rem;
 }
 
@@ -42,7 +45,12 @@ h1.title {
   margin-bottom: 0.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "ZCOOL KuaiLe", sans-serif;
 }
 
@@ -67,7 +75,9 @@ code:not(pre *) {
   }
 }
 
-code, pre, .mono {
+code,
+pre,
+.mono {
   font-family: Hack;
 }
 
@@ -112,6 +122,33 @@ nav {
   font-family: "ZCOOL KuaiLe", sans-serif;
   font-weight: 400;
   font-style: normal;
+  // This effect was inspired by https://www.arp242.net/
+  background-color: #d8d8d8;
+
+  // yes silly edges
+  // padding: 0 20px;
+  // clip-path: polygon(
+  //   4px 0px, // top left
+  //   calc(100% - 4px) 0px, // top right
+  //   calc(100% - 0.5rem) 10rem,
+  //   100% 100%, // bottom right
+  //   20% calc(100% - 9px),
+  //   2px 100%, // bottom left
+  //   0px 80%,
+  //   8px 30%,
+  // );
+
+  // no silly edges
+  padding: 0 1.25rem;
+  clip-path: polygon(
+    0px 0px, // top left
+    100% 0px, // top right
+    100% calc(100% - 0.2rem), // bottom right
+    75% calc(100% - 0.1rem),
+    40% calc(100% - 0.6rem),
+    20% 100%,
+    0 calc(100% - 0.4rem), // bottom left
+  );
 
   // Push the list of links to the right side of the screen
   ul {

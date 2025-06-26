@@ -1,5 +1,5 @@
 +++
-title = "Goofyglyphs (📜▶🤪)"
+title = "Goofyglyphs"
 description = "A silly conlang with minimal grammar and vocabulary, written entirely in emojis."
 weight = 50
 +++
