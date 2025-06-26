@@ -60,7 +60,7 @@ signed positive and unsigned numbers the same representation for most numbers.
 ```
 
 The rules for addition are:
-* If the signs are the sames, add the digits as if they were unsigned. The
+* If the signs are the same, add the digits as if they were unsigned. The
   result has the sign of the operands.
 * If the magnitudes are different, subtract the digits of the smaller number
   from the digits of the larger number. The result has the sign of the larger
@@ -1143,7 +1143,7 @@ sqrt:
 
   ; restore r1-r3, load the pc with the original
   ; link register
-  ldmia sp!, {r1-r3, pc}  ; 
+  ldmia sp!, {r1-r3, pc}  ;
 
 .data
 n: .word 625

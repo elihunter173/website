@@ -52,7 +52,7 @@ It is important to realize society changes people and people change society.
 
 ### Societal Concepts
 
-* Issues: Largely felt troubles coming form a common origin in society. Hard to
+* Issues: Largely felt troubles coming from a common origin in society. Hard to
   pinpoint specific cause.
   * Synonyms: Public Issues of Social Structure.
   * Parallel: Troubles.
@@ -67,7 +67,7 @@ It is important to realize society changes people and people change society.
 ### Individual Concepts
 
 * Troubles: Privately felt difficulties
-  * Synonyms: Personal Troubles of Mileau (i.e. social setting of troubles)
+  * Synonyms: Personal Troubles of Milieu (i.e. social setting of troubles)
   * Parallel: Issues.
   * Examples: Divorce (rate), student loan debt, unemployment (in
   recession/depression), obesity.
@@ -121,7 +121,7 @@ Here's a broad overview:
   * Inductive (research to theory/hypotheses)
   * Methods: participant observation, focus groups, in-depth interviews (i.e.
     text-based data)
-  * Asks “what” or “how”
+  * Asks "what" or "how"
   * Deep
   * Not generalizable
 

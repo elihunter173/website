@@ -52,7 +52,7 @@ store** to try to get the best of both worlds.
 
 Programs normally exhibit **temporal locality**, where they are likely to
 access things accessed recently, and **spatial locality**, where they are like
-to access things nearby things accessed recently.
+to access things near things accessed recently.
 
 Since we normally both *read* and *write* to the cache, the backing store may
 become out of date. To resolve this, we need a write-policy to keep them in

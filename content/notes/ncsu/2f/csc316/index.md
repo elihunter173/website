@@ -26,7 +26,7 @@ teacher = "Dr. Jason King"
   * Deterministic Data Structures: Data structures where the same actions
     always produces the same results.
   * Probabilistic Data Structures: Data structures where the same actions do
-    not always produces the same results.
+    not always produce the same results.
 * Theory of Algorithms: Designing and analyzing computational procedures.
 * Complexity Theory: Classifying problems based on their runtime/difficulty.
   Sometimes proving you can't have an efficient implementation.
@@ -1714,7 +1714,7 @@ There exist the following guidelines/recommendations for implementing
     * If the field is a `float`, compute `Float.floatToIntBits(f)`.
     * If the field is a `double`, compute `Double.doubleToLongBits(f)`, and
       then hash the resulting long as above
-    * If the field is an object reference and this class’s equals method
+    * If the field is an object reference and this class's equals method
       compares the field by recursively invoking equals, recursively invoke
       hashCode on the field. If the value of the field is null, return 0 (or
       some other constant, but 0 is traditional)
@@ -1988,9 +1988,9 @@ thing as the key.
 | `add(e)`       | Adds the element e to the set (if e is not already present in the set).                                       |
 | `remove(e)`    | Removes and returns the element e from the set (if e is present in the set).                                  |
 | `contains(e)`  | Returns true if the set contains the element e; otherwise, returns false.                                     |
-| `addAll(T)`    | Updates the current set to also include all elements contained in the set T (also called “union”).            |
-| `retainAll(T)` | Updates the current set to keep only those elements that are also elements in T (also called “intersection”). |
-| `removeAll(T)` | Updates the current set to remove any of the elements that are contained in T (also called “subtraction”).    |
+| `addAll(T)`    | Updates the current set to also include all elements contained in the set T (also called "union").            |
+| `retainAll(T)` | Updates the current set to keep only those elements that are also elements in T (also called "intersection"). |
+| `removeAll(T)` | Updates the current set to remove any of the elements that are contained in T (also called "subtraction").    |
 | `size()`       | Returns the number of elements in the set.                                                                    |
 | `isEmpty()`    | Returns true if the set contains no elements.                                                                 |
 

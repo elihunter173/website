@@ -53,9 +53,9 @@ teacher = "Dr. Sarah Heckman"
 ## Academic Integrity
 
 * We follow the [ACM Code of Ethics and Professionalism](https://www.acm.org/code-of-ethics)
-* All work must be own.
+* All work must be your own.
 * Cheating results in -100 for assignment.
-* TA's are "Peer Teaching Fellows"
+* TAs are "Peer Teaching Fellows"
 
 ## Main Topics
 
@@ -177,7 +177,7 @@ teacher = "Dr. Sarah Heckman"
   ensure it.
   * *Java Invariants:* If you override `equals()`, you should also override
   `hashCode()`
-  * `hashCode()`: Hashes an objects
+  * `hashCode()`: Hashes an object
 
 ### Cloning
 

@@ -163,7 +163,7 @@ always correct and we have algorithms to optimize them later.
 
 ## Parser
 
-The cheif job of the parser is to product an **abstract syntax tree** (AST). To
+The chief job of the parser is to produce an **abstract syntax tree** (AST). To
 do this, the parser uses a formal grammer. Sometimes, finalizing the abstract
 syntax tree (e.g. in cases of overloading), we need to do context sensitive
 analysis (e.g. type analysis) that cannot be done by the parser.
@@ -1470,7 +1470,6 @@ scheduling**. It is done as follows.
 1. Build a dependence graph $G$.
 1. Compute a priority function over the nodes in $G$. (The priority function
    determines the latency of the instruction.)
-1. 
 
 *What are the weaknesses of this technique?* We can't determine what branch
 will be taken, even which branch will be taken most of the time. We can't

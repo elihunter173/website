@@ -119,7 +119,7 @@ small cheatsheet.
 
 ## Principles
 
-* Archimede's Principle (for bouyancy): The bouyant force is the weight of the fluid displaced.
+* Archimedes' Principle (for buoyancy): The buoyant force is the weight of the fluid displaced.
 
 ## Laws
 
@@ -146,7 +146,7 @@ small cheatsheet.
 | Weight     | $W = mg = m * \frac{GM_{body}}{r^2}$ | Assumes uniform gravitational field.                  |
 | Normal     | $N = F_{\perp_{inside}}$             | The force that prevents two bodies from intersecting. |
 | Spring     | $F_{sp} = -kx$                       | $k$ is the unique spring constant.                    |
-| Bouyant    | $B = \rho_{fluid}gV_{disp}$          | For fully submered bodies, $V_{disp} = V_{obj}$.      |
+| Buoyant    | $B = \rho_{fluid}gV_{disp}$          | For fully submerged bodies, $V_{disp} = V_{obj}$.     |
 
 # Energy
 

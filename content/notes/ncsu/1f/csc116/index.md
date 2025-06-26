@@ -13,7 +13,7 @@ of them so here is what little I still have.
 
 * `man COMMAND`: Show the manual entry for that command.
 * Absolute Path: begins at root, starts with `/`
-* Relative Path: begins at current directory, doesn’t start with anything.
+* Relative Path: begins at current directory, doesn't start with anything.
 * `\`: Escape character, allows for special characters to be encoded.
 * `-`: Single character / short flag.
 * `--`: Multiple character / long flag.
@@ -42,7 +42,7 @@ of them so here is what little I still have.
   directory.
   * `-R`/`-r`: recursive copy (copy directory and all subdirectories)
 * `rm PATH`: Remove file.
-  * `-i`: Interactive. Asks for conformation.
+  * `-i`: Interactive. Asks for confirmation.
   * `-r`: Recursive. Removes all files and child directories.
   * `-f`: Force. Ignore all failures and go ahead at all costs.
 * `chmod PERMISSIONS PATH`: Change the permissions of `PATH`. If `PERMISSIONS`
@@ -153,7 +153,7 @@ listed as `foo`, you run `git foo`.
   specify `BRANCH` then you're using the "upstream" branch, that is the branch
   on the server that your branch was made from. For this class it'll be master
   mostly.
-* `status`: Show status of current repostiroy. Lists files added, files
+* `status`: Show status of current repository. Lists files added, files
   modified but unadded, etc.
 * `diff FILE`: Show the differences between last commit and current status.
 * `branch BRANCH`: Create a new branch off your current branch.
@@ -165,7 +165,7 @@ listed as `foo`, you run `git foo`.
 ## Configuration
 
 Git has a bunch of configuration values that go in your git config file. We'll
-list the key nes for this class.
+list the key ones for this class.
 
 * `user.name`: Name of user.
 * `user.email`: Email of user.

@@ -21,7 +21,7 @@ Ethical theories are split into three general areas: **meta-ethics**,
     the situation. Your goal is to maximize the utility function.
   * Rights: List of rights people have universally. You judge the ethics of a
     situation based on whether it respects or infringes on these rights.
-  * Virtues: You think about about what a virtuous person would do.
+  * Virtues: You think about what a virtuous person would do.
 
 Here are some frameworks for making decisions:
 * Consequentialist: Consider future effects.

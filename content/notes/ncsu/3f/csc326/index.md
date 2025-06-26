@@ -149,7 +149,7 @@ We then can break up the system into **slices** which we can deliver and build
 ## User-Stories
 
 User-stories are an informal and highly collaborative form of software
-engineerings. (Agile!) Agile in general tries to embrace that requirements
+engineering. (Agile!) Agile in general tries to embrace that requirements
 change by regularly delivering and collaborating with the stakeholders. They
 are written **by the stakeholders**.
 
@@ -689,7 +689,7 @@ It is too large to fit attractively.
 </hibernate‐configuration>
 ```
 
-Here is an annotated example of a plain Java class that uses Hibernate 
+Here is an annotated example of a plain Java class that uses Hibernate
 
 ```java
 @Entity
@@ -999,7 +999,7 @@ FROM
 WHERE
   -- t.id is higher priority for sorting than
   -- r.id
-  t.id = tr.transaction_id 
+  t.id = tr.transaction_id
   AND r.id = tr.recipe_id
 ORDER BY t.id, r.id
 ;

@@ -8,7 +8,7 @@ teacher = "Ms. Hailey Queen"
 
 * Goal of E-101: Show engineering as a profession, the design cycle, basic
   problem solving.
-* Goals of E-102: Specific the grand challenges engineers face, how
+* Goals of E-102: Specify the grand challenges engineers face, how
   engineers tackle those, and how those challenges impact history, politics,
   society, etc.
     * This is a GEP (interdisciplinary perspectives).
@@ -63,7 +63,7 @@ teacher = "Ms. Hailey Queen"
 * Sustainability
   * Make solar energy affordable
   * Provide energy from fusion
-  * Developer carbon sequestration methods
+  * Develop carbon sequestration methods
   * Manage the nitrogen cycle
   * Provide access to clean water
 * Joy of Living
@@ -127,7 +127,7 @@ This has connections to [personalizing learning](#Advance Personalized Learning)
 * Sustainability: Maintaining balance of resource use in environment.
 * Things that Add Nitrogen to Ground: Legumes (nitrogen fixing root nodules),
   fertilizer, nitrifying bacteria.
-* Things that Remove Nitrogen from Ground: Denitrifying bacteria, soil leeching
+* Things that Remove Nitrogen from Ground: Denitrifying bacteria, soil leaching
   (water), plant roots.
 * *How does nitrogen get added by humans?* Primarily creating nitrogen based
   fertilizer and disrupting ecosystems (killing nitrogen providing legumes).
@@ -168,14 +168,14 @@ This has connections to [personalizing learning](#Advance Personalized Learning)
   * Nuclear car wash.
   * Computer modeling of nuclear attacks to guide warning systems and clean up.
 
-### Anantomy of Nuclear Weapons/Reactor
+### Anatomy of Nuclear Weapons/Reactor
 
 * For a weapon to work, a reaction needs to be supercritical.
 * Subcritical: Not enough neutrons are released to sustain the reaction. *Dies
   out.*
-* Critical: Just enoug neutrons to release to sustain the reaction. *Self
+* Critical: Just enough neutrons to release to sustain the reaction. *Self
   sustains.*
-* Supercritical: More neutrons are released than need to sustain the reaciton.
+* Supercritical: More neutrons are released than need to sustain the reaction.
   *Goes boom.*
 * Types of Nuclear Assemblies / Detonators:
   * Gun type: A conventional explosive to the side of two nuclear pieces

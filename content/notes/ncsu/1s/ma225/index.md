@@ -18,7 +18,7 @@ small cheatsheet.
   * "4 divides 5."
 * Universe ($\mathcal{U}$): All possible elements within the realm of
   discussion.
-* Open Sentence: A propsoition dependent on a variable within the universe.
+* Open Sentence: A proposition dependent on a variable within the universe.
 * Universal Quantifier ($\forall$): $(\forall x) P(x)$ is true iff the truth
   set of $P(x)$ is $\mathcal{U}$.
 * Existential Quantifier ($\exists$): $(\exists x) P(x)$ is true iff the truth

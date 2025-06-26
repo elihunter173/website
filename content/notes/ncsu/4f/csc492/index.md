@@ -18,9 +18,8 @@ not always the case.
 It is beneficial to draft your test plan when you're doing your requirements.
 
 Make sure your acceptance test plan is *specific*, you should fully describe
-everything and make it so it's impossible for someone to reasonably do
-something other than you intend. Make sure you create a test data set for your
-acceptance tests to you use. Your test data should be (relatively) small and
-understandable.
+everything and make it so it's impossible for someone to reasonably do something
+other than you intend. Make sure you create a test data set for your acceptance
+tests to use. Your test data should be (relatively) small and understandable.
 
 In OPR 1 we should report on test plan, test design.

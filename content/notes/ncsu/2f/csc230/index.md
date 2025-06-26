@@ -39,7 +39,7 @@ The parts are split into a frontend and backend. Frontends deal with the
 language specifics. Backends deal with the architecture specifics. The middle
 speaks a standard language.
 
-This let's the hardest parts (optimization) be handled in a repeatable way for
+This lets the hardest parts (optimization) be handled in a repeatable way for
 different languages and architectures.
 
 * Frontend: preprocessing, lexical analysis, parsing, assembler.
@@ -822,9 +822,9 @@ Each `errno` has short messages describing then, which can be accessed through
   current error. Prefix it with `s`.
 
 ```c
-FILE *fp = fopen(“someFile.txt”, “r”);
+FILE *fp = fopen("someFile.txt", "r");
 if (fp == NULL) {
-  perror(“someFile.txt”);
+  perror("someFile.txt");
   exit(1);
 }
 ```

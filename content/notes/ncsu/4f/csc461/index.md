@@ -13,7 +13,7 @@ teacher = "Dr. Ben Watson"
 
 * Brunelleschi (1425): First to invent/define linear perspective.
 * Issac Newton (~1675): Discovered white light is a combo of light of all
-  color. Created color wheel.
+  colors. Created color wheel.
 * Thomas Young, Herman von Helmholtz, James Maxwell (1800s): Improved color
   theory and created first color photograph/display.
 * Ewald Hering (1800s): Theorized that human vision perception resulted in
