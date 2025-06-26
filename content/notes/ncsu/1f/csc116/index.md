@@ -21,7 +21,7 @@ of them so here is what little I still have.
 * `..`: Above directory.
 * `~`: Home directory.
 
-{{ figure(src="afs_tree.png, title="Simple Heap") }}
+{{ figure(src="afs_tree.png", title="Diagram of AFS Filesystem Layout") }}
 
 # Commands
 
